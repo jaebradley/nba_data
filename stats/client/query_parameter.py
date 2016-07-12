@@ -40,8 +40,8 @@ class Season(BaseQueryParameter):
 
 class CurrentSeasonOnly(BaseQueryParameter):
 
-    yes = "1"
-    no = "0"
+    yes = 1
+    no = 0
 
     @staticmethod
     def get_parameter_name():
@@ -86,10 +86,21 @@ class Team(BaseQueryParameter):
 
 
 def generate_request_parameters(league=None, season_type=None, season=None, current_season_only=None, team=None):
-    return {
-        League.get_parameter_name(): league,
-        SeasonType.get_parameter_name(): season_type,
-        Season.get_parameter_name(): season,
-        CurrentSeasonOnly.get_parameter_name(): current_season_only,
-        Team.get_parameter_name(): team,
-    }
+    parameters = {}
+
+    if league is not None:
+        parameters[League.get_parameter_name()] = league.value
+
+    if season_type is not None:
+        parameters[SeasonType.get_parameter_name()] = season_type.value
+
+    if season is not None:
+        parameters[Season.get_parameter_name()] = season.value
+
+    if current_season_only is not None:
+        parameters[CurrentSeasonOnly.get_parameter_name()] = current_season_only.value
+
+    if team is not None:
+        parameters[Team.get_parameter_name()] = team.value
+
+    return parameters

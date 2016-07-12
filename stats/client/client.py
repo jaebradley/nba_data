@@ -1,6 +1,7 @@
 import requests
 
 from stats.client.query_parameter import League, CurrentSeasonOnly, Team, generate_request_parameters
+from deserializer.common_all_players_deserializer import deserialize_json
 
 
 class Client:
@@ -15,3 +16,4 @@ class Client:
                                 params=generate_request_parameters(season=season,
                                                                    league=league,
                                                                    current_season_only=current_season_only))
+        return deserialize_json(response.json())
