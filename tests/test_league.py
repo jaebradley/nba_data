@@ -1,6 +1,6 @@
 from unittest import TestCase
 
-from QueryParameter import League
+from stats.client.query_parameter import League
 
 
 class TestLeague(TestCase):

@@ -1,6 +1,6 @@
 import requests
 
-from QueryParameter import Season, League, CurrentSeasonOnly, generate_request_parameters
+from stats.client.query_parameter import League, CurrentSeasonOnly, Team, generate_request_parameters
 
 
 class Client:
@@ -15,4 +15,3 @@ class Client:
                                 params=generate_request_parameters(season=season,
                                                                    league=league,
                                                                    current_season_only=current_season_only))
-        
