@@ -10,7 +10,7 @@ class Client:
         pass
 
     @staticmethod
-    def get_players_for_season(self, season, league=League.nba, current_season_only=CurrentSeasonOnly.yes):
+    def get_players_for_season(season, league=League.nba, current_season_only=CurrentSeasonOnly.yes):
         response = requests.get(UriGenerator.generate_common_all_players_uri(),
                                 params=generate_request_parameters(season=season,
                                                                    league=league,
@@ -18,7 +18,7 @@ class Client:
         return Player.deserialize_common_all_players(response.json())
 
     @staticmethod
-    def get_games_for_team(self, season, team, season_type=SeasonType.regular_season):
+    def get_games_for_team(season, team, season_type=SeasonType.regular_season):
         response = requests.get(UriGenerator.generate_team_game_log_uri(),
                                 params=generate_request_parameters(season=season,
                                                                    season_type=season_type,
