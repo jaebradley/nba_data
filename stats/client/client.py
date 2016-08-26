@@ -19,7 +19,7 @@ class Client:
                                                                    current_season_only=current_season_only))
         return Player.deserialize_common_all_players(response.json())
 
-    def get_games_for_team(self, season, team, season_type=SeasonType.regular_season):
+    def get_games_fodr_team(self, season, team, season_type=SeasonType.regular_season):
         response = requests.get(self.base_uri + self.team_game_log_path,
                                 params=generate_request_parameters(season=season,
                                                                    season_type=season_type,
