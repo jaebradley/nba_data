@@ -36,8 +36,15 @@ class Team(Enum):
 
     @staticmethod
     def get_team(team_id):
-        if team_id in team_id_map:
-            return team_id_map.get(team_id)
+        if team_id in team_id_to_name_map:
+            return team_id_to_name_map.get(team_id)
+
+        return Team.undefined
+
+    @staticmethod
+    def get_id(team):
+        if team in team_name_to_id_map:
+            return team_name_to_id_map.get(team)
 
         return Team.undefined
 
@@ -45,7 +52,7 @@ class Team(Enum):
 https://github.com/seemethere/nba_py/wiki/stats.nba.com-Endpoint-Documentation#current-teams
 """
 
-team_id_map = {
+team_id_to_name_map = {
     1610612737: Team.atlanta_hawks,
     1610612738: Team.boston_celtics,
     1610612751: Team.brooklyn_nets,
@@ -76,5 +83,38 @@ team_id_map = {
     1610612761: Team.toronto_raptors,
     1610612762: Team.utah_jazz,
     1610612764: Team.washington_wizards,
+}
+
+team_name_to_id_map = {
+    Team.atlanta_hawks: 1610612737,
+    Team.boston_celtics: 1610612738,
+    Team.brooklyn_nets: 1610612751,
+    Team.charlotte_hornets: 1610612766,
+    Team.chicago_bulls: 1610612741,
+    Team.cleveland_cavaliers: 1610612739,
+    Team.dallas_mavericks: 1610612742,
+    Team.denver_nuggets: 1610612743,
+    Team.detroit_pistons: 1610612765,
+    Team.golden_state_warriors: 1610612744,
+    Team.houston_rockets: 1610612745,
+    Team.indiana_pacers: 1610612754,
+    Team.los_angeles_clippers: 1610612746,
+    Team.los_angeles_lakers: 1610612747,
+    Team.memphis_grizzlies: 1610612763,
+    Team.miami_heat: 1610612748,
+    Team.milwaukee_bucks: 1610612749,
+    Team.minnesota_timberwolves: 1610612750,
+    Team.new_orleans_pelicans: 1610612740,
+    Team.new_york_knicks: 1610612752,
+    Team.oklahoma_city_thunder: 1610612760,
+    Team.orlando_magic: 1610612753,
+    Team.philadelphia_76ers: 1610612755,
+    Team.phoenix_suns: 1610612756,
+    Team.portland_trail_blazers: 1610612757,
+    Team.sacramento_kings: 1610612758,
+    Team.san_antonio_spurs: 1610612759,
+    Team.toronto_raptors: 1610612761,
+    Team.utah_jazz: 1610612762,
+    Team.washington_wizards: 1610612764
 }
 

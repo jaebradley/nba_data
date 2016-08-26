@@ -1,5 +1,7 @@
 from enum import Enum
 
+from stats.data.team import Team as TeamObject
+
 
 class BaseQueryParameter(Enum):
     @staticmethod
@@ -49,36 +51,36 @@ class CurrentSeasonOnly(BaseQueryParameter):
 
 
 class Team(BaseQueryParameter):
-    atlanta_hawks = 1610612737
-    boston_celtics = 1610612738
-    brooklyn_nets = 1610612751
-    charlotte_hornets = 1610612766
-    chicago_bulls = 1610612741
-    cleveland_cavaliers = 1610612739
-    dallas_mavericks = 1610612742
-    denver_nuggets = 1610612743
-    detroit_pistons = 1610612765
-    golden_state_warriors = 1610612744
-    houston_rockets = 1610612745
-    indiana_pacers = 1610612754
-    los_angeles_clippers = 1610612746
-    los_angeles_lakers = 1610612747
-    memphis_grizzlies = 1610612763
-    miami_heat = 1610612748
-    milwaukee_bucks = 1610612749
-    minnesota_timberwolves = 1610612750
-    new_orleans_pelicans = 1610612740
-    new_york_knicks = 1610612752
-    oklahoma_city_thunder = 1610612760
-    orlando_magic = 1610612753
-    philadelphia_76ers = 1610612755
-    phoenix_suns = 1610612756
-    portland_trail_blazers = 1610612757
-    sacramento_kings = 1610612758
-    san_antonio_spurs = 1610612759
-    toronto_raptors = 1610612761
-    utah_jazz = 1610612762
-    washington_wizards = 1610612764
+    atlanta_hawks = TeamObject.get_id(TeamObject.atlanta_hawks)
+    boston_celtics = TeamObject.get_id(TeamObject.atlanta_hawks)
+    brooklyn_nets = TeamObject.get_id(TeamObject.atlanta_hawks)
+    charlotte_hornets = TeamObject.get_id(TeamObject.atlanta_hawks)
+    chicago_bulls = TeamObject.get_id(TeamObject.atlanta_hawks)
+    cleveland_cavaliers = TeamObject.get_id(TeamObject.atlanta_hawks)
+    dallas_mavericks = TeamObject.get_id(TeamObject.atlanta_hawks)
+    denver_nuggets = TeamObject.get_id(TeamObject.atlanta_hawks)
+    detroit_pistons = TeamObject.get_id(TeamObject.atlanta_hawks)
+    golden_state_warriors = TeamObject.get_id(TeamObject.atlanta_hawks)
+    houston_rockets = TeamObject.get_id(TeamObject.atlanta_hawks)
+    indiana_pacers = TeamObject.get_id(TeamObject.atlanta_hawks)
+    los_angeles_clippers = TeamObject.get_id(TeamObject.atlanta_hawks)
+    los_angeles_lakers = TeamObject.get_id(TeamObject.atlanta_hawks)
+    memphis_grizzlies = TeamObject.get_id(TeamObject.atlanta_hawks)
+    miami_heat = TeamObject.get_id(TeamObject.atlanta_hawks)
+    milwaukee_bucks = TeamObject.get_id(TeamObject.atlanta_hawks)
+    minnesota_timberwolves = TeamObject.get_id(TeamObject.atlanta_hawks)
+    new_orleans_pelicans = TeamObject.get_id(TeamObject.atlanta_hawks)
+    new_york_knicks = TeamObject.get_id(TeamObject.atlanta_hawks)
+    oklahoma_city_thunder = TeamObject.get_id(TeamObject.atlanta_hawks)
+    orlando_magic = TeamObject.get_id(TeamObject.atlanta_hawks)
+    philadelphia_76ers = TeamObject.get_id(TeamObject.atlanta_hawks)
+    phoenix_suns = TeamObject.get_id(TeamObject.atlanta_hawks)
+    portland_trail_blazers = TeamObject.get_id(TeamObject.atlanta_hawks)
+    sacramento_kings = TeamObject.get_id(TeamObject.atlanta_hawks)
+    san_antonio_spurs = TeamObject.get_id(TeamObject.atlanta_hawks)
+    toronto_raptors = TeamObject.get_id(TeamObject.atlanta_hawks)
+    utah_jazz = TeamObject.get_id(TeamObject.atlanta_hawks)
+    washington_wizards = TeamObject.get_id(TeamObject.atlanta_hawks)
 
     @staticmethod
     def get_parameter_name():
