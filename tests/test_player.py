@@ -1,6 +1,8 @@
 from unittest import TestCase
 import json
+import os
 
+from tests.config import ROOT_DIRECTORY
 from stats.data.player import Player
 from stats.data.team import Team
 
@@ -13,6 +15,10 @@ class TestPlayer(TestCase):
         self.assertEqual(player.nba_id, 1)
 
     def test_deserialize_common_all_players(self):
-        with open('../files/commonallplayers.json') as data_file:
+        with open(os.path.join(ROOT_DIRECTORY, 'tests/files/commonallplayers.json')) as data_file:
             data = json.load(data_file)
-            Player.deserialize_common_all_players(data)
+            deserialized_players = Player.deserialize_common_all_players(data)
+            quincy_acy = deserialized_players[0]
+            quincy_acy.name = "Quincy Acy"
+            quincy_acy.id = 203112
+            quincy_acy.team = Team.sacramento_kings
