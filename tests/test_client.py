@@ -7,9 +7,7 @@ from stats.data.team import Team
 
 class TestClient(TestCase):
     def test(self):
-        client = Client()
-
-        players = client.get_players_for_season(season=Season.season_2015)
+        players = Client.get_players_for_season(season=Season.season_2015)
         quincy_acy = players[0]
         quincy_acy.name = "Quincy Acy"
         quincy_acy.id = 203112
