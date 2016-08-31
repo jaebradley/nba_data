@@ -1,8 +1,12 @@
-from enum import Enum
+from base_query_parameter import BaseQueryParameter
 
 
-class Season(Enum):
+class Season(BaseQueryParameter):
     season_2015 = "2015-16"
+
+    @staticmethod
+    def get_query_parameter_name():
+        return "Season"
 
     @staticmethod
     def get_season(season_name):

@@ -1,7 +1,7 @@
-from enum import Enum
+from base_query_parameter import BaseQueryParameter
 
 
-class Team(Enum):
+class Team(BaseQueryParameter):
     atlanta_hawks = "Atlanta Hawks"
     boston_celtics = "Boston Celtics"
     brooklyn_nets = "Brooklyn Nets"
@@ -33,6 +33,10 @@ class Team(Enum):
     utah_jazz = "Utah Jazz"
     washington_wizards = "Washington Wizards"
     undefined = "Undefined"
+
+    @staticmethod
+    def get_query_parameter_name():
+        return "TeamId"
 
     @staticmethod
     def get_team_by_id(team_id):

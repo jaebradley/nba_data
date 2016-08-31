@@ -1,7 +1,7 @@
 from unittest import TestCase
 
 from stats.client.client import Client
-from stats.client.query_parameter import Season, Team
+from stats.client.query_parameter_generator import Season, Team
 
 
 class TestClient(TestCase):
