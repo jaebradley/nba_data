@@ -1,8 +1,7 @@
 from unittest import TestCase
 
 from stats.client.client import Client
-from stats.client.query_parameter import Season
-from stats.data.team import Team
+from stats.client.query_parameter import Season, Team
 
 
 class TestClient(TestCase):
@@ -12,3 +11,5 @@ class TestClient(TestCase):
         quincy_acy.name = "Quincy Acy"
         quincy_acy.id = 203112
         quincy_acy.team = Team.sacramento_kings
+
+        games = Client.get_games_for_team(Season.season_2015, Team.boston_celtics)

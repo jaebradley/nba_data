@@ -35,18 +35,31 @@ class Team(Enum):
     undefined = "Undefined"
 
     @staticmethod
-    def get_team(team_id):
-        if team_id in team_id_to_name_map:
-            return team_id_to_name_map.get(team_id)
+    def get_team_by_id(team_id):
+        team = team_id_to_name_map.get(team_id)
 
-        return Team.undefined
+        if team is None:
+            return Team.undefined
+
+        return team
 
     @staticmethod
     def get_id(team):
-        if team in team_name_to_id_map:
-            return team_name_to_id_map.get(team)
+        team_id = team_name_to_id_map.get(team)
 
-        return Team.undefined
+        if team_id is None:
+            raise RuntimeError("Team: %s does not have an id", team)
+
+        return team_id
+
+    @staticmethod
+    def get_team_by_abbreviation(abbreviation):
+        team = team_abbreviation_to_name_map.get(abbreviation)
+
+        if team is None:
+            return Team.undefined
+
+        return team
 
 """
 https://github.com/seemethere/nba_py/wiki/stats.nba.com-Endpoint-Documentation#current-teams
@@ -116,5 +129,37 @@ team_name_to_id_map = {
     Team.toronto_raptors: 1610612761,
     Team.utah_jazz: 1610612762,
     Team.washington_wizards: 1610612764
+}
+
+team_abbreviation_to_name_map = {
+    "ATL": Team.atlanta_hawks,
+    "BOS": Team.boston_celtics,
+    "CHA": Team.charlotte_hornets,
+    "CHI": Team.chicago_bulls,
+    "CLE": Team.cleveland_cavaliers,
+    "DAL": Team.dallas_mavericks,
+    "DEN": Team.denver_nuggets,
+    "DET": Team.detroit_pistons,
+    "GSW": Team.golden_state_warriors,
+    "HOU": Team.houston_rockets,
+    "IND": Team.indiana_pacers,
+    "LAC": Team.los_angeles_clippers,
+    "LAL": Team.los_angeles_lakers,
+    "MEM": Team.memphis_grizzlies,
+    "MIA": Team.miami_heat,
+    "MIL": Team.milwaukee_bucks,
+    "MIN": Team.minnesota_timberwolves,
+    "NOP": Team.new_orleans_pelicans,
+    "NYK": Team.new_york_knicks,
+    "OKC": Team.oklahoma_city_thunder,
+    "ORL": Team.orlando_magic,
+    "PHI": Team.philadelphia_76ers,
+    "PHO": Team.phoenix_suns,
+    "POR": Team.portland_trail_blazers,
+    "SAC": Team.sacramento_kings,
+    "SAS": Team.san_antonio_spurs,
+    "TOR": Team.toronto_raptors,
+    "UTA": Team.utah_jazz,
+    "WAS": Team.washington_wizards,
 }
 

@@ -15,6 +15,6 @@ class Outcome(Enum):
 
 
 outcome_abbreviation_to_outcome_map = {
-    "w": Outcome.win,
-    "l": Outcome.loss,
+    "W": Outcome.win,
+    "L": Outcome.loss,
 }

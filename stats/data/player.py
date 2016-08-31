@@ -14,7 +14,7 @@ class Player:
     @staticmethod
     def create(display_first_last, team_id, nba_id):
         return Player(name=display_first_last,
-                      team=Team.get_team(team_id=team_id),
+                      team=Team.get_team_by_id(team_id=team_id),
                       nba_id=nba_id)
 
     @staticmethod

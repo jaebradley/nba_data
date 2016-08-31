@@ -2,6 +2,7 @@ import requests
 
 from stats.client.query_parameter import League, CurrentSeasonOnly, Team, SeasonType, generate_request_parameters
 from stats.data.player import Player
+from stats.data.game import Game
 from stats.client.uri_generator import UriGenerator
 
 
@@ -23,3 +24,4 @@ class Client:
                                 params=generate_request_parameters(season=season,
                                                                    season_type=season_type,
                                                                    team=team))
+        return Game.deserialize_team_game_log(response.json())
