@@ -31,7 +31,7 @@ class Client:
         return TeamGameLogDeserializer.deserialize_team_game_log(response.json())
 
     @staticmethod
-    def get_player_details(player_id):
+    def get_player_info(player_id):
         response = requests.get(UriGenerator.generate_common_player_info_uri(),
                                 params=QueryParameterGenerator.generate_request_parameters(player_id=player_id))
 
