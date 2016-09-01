@@ -5,6 +5,6 @@ python:
 install: "pip install -r requirements.txt"
 # command to run tests
 script:
-- if [[ $TRAVIS_PYTHON_VERSION == '2.7' ]]; then python -m unittest discover; fi
+- nosetests --with-coverage # Add me to run nose with coverage
 after_success:
   - coveralls
