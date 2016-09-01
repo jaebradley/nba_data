@@ -2,9 +2,9 @@ import json
 import os
 from unittest import TestCase
 
-from tests.config import ROOT_DIRECTORY
-from stats.data.team import Team
 from stats.client.deserializers.common_all_players_deserializer import CommonAllPlayersDeserializer
+from stats.data.team import Team
+from tests.config import ROOT_DIRECTORY
 
 
 class TestCommonAllPlayersDeserializer(TestCase):
