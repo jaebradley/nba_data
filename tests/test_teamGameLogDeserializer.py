@@ -18,8 +18,8 @@ class TestTeamGameLogDeserializer(TestCase):
             deserialized_games = TeamGameLogDeserializer.deserialize_team_game_log(data)
             game = deserialized_games[0]
             self.assertEqual(game.nba_id, "0021501217")
-            self.assertEqual(game.home_team, Team.boston_celtics)
-            self.assertEqual(game.away_team, Team.miami_heat)
+            self.assertEqual(game.matchup.home_team, Team.boston_celtics)
+            self.assertEqual(game.matchup.away_team, Team.miami_heat)
             self.assertEqual(game.season, Season.season_2015)
             self.assertEqual(game.season_type, SeasonType.regular_season)
             self.assertEqual(game.home_team_outcome, Outcome.win)
@@ -27,19 +27,13 @@ class TestTeamGameLogDeserializer(TestCase):
 
     def test_parse_home_matchup(self):
         home_matchup = TeamGameLogDeserializer.parse_matchup("LAL vs. LAC")
-        self.assertEqual(home_matchup.__len__(), 2)
-        self.assertTrue(home_matchup.has_key("home_team"))
-        self.assertTrue(home_matchup.has_key("away_team"))
-        self.assertEqual(home_matchup.get("home_team"), Team.los_angeles_lakers)
-        self.assertEqual(home_matchup.get("away_team"), Team.los_angeles_clippers)
+        self.assertEqual(home_matchup.home_team, Team.los_angeles_lakers)
+        self.assertEqual(home_matchup.away_team, Team.los_angeles_clippers)
 
     def test_parse_away_matchup(self):
         away_matchup = TeamGameLogDeserializer.parse_matchup("LAL @ LAC")
-        self.assertEqual(away_matchup.__len__(), 2)
-        self.assertTrue(away_matchup.has_key("home_team"))
-        self.assertTrue(away_matchup.has_key("away_team"))
-        self.assertEqual(away_matchup.get("home_team"), Team.los_angeles_clippers)
-        self.assertEqual(away_matchup.get("away_team"), Team.los_angeles_lakers)
+        self.assertEqual(away_matchup.home_team, Team.los_angeles_clippers)
+        self.assertEqual(away_matchup.away_team, Team.los_angeles_lakers)
 
     def test_parse_exceptional_matchup(self):
         self.assertRaises(RuntimeError, TeamGameLogDeserializer.parse_matchup, "Jae Bradley")
