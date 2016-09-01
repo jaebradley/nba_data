@@ -5,4 +5,4 @@ from stats.client.query_parameter_generator import League
 
 class TestLeague(TestCase):
     def test(self):
-        self.assertEquals(League.get_parameter_name(), "LeagueId")
+        self.assertEquals(League.get_query_parameter_name(), "LeagueId")
