@@ -1,3 +1,5 @@
+from datetime import datetime
+
 from stats.data.season import Season
 from stats.data.season_type import SeasonType
 from stats.data.game import Game
@@ -7,21 +9,26 @@ from stats.data.outcome import Outcome
 
 class TeamGameLogDeserializer:
     game_date_format = "%b %d, %Y"
+
+    result_set_index = 0
     game_id_index = 1
     game_date_index = 2
     matchup_index = 3
     home_team_outcome_index = 4
 
+    def __init__(self):
+        pass
+
     @staticmethod
     def deserialize_team_game_log(team_game_log_json):
         deserialized_results = []
-        results = team_game_log_json["resultSets"][0]["rowSet"]
-        season = Season.get_season(team_game_log_json["parameters"]["Season"])
-        season_type = SeasonType.get_season_type(team_game_log_json["parameters"]["SeasonType"])
+        results = team_game_log_json["resultSets"][TeamGameLogDeserializer.result_set_index]["rowSet"]
+        season = Season.get_season(team_game_log_json["parameters"][Season.get_query_parameter_name()])
+        season_type = SeasonType.get_season_type(team_game_log_json["parameters"][Season.get_query_parameter_name()])
         for result in results:
             parsed_matchup = TeamGameLogDeserializer.parse_matchup(result[TeamGameLogDeserializer.matchup_index])
-            home_team = Team.get_team_by_id(parsed_matchup["home_team"])
-            away_team = Team.get_team_by_id(parsed_matchup["away_team"])
+            home_team = parsed_matchup["home_team"]
+            away_team = parsed_matchup["away_team"]
             home_team_outcome = Outcome.get_outcome_from_abbreviation(result[TeamGameLogDeserializer.home_team_outcome_index])
             deserialized_results.append(
                 Game(nba_id=result[TeamGameLogDeserializer.game_id_index],
@@ -54,4 +61,4 @@ class TeamGameLogDeserializer:
 
     @staticmethod
     def parse_date(date_string):
-        return datetime.strptime(date_string, Game.game_date_format).date()
+        return datetime.strptime(date_string, TeamGameLogDeserializer.game_date_format).date()

@@ -24,5 +24,5 @@ season_type_name_map = {
     "Regular Season": SeasonType.regular_season,
     "Pre Season": SeasonType.pre_season,
     "Playoffs": SeasonType.playoffs,
-    "All Star": SeasonType.all_star,
+    "All-Star": SeasonType.all_star,
 }

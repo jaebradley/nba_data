@@ -16,15 +16,13 @@ class Client:
     @staticmethod
     def get_players_for_season(season, league=League.nba, current_season_only=CurrentSeasonOnly.yes):
         response = requests.get(UriGenerator.generate_common_all_players_uri(),
-                                params=QueryParameterGenerator.generate_request_parameters(season=season,
-                                                                   league=league,
-                                                                   current_season_only=current_season_only))
+                                params=QueryParameterGenerator.generate_request_parameters(
+                                        season=season, league=league, current_season_only=current_season_only))
         return CommonAllPlayersDeserializer.deserialize_common_all_players(response.json())
 
     @staticmethod
     def get_games_for_team(season, team, season_type=SeasonType.regular_season):
         response = requests.get(UriGenerator.generate_team_game_log_uri(),
-                                params=QueryParameterGenerator.generate_request_parameters(season=season,
-                                                                   season_type=season_type,
-                                                                   team=team))
+                                params=QueryParameterGenerator.generate_request_parameters(
+                                        season=season, season_type=season_type, team=team))
         return TeamGameLogDeserializer.deserialize_team_game_log(response.json())
