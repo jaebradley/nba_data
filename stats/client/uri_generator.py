@@ -12,4 +12,4 @@ class UriGenerator:
 
     @staticmethod
     def generate_team_game_log_uri():
-        return UriGenerator.base_uri + UriGenerator.team_game_log_path;
+        return UriGenerator.base_uri + UriGenerator.team_game_log_path
