@@ -3,6 +3,7 @@ from stats.data.league import League
 from stats.data.season import Season
 from stats.data.season_type import SeasonType
 from stats.data.team import Team
+from stats.data.player import Player
 
 
 class QueryParameterGenerator:
@@ -11,7 +12,8 @@ class QueryParameterGenerator:
         pass
 
     @staticmethod
-    def generate_request_parameters(league=None, season_type=None, season=None, current_season_only=None, team=None):
+    def generate_request_parameters(league=None, season_type=None, season=None, current_season_only=None, team=None,
+                                    player_id=None):
         parameters = {}
 
         if league is not None:
@@ -28,5 +30,8 @@ class QueryParameterGenerator:
 
         if team is not None:
             parameters[Team.get_query_parameter_name()] = Team.get_id(team=team)
+
+        if player_id is not None:
+            parameters[Player.get_query_parameter_name()] = player_id
 
         return parameters

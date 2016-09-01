@@ -2,6 +2,7 @@ import requests
 
 from deserializers.common_all_players_deserializer import CommonAllPlayersDeserializer
 from deserializers.team_game_log_deserializer import TeamGameLogDeserializer
+from deserializers.common_player_info_deserializer import CommonPlayerInfoDeserializer
 from stats.client.query_parameter_generator import QueryParameterGenerator
 from stats.client.uri_generator import UriGenerator
 from stats.data.current_season_only import CurrentSeasonOnly
@@ -28,3 +29,10 @@ class Client:
                                                                                            season_type=season_type,
                                                                                            team=team))
         return TeamGameLogDeserializer.deserialize_team_game_log(response.json())
+
+    @staticmethod
+    def get_player_details(player_id):
+        response = requests.get(UriGenerator.generate_common_player_info_uri(),
+                                params=QueryParameterGenerator.generate_request_parameters(player_id=player_id))
+
+        return CommonPlayerInfoDeserializer.deserialize_common_player_info(response)
