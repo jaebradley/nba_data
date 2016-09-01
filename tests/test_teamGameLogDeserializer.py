@@ -18,8 +18,8 @@ class TestTeamGameLogDeserializer(TestCase):
             deserialized_games = TeamGameLogDeserializer.deserialize_team_game_log(data)
             game = deserialized_games[0]
             self.assertEqual(game.nba_id, "0021501217")
-            self.assertEqual(game.home_team, Team.boston_celtics)
-            self.assertEqual(game.away_team, Team.miami_heat)
+            self.assertEqual(game.matchup.home_team, Team.boston_celtics)
+            self.assertEqual(game.matchup.away_team, Team.miami_heat)
             self.assertEqual(game.season, Season.season_2015)
             self.assertEqual(game.season_type, SeasonType.regular_season)
             self.assertEqual(game.home_team_outcome, Outcome.win)
