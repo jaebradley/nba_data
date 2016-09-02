@@ -1,7 +1,8 @@
 from base_query_parameter import BaseQueryParameter
+from enum import Enum
 
 
-class SeasonType(BaseQueryParameter):
+class SeasonType(BaseQueryParameter, Enum):
     regular_season = "Regular Season"
     pre_season = "Pre Season"
     playoffs = "Playoffs"
