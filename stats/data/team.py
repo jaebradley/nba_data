@@ -44,7 +44,7 @@ class Team(BaseQueryParameter, Enum):
         team = team_id_to_name_map.get(team_id)
 
         if team is None:
-            return Team.undefined
+            raise ValueError("Unknown team_id: %s", team)
 
         return team
 
@@ -53,16 +53,16 @@ class Team(BaseQueryParameter, Enum):
         team_id = team_name_to_id_map.get(team)
 
         if team_id is None:
-            raise RuntimeError("Team: %s does not have an id", team)
+            raise ValueError("Team: %s does not have an id", team)
 
         return team_id
 
     @staticmethod
     def get_team_by_abbreviation(abbreviation):
-        team = team_abbreviation_to_name_map.get(abbreviation)
+        team = team_abbreviation_to_name_map.get(abbreviation.upper())
 
         if team is None:
-            return Team.undefined
+            raise ValueError("Unknown abbreviation: %s", abbreviation)
 
         return team
 
