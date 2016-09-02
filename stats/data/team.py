@@ -139,6 +139,7 @@ team_name_to_id_map = {
 team_abbreviation_to_name_map = {
     "ATL": Team.atlanta_hawks,
     "BOS": Team.boston_celtics,
+    "BKN": Team.brooklyn_nets,
     "CHA": Team.charlotte_hornets,
     "CHI": Team.chicago_bulls,
     "CLE": Team.cleveland_cavaliers,
@@ -159,7 +160,7 @@ team_abbreviation_to_name_map = {
     "OKC": Team.oklahoma_city_thunder,
     "ORL": Team.orlando_magic,
     "PHI": Team.philadelphia_76ers,
-    "PHO": Team.phoenix_suns,
+    "PHX": Team.phoenix_suns,
     "POR": Team.portland_trail_blazers,
     "SAC": Team.sacramento_kings,
     "SAS": Team.san_antonio_spurs,
