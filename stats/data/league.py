@@ -1,7 +1,8 @@
 from base_query_parameter import BaseQueryParameter
+from enum import Enum
 
 
-class League(BaseQueryParameter):
+class League(BaseQueryParameter, Enum):
     nba = "00"
     aba = "01"
 

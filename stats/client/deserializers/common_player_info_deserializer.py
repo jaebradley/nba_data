@@ -31,7 +31,7 @@ class CommonPlayerInfoDeserializer:
                                     team_id=result[CommonPlayerInfoDeserializer.team_id_index],
                                     birth_date=CommonPlayerInfoDeserializer.parse_date(result[CommonPlayerInfoDeserializer.birth_date_index]),
                                     height=CommonPlayerInfoDeserializer.parse_height(result[CommonPlayerInfoDeserializer.height_index]),
-                                    weight=result[CommonPlayerInfoDeserializer.weight_index],
+                                    weight=int(result[CommonPlayerInfoDeserializer.weight_index]),
                                     jersey_number=int(result[CommonPlayerInfoDeserializer.jersey_number_index]),
                                     position_name=result[CommonPlayerInfoDeserializer.position_name_index])
 

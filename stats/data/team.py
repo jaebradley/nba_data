@@ -1,7 +1,8 @@
 from base_query_parameter import BaseQueryParameter
+from enum import Enum
 
 
-class Team(BaseQueryParameter):
+class Team(BaseQueryParameter, Enum):
     atlanta_hawks = "Atlanta Hawks"
     boston_celtics = "Boston Celtics"
     brooklyn_nets = "Brooklyn Nets"

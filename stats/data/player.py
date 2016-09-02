@@ -1,5 +1,5 @@
-from base_query_parameter import BaseQueryParameter
 from stats.data.team import Team
+from stats.data.base_query_parameter import BaseQueryParameter
 
 
 class Player(BaseQueryParameter):
