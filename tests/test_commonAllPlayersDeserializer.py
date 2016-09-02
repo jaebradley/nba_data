@@ -8,6 +8,10 @@ from tests.config import ROOT_DIRECTORY
 
 
 class TestCommonAllPlayersDeserializer(TestCase):
+    def test_instantiation(self):
+        deserializer = CommonAllPlayersDeserializer()
+        self.assertTrue(deserializer.__dict__ == {})
+
     def test_deserialize_common_all_players(self):
         with open(os.path.join(ROOT_DIRECTORY, 'tests/files/commonallplayers.json')) as data_file:
             data = json.load(data_file)

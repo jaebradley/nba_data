@@ -12,6 +12,10 @@ from tests.config import ROOT_DIRECTORY
 
 
 class TestTeamGameLogDeserializer(TestCase):
+    def test_instantiation(self):
+        deserializer = TeamGameLogDeserializer()
+        self.assertTrue(deserializer.__dict__ == {})
+
     def test_deserialize_team_game_log(self):
         with open(os.path.join(ROOT_DIRECTORY, 'tests/files/teamgamelog.json')) as data_file:
             data = json.load(data_file)

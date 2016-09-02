@@ -8,7 +8,7 @@ class Position(Enum):
 
     @staticmethod
     def get_position_from_abbreviation(abbreviation):
-        position = abbreviation_to_position_map.get(abbreviation)
+        position = abbreviation_to_position_map.get(abbreviation.upper())
 
         if position is None:
             raise ValueError("Unknown position abbreviation: %s", abbreviation)

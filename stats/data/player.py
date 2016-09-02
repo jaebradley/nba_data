@@ -14,6 +14,11 @@ class Player(BaseQueryParameter):
 
     @staticmethod
     def create(display_first_last, team_id, nba_id):
+        try:
+            team = Team.get_team_by_id(team_id=team_id)
+        except ValueError:
+            team = Team.undefined
+
         return Player(name=display_first_last,
-                      team=Team.get_team_by_id(team_id=team_id),
+                      team=team,
                       nba_id=nba_id)
