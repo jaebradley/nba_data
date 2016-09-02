@@ -10,6 +10,10 @@ from tests.config import ROOT_DIRECTORY
 
 
 class TestCommonPlayerInfoDeserializer(TestCase):
+    def test_instantiation(self):
+        deserializer = CommonPlayerInfoDeserializer()
+        self.assertTrue(deserializer.__dict__ == {})
+
     def test_common_player_info_deserialization(self):
         with open(os.path.join(ROOT_DIRECTORY, 'tests/files/commonplayerinfo.json')) as data_file:
             data = json.load(data_file)
