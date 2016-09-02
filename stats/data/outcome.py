@@ -7,9 +7,9 @@ class Outcome(Enum):
 
     @staticmethod
     def get_outcome_from_abbreviation(abbreviation):
-        lookup_value = outcome_abbreviation_to_outcome_map.get(abbreviation)
+        lookup_value = outcome_abbreviation_to_outcome_map.get(abbreviation.upper())
         if lookup_value is None:
-            raise KeyError("unknown abbreviation: %s", abbreviation)
+            raise ValueError("Unknown abbreviation: %s", abbreviation)
 
         return lookup_value
 
