@@ -5,7 +5,7 @@ from stats.data.season_type import SeasonType, season_type_name_map
 
 class TestSeasonType(TestCase):
     def test_get_query_parameter_name(self):
-        self.assertEqual(SeasonType.get_query_parameter_name(), "SesaonType")
+        self.assertEqual(SeasonType.get_query_parameter_name(), "SeasonType")
 
     def test_get_season_typea(self):
         self.assertEqual(SeasonType.get_season_type("Regular Season"), SeasonType.regular_season)
