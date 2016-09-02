@@ -17,7 +17,7 @@ class SeasonType(BaseQueryParameter, Enum):
         season_type = season_type_name_map.get(season_type_name)
 
         if season_type is None:
-            raise RuntimeError("Unknown season type name: %s", season_type_name)
+            raise ValueError("Unknown season type name: %s", season_type_name)
 
         return season_type
 
