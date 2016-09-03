@@ -34,7 +34,7 @@ class AdvancedBoxScorePlayerStatsDeserializer:
                                               player_nba_id=box_score[AdvancedBoxScorePlayerStatsDeserializer.player_id_index],
                                               team_id=box_score[AdvancedBoxScorePlayerStatsDeserializer.team_id_index],
                                               comment=box_score[AdvancedBoxScorePlayerStatsDeserializer.comment_index],
-                                              seconds_played=AdvancedBoxScorePlayerStatsDeserializer.parse_minutes_to_second(box_score[AdvancedBoxScorePlayerStatsDeserializer.minutes_played_index]),
+                                              seconds_played=AdvancedBoxScorePlayerStatsDeserializer.parse_minutes_representation_to_seconds(box_score[AdvancedBoxScorePlayerStatsDeserializer.minutes_played_index]),
                                               offensive_rating=AdvancedBoxScorePlayerStatsDeserializer.parse_float(box_score[AdvancedBoxScorePlayerStatsDeserializer.offensive_rating_index]),
                                               defensive_rating=AdvancedBoxScorePlayerStatsDeserializer.parse_float(box_score[AdvancedBoxScorePlayerStatsDeserializer.defensive_rating_index]),
                                               teammate_assist_percentage=AdvancedBoxScorePlayerStatsDeserializer.parse_percentage(box_score[AdvancedBoxScorePlayerStatsDeserializer.teammate_assist_percentage_index]),
@@ -53,7 +53,8 @@ class AdvancedBoxScorePlayerStatsDeserializer:
         if float_value is None:
             return AdvancedBoxScorePlayerStatsDeserializer.default_decimal_value
 
-        assert isinstance(float_value, float)
+        if not isinstance(float_value, float):
+            raise ValueError("Expected a float instead of %s", float_value)
 
         return Decimal(Decimal(float_value).quantize(Decimal(".1"), rounding=ROUND_HALF_UP))
 
@@ -62,21 +63,24 @@ class AdvancedBoxScorePlayerStatsDeserializer:
         if percentage is None:
             return AdvancedBoxScorePlayerStatsDeserializer.default_decimal_value
 
-        assert isinstance(percentage, float)
+        if not isinstance(percentage, float):
+            raise ValueError("Expected a float instead of %s", percentage)
 
         return Decimal((100 * Decimal(percentage)).quantize(Decimal(".1"), rounding=ROUND_HALF_UP))
 
     @staticmethod
-    def parse_minutes_to_second(minutes):
+    def parse_minutes_representation_to_seconds(minutes):
         if minutes is None:
             return 0
 
-        assert isinstance(minutes, unicode)
+        if not isinstance(minutes, unicode):
+            raise ValueError("Expected a unicode minutes representation instead of %s", minutes)
 
         if ":" in minutes:
             minutes_parts = minutes.split(":")
 
-            assert len(minutes_parts) == 2
+            if not len(minutes_parts) == 2:
+                raise ValueError("Expected a minute and seconds part instead of %s", minutes_parts)
 
             return int(minutes_parts[0]) * 60 + int(minutes_parts[1])
 

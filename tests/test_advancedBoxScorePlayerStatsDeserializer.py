@@ -37,4 +37,19 @@ class TestAdvancedBoxScorePlayerStatsDeserializer(TestCase):
             self.assertEqual(nicolas_batum_box_score.effective_field_goal_percentage, Decimal('50.0'))
             self.assertEqual(nicolas_batum_box_score.true_shooting_percentage, Decimal('50.0'))
             self.assertEqual(nicolas_batum_box_score.usage_percentage, Decimal('18.1'))
-    
+
+    def test_parse_float(self):
+        self.assertEqual(AdvancedBoxScorePlayerStatsDeserializer.parse_float(None), Decimal("0.0"))
+        self.assertRaises(ValueError, AdvancedBoxScorePlayerStatsDeserializer.parse_float, "jae")
+        self.assertEqual(AdvancedBoxScorePlayerStatsDeserializer.parse_float(1.50), Decimal("1.5"))
+
+    def test_parse_percentage(self):
+        self.assertEqual(AdvancedBoxScorePlayerStatsDeserializer.parse_percentage(None), Decimal("0.0"))
+        self.assertRaises(ValueError, AdvancedBoxScorePlayerStatsDeserializer.parse_percentage, "jae")
+        self.assertEqual(AdvancedBoxScorePlayerStatsDeserializer.parse_percentage(1.50), Decimal("150.0"))
+
+    def test_parse_minutes(self):
+        self.assertEqual(AdvancedBoxScorePlayerStatsDeserializer.parse_minutes_representation_to_seconds(None), 0)
+        self.assertEqual(AdvancedBoxScorePlayerStatsDeserializer.parse_minutes_representation_to_seconds(u"12:34"), 754)
+        self.assertRaises(ValueError, AdvancedBoxScorePlayerStatsDeserializer.parse_minutes_representation_to_seconds, 1234)
+        self.assertRaises(ValueError, AdvancedBoxScorePlayerStatsDeserializer.parse_minutes_representation_to_seconds, u"12:34:56")
