@@ -13,7 +13,7 @@ class PlayerDetails:
 
     @staticmethod
     def create(nba_id, name, team_id, birth_date, height, weight, jersey_number, position_name):
-        return PlayerDetails(player=Player.create(nba_id=nba_id, display_first_last=name, team_id=team_id),
+        return PlayerDetails(player=Player.create(nba_id=nba_id, name=name, team_id=team_id),
                              birth_date=birth_date,
                              height=height,
                              weight=weight,
