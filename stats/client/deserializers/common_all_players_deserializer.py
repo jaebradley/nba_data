@@ -14,7 +14,7 @@ class CommonAllPlayersDeserializer:
         deserialized_results = []
         results = common_all_players_json["resultSets"][0]["rowSet"]
         for result in results:
-            deserialized_results.append(Player.create(display_first_last=str(result[CommonAllPlayersDeserializer.name_index]),
+            deserialized_results.append(Player.create(name=str(result[CommonAllPlayersDeserializer.name_index]),
                                                       team_id=result[CommonAllPlayersDeserializer.team_id_index],
                                                       nba_id=result[CommonAllPlayersDeserializer.id_index]))
         return deserialized_results
