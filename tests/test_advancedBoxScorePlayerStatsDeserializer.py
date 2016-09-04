@@ -53,3 +53,4 @@ class TestAdvancedBoxScorePlayerStatsDeserializer(TestCase):
         self.assertEqual(AdvancedBoxScorePlayerStatsDeserializer.parse_minutes_representation_to_seconds(u"12:34"), 754)
         self.assertRaises(ValueError, AdvancedBoxScorePlayerStatsDeserializer.parse_minutes_representation_to_seconds, 1234)
         self.assertRaises(ValueError, AdvancedBoxScorePlayerStatsDeserializer.parse_minutes_representation_to_seconds, u"12:34:56")
+        self.assertRaises(ValueError, AdvancedBoxScorePlayerStatsDeserializer.parse_minutes_representation_to_seconds, u"jae")
