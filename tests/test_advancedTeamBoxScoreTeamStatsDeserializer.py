@@ -9,6 +9,9 @@ from stats.client.deserializers.advanced_team_box_score_deserializer import Adva
 
 
 class TestAdvancedBoxScoreTeamStatsDeserializer(TestCase):
+    def test_instantiation(self):
+        self.assertIsNotNone(AdvancedBoxScoreTeamStatsDeserializer())
+
     def test_deserialize_advanced_box_score_player_stats(self):
         with open(os.path.join(ROOT_DIRECTORY, 'tests/files/boxscoreadvancedteamstats.json')) as data_file:
             data = json.load(data_file)
