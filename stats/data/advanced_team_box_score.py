@@ -20,10 +20,10 @@ class AdvancedTeamBoxScore:
         self.true_shooting_percentage = true_shooting_percentage
 
     @staticmethod
-    def create(team_nba_id, comment, seconds_played, offensive_rating, defensive_rating,
-               teammate_assist_percentage, assist_to_turnover_ratio, assists_per_100_possessions,
-               offensive_rebound_percentage, defensive_rebound_percentage, turnovers_per_100_possessions,
-               effective_field_goal_percentage, true_shooting_percentage):
+    def create(team_nba_id, seconds_played, offensive_rating, defensive_rating, teammate_assist_percentage,
+               assist_to_turnover_ratio, assists_per_100_possessions, offensive_rebound_percentage,
+               defensive_rebound_percentage, turnovers_per_100_possessions, effective_field_goal_percentage,
+               true_shooting_percentage):
         return AdvancedTeamBoxScore(team=Team.get_team_by_id(team_id=team_nba_id), seconds_played=seconds_played,
                                     offensive_rating=offensive_rating, defensive_rating=defensive_rating,
                                     teammate_assist_percentage=teammate_assist_percentage,
