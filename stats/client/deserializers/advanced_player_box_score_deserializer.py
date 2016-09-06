@@ -1,6 +1,6 @@
 from decimal import Decimal
 
-from stats.client.deserializers.advanced_box_score_deserializer import AdvancedBoxScoreDeserializer
+from stats.client.deserializers.utils.advanced_box_score_deserializer_utils import AdvancedBoxScoreDeserializerUtils
 from stats.data.advanced_player_box_score import AdvancedPlayerBoxScore
 
 
@@ -35,16 +35,16 @@ class AdvancedBoxScorePlayerStatsDeserializer:
                                               player_nba_id=box_score[AdvancedBoxScorePlayerStatsDeserializer.player_id_index],
                                               team_id=box_score[AdvancedBoxScorePlayerStatsDeserializer.team_id_index],
                                               comment=box_score[AdvancedBoxScorePlayerStatsDeserializer.comment_index],
-                                              seconds_played=AdvancedBoxScoreDeserializer.parse_minutes_representation_to_seconds(box_score[AdvancedBoxScorePlayerStatsDeserializer.minutes_played_index]),
-                                              offensive_rating=AdvancedBoxScoreDeserializer.parse_float(box_score[AdvancedBoxScorePlayerStatsDeserializer.offensive_rating_index]),
-                                              defensive_rating=AdvancedBoxScoreDeserializer.parse_float(box_score[AdvancedBoxScorePlayerStatsDeserializer.defensive_rating_index]),
-                                              teammate_assist_percentage=AdvancedBoxScoreDeserializer.parse_percentage(box_score[AdvancedBoxScorePlayerStatsDeserializer.teammate_assist_percentage_index]),
-                                              assist_to_turnover_ratio=AdvancedBoxScoreDeserializer.parse_float(box_score[AdvancedBoxScorePlayerStatsDeserializer.assist_to_turnover_ratio_index]),
-                                              assists_per_100_possessions=AdvancedBoxScoreDeserializer.parse_float(box_score[AdvancedBoxScorePlayerStatsDeserializer.assists_per_100_possessions_index]),
-                                              offensive_rebound_percentage=AdvancedBoxScoreDeserializer.parse_percentage(box_score[AdvancedBoxScorePlayerStatsDeserializer.offensive_rebound_percentage_index]),
-                                              defensive_rebound_percentage=AdvancedBoxScoreDeserializer.parse_percentage(box_score[AdvancedBoxScorePlayerStatsDeserializer.defensive_rebound_percentage_index]),
-                                              turnovers_per_100_possessions=AdvancedBoxScoreDeserializer.parse_float(box_score[AdvancedBoxScorePlayerStatsDeserializer.turnovers_per_100_possessions_index]),
-                                              effective_field_goal_percentage=AdvancedBoxScoreDeserializer.parse_percentage(box_score[AdvancedBoxScorePlayerStatsDeserializer.effective_field_goal_percentage_index]),
-                                              true_shooting_percentage=AdvancedBoxScoreDeserializer.parse_percentage(box_score[AdvancedBoxScorePlayerStatsDeserializer.true_shooting_percentage_index]),
-                                              usage_percentage=AdvancedBoxScoreDeserializer.parse_percentage(box_score[AdvancedBoxScorePlayerStatsDeserializer.usage_percentage_index])))
+                                              seconds_played=AdvancedBoxScoreDeserializerUtils.parse_minutes_representation_to_seconds(box_score[AdvancedBoxScorePlayerStatsDeserializer.minutes_played_index]),
+                                              offensive_rating=AdvancedBoxScoreDeserializerUtils.parse_float(box_score[AdvancedBoxScorePlayerStatsDeserializer.offensive_rating_index]),
+                                              defensive_rating=AdvancedBoxScoreDeserializerUtils.parse_float(box_score[AdvancedBoxScorePlayerStatsDeserializer.defensive_rating_index]),
+                                              teammate_assist_percentage=AdvancedBoxScoreDeserializerUtils.parse_percentage(box_score[AdvancedBoxScorePlayerStatsDeserializer.teammate_assist_percentage_index]),
+                                              assist_to_turnover_ratio=AdvancedBoxScoreDeserializerUtils.parse_float(box_score[AdvancedBoxScorePlayerStatsDeserializer.assist_to_turnover_ratio_index]),
+                                              assists_per_100_possessions=AdvancedBoxScoreDeserializerUtils.parse_float(box_score[AdvancedBoxScorePlayerStatsDeserializer.assists_per_100_possessions_index]),
+                                              offensive_rebound_percentage=AdvancedBoxScoreDeserializerUtils.parse_percentage(box_score[AdvancedBoxScorePlayerStatsDeserializer.offensive_rebound_percentage_index]),
+                                              defensive_rebound_percentage=AdvancedBoxScoreDeserializerUtils.parse_percentage(box_score[AdvancedBoxScorePlayerStatsDeserializer.defensive_rebound_percentage_index]),
+                                              turnovers_per_100_possessions=AdvancedBoxScoreDeserializerUtils.parse_float(box_score[AdvancedBoxScorePlayerStatsDeserializer.turnovers_per_100_possessions_index]),
+                                              effective_field_goal_percentage=AdvancedBoxScoreDeserializerUtils.parse_percentage(box_score[AdvancedBoxScorePlayerStatsDeserializer.effective_field_goal_percentage_index]),
+                                              true_shooting_percentage=AdvancedBoxScoreDeserializerUtils.parse_percentage(box_score[AdvancedBoxScorePlayerStatsDeserializer.true_shooting_percentage_index]),
+                                              usage_percentage=AdvancedBoxScoreDeserializerUtils.parse_percentage(box_score[AdvancedBoxScorePlayerStatsDeserializer.usage_percentage_index])))
         return deserialized_box_scores
