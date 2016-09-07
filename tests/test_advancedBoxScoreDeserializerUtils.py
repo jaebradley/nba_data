@@ -18,10 +18,3 @@ class TestAdvancedBoxScorePlayerStatsDeserializer(TestCase):
         self.assertEqual(AdvancedBoxScoreDeserializerUtils.parse_percentage(None), Decimal("0.0"))
         self.assertRaises(ValueError, AdvancedBoxScoreDeserializerUtils.parse_percentage, "jae")
         self.assertEqual(AdvancedBoxScoreDeserializerUtils.parse_percentage(1.50), Decimal("150.0"))
-
-    def test_parse_minutes(self):
-        self.assertEqual(AdvancedBoxScoreDeserializerUtils.parse_minutes_representation_to_seconds(None), 0)
-        self.assertEqual(AdvancedBoxScoreDeserializerUtils.parse_minutes_representation_to_seconds(u"12:34"), 754)
-        self.assertRaises(ValueError, AdvancedBoxScoreDeserializerUtils.parse_minutes_representation_to_seconds, 1234)
-        self.assertRaises(ValueError, AdvancedBoxScoreDeserializerUtils.parse_minutes_representation_to_seconds, u"12:34:56")
-        self.assertRaises(ValueError, AdvancedBoxScoreDeserializerUtils.parse_minutes_representation_to_seconds, u"jae")

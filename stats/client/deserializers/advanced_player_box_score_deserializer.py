@@ -1,6 +1,7 @@
 from decimal import Decimal
 
 from stats.client.deserializers.utils.advanced_box_score_deserializer_utils import AdvancedBoxScoreDeserializerUtils
+from stats.client.deserializers.utils.box_score_deserializer_utils import BoxScoreDeserializerUtils
 from stats.data.advanced_player_box_score import AdvancedPlayerBoxScore
 
 
@@ -35,7 +36,7 @@ class AdvancedBoxScorePlayerStatsDeserializer:
                                               player_nba_id=box_score[AdvancedBoxScorePlayerStatsDeserializer.player_id_index],
                                               team_id=box_score[AdvancedBoxScorePlayerStatsDeserializer.team_id_index],
                                               comment=box_score[AdvancedBoxScorePlayerStatsDeserializer.comment_index],
-                                              seconds_played=AdvancedBoxScoreDeserializerUtils.parse_minutes_representation_to_seconds(box_score[AdvancedBoxScorePlayerStatsDeserializer.minutes_played_index]),
+                                              seconds_played=BoxScoreDeserializerUtils.parse_minutes_representation_to_seconds(box_score[AdvancedBoxScorePlayerStatsDeserializer.minutes_played_index]),
                                               offensive_rating=AdvancedBoxScoreDeserializerUtils.parse_float(box_score[AdvancedBoxScorePlayerStatsDeserializer.offensive_rating_index]),
                                               defensive_rating=AdvancedBoxScoreDeserializerUtils.parse_float(box_score[AdvancedBoxScorePlayerStatsDeserializer.defensive_rating_index]),
                                               teammate_assist_percentage=AdvancedBoxScoreDeserializerUtils.parse_percentage(box_score[AdvancedBoxScorePlayerStatsDeserializer.teammate_assist_percentage_index]),
