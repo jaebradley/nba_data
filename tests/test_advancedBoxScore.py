@@ -8,5 +8,5 @@ class TestAdvancedBoxScore(TestCase):
         test_box_score = AdvancedBoxScore("bae", "jadley", "foo")
         self.assertIsNotNone(test_box_score)
         self.assertEqual(test_box_score.game_id, "bae")
-        self.assertEqual(test_box_score.player_box_score, "jadley")
-        self.assertEqual(test_box_score.team_box_score, "foo")
+        self.assertEqual(test_box_score.player_box_scores, "jadley")
+        self.assertEqual(test_box_score.team_box_scores, "foo")
