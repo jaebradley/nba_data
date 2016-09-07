@@ -12,8 +12,8 @@ class TestTraditionalPlayerBoxScore(TestCase):
 
         box_score = TraditionalPlayerBoxScore.create(player_name=test_player_name, player_nba_id=test_player_nba_id,
                                                      team_id=test_team_nba_id, comment="boo", seconds_played=100,
-                                                     field_goals_attempts=1, field_goals_made=2,
-                                                     three_point_field_goals_made=3, three_point_field_goals_attempts=4,
+                                                     field_goal_attempts=1, field_goals_made=2,
+                                                     three_point_field_goals_made=3, three_point_field_goal_attempts=4,
                                                      free_throws_made=5, free_throws_attempts=6, offensive_rebounds=7,
                                                      defensive_rebounds=8, assists=9, steals=10, blocks=11, turnovers=12,
                                                      personal_fouls=13, plus_minus=14)

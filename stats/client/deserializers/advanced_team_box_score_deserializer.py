@@ -1,6 +1,7 @@
 from decimal import Decimal
 
 from stats.client.deserializers.utils.advanced_box_score_deserializer_utils import AdvancedBoxScoreDeserializerUtils
+from stats.client.deserializers.utils.box_score_deserializer_utils import BoxScoreDeserializerUtils
 from stats.data.advanced_team_box_score import AdvancedTeamBoxScore
 
 
@@ -28,7 +29,7 @@ class AdvancedBoxScoreTeamStatsDeserializer:
         for box_score in advanced_box_score_player_stats_json["rowSet"]:
             deserialized_box_scores.append(
                 AdvancedTeamBoxScore.create(team_nba_id=box_score[AdvancedBoxScoreTeamStatsDeserializer.team_id_index],
-                                            seconds_played=AdvancedBoxScoreDeserializerUtils.parse_minutes_representation_to_seconds(box_score[AdvancedBoxScoreTeamStatsDeserializer.minutes_played_index]),
+                                            seconds_played=BoxScoreDeserializerUtils.parse_minutes_representation_to_seconds(box_score[AdvancedBoxScoreTeamStatsDeserializer.minutes_played_index]),
                                             offensive_rating=AdvancedBoxScoreDeserializerUtils.parse_float(box_score[AdvancedBoxScoreTeamStatsDeserializer.offensive_rating_index]),
                                             defensive_rating=AdvancedBoxScoreDeserializerUtils.parse_float(box_score[AdvancedBoxScoreTeamStatsDeserializer.defensive_rating_index]),
                                             teammate_assist_percentage=AdvancedBoxScoreDeserializerUtils.parse_percentage(box_score[AdvancedBoxScoreTeamStatsDeserializer.teammate_assist_percentage_index]),
