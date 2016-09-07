@@ -1,26 +1,17 @@
-from decimal import Decimal
+import json
+import os
 from unittest import TestCase
 
 from stats.client.deserializers.advanced_box_score_deserializer import AdvancedBoxScoreDeserializer
+from tests.config import ROOT_DIRECTORY
 
 
-class TestAdvancedBoxScorePlayerStatsDeserializer(TestCase):
+class TestAdvancedBoxScoreDeserializer(TestCase):
     def test_instantiation(self):
         self.assertIsNotNone(AdvancedBoxScoreDeserializer())
 
-    def test_parse_float(self):
-        self.assertEqual(AdvancedBoxScoreDeserializer.parse_float(None), Decimal("0.0"))
-        self.assertRaises(ValueError, AdvancedBoxScoreDeserializer.parse_float, "jae")
-        self.assertEqual(AdvancedBoxScoreDeserializer.parse_float(1.50), Decimal("1.5"))
-
-    def test_parse_percentage(self):
-        self.assertEqual(AdvancedBoxScoreDeserializer.parse_percentage(None), Decimal("0.0"))
-        self.assertRaises(ValueError, AdvancedBoxScoreDeserializer.parse_percentage, "jae")
-        self.assertEqual(AdvancedBoxScoreDeserializer.parse_percentage(1.50), Decimal("150.0"))
-
-    def test_parse_minutes(self):
-        self.assertEqual(AdvancedBoxScoreDeserializer.parse_minutes_representation_to_seconds(None), 0)
-        self.assertEqual(AdvancedBoxScoreDeserializer.parse_minutes_representation_to_seconds(u"12:34"), 754)
-        self.assertRaises(ValueError, AdvancedBoxScoreDeserializer.parse_minutes_representation_to_seconds, 1234)
-        self.assertRaises(ValueError, AdvancedBoxScoreDeserializer.parse_minutes_representation_to_seconds, u"12:34:56")
-        self.assertRaises(ValueError, AdvancedBoxScoreDeserializer.parse_minutes_representation_to_seconds, u"jae")
+    def test_deserialize_advanced_box_score(self):
+        with open(os.path.join(ROOT_DIRECTORY, 'tests/files/boxscoreadvanced.json')) as data_file:
+            data = json.load(data_file)
+            advanced_box_score = AdvancedBoxScoreDeserializer.deserialize_advanced_box_score(data)
+            self.assertEqual(advanced_box_score.game_id, "0021501205")

@@ -1,47 +1,16 @@
-from decimal import Decimal, ROUND_HALF_UP
+from stats.client.deserializers.advanced_player_box_score_deserializer import AdvancedBoxScorePlayerStatsDeserializer
+from stats.client.deserializers.advanced_team_box_score_deserializer import AdvancedBoxScoreTeamStatsDeserializer
+from stats.data.advanced_box_score import AdvancedBoxScore
 
 
 class AdvancedBoxScoreDeserializer:
-
-    default_decimal_value = Decimal("0.0")
 
     def __init__(self):
         pass
 
     @staticmethod
-    def parse_float(float_value):
-        if float_value is None:
-            return AdvancedBoxScoreDeserializer.default_decimal_value
-
-        if not isinstance(float_value, float):
-            raise ValueError("Expected a float instead of %s", float_value)
-
-        return Decimal(Decimal(float_value).quantize(Decimal(".1"), rounding=ROUND_HALF_UP))
-
-    @staticmethod
-    def parse_percentage(percentage):
-        if percentage is None:
-            return AdvancedBoxScoreDeserializer.default_decimal_value
-
-        if not isinstance(percentage, float):
-            raise ValueError("Expected a float instead of %s", percentage)
-
-        return Decimal((100 * Decimal(percentage)).quantize(Decimal(".1"), rounding=ROUND_HALF_UP))
-
-    @staticmethod
-    def parse_minutes_representation_to_seconds(minutes):
-        if minutes is None:
-            return 0
-
-        if not isinstance(minutes, unicode):
-            raise ValueError("Expected a unicode minutes representation instead of %s", minutes)
-
-        if ":" in minutes:
-            minutes_parts = minutes.split(":")
-
-            if not len(minutes_parts) == 2:
-                raise ValueError("Expected a minute and seconds part instead of %s", minutes_parts)
-
-            return int(minutes_parts[0]) * 60 + int(minutes_parts[1])
-
-        raise ValueError("Unknown minutes value: %s", minutes)
+    def deserialize_advanced_box_score(advanced_box_score_json):
+        game_id = advanced_box_score_json["parameters"]["GameID"]
+        advanced_box_score_player_stats = AdvancedBoxScorePlayerStatsDeserializer.deserialize_advanced_box_score_player_stats(advanced_box_score_json["resultSets"][0])
+        advanced_box_score_team_stats = AdvancedBoxScoreTeamStatsDeserializer.deserialize_advanced_box_score_team_stats(advanced_box_score_json["resultSets"][1])
+        return AdvancedBoxScore(game_id=game_id, player_box_scores=advanced_box_score_player_stats, team_box_scores=advanced_box_score_team_stats)
