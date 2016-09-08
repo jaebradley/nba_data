@@ -4,21 +4,20 @@ from stats.data.traditional_team_box_score import TraditionalTeamBoxScore
 
 class TraditionalBoxScoreTeamStatsDeserializer:
     team_id_index = 1
-    unit_name_index = 5
-    minutes_played_index = 6
-    field_goals_made_index = 7
-    field_goal_attempts_index = 8
-    three_point_field_goals_made_index = 10
-    three_point_field_goal_attempts_index = 11
-    free_throws_made_index = 13
-    free_throw_attempts_index = 14
-    offensive_rebounds_index = 16
-    defensive_rebounds_index = 17
-    assists_index = 19
-    steals_index = 20
-    blocks_index = 21
-    turnovers_index = 22
-    personal_fouls_index = 23
+    minutes_played_index = 5
+    field_goals_made_index = 6
+    field_goal_attempts_index = 7
+    three_point_field_goals_made_index = 9
+    three_point_field_goal_attempts_index = 10
+    free_throws_made_index = 12
+    free_throw_attempts_index = 13
+    offensive_rebounds_index = 15
+    defensive_rebounds_index = 16
+    assists_index = 18
+    steals_index = 19
+    blocks_index = 20
+    turnovers_index = 21
+    personal_fouls_index = 22
 
     def __init__(self):
         pass
@@ -29,7 +28,6 @@ class TraditionalBoxScoreTeamStatsDeserializer:
         for box_score in traditional_box_score_player_stats_json["rowSet"]:
             deserialized_box_scores.append(
                 TraditionalTeamBoxScore.create(team_id=box_score[TraditionalBoxScoreTeamStatsDeserializer.team_id_index],
-                                               unit_name=box_score[TraditionalBoxScoreTeamStatsDeserializer.unit_name_index],
                                                seconds_played=BoxScoreDeserializerUtils.parse_minutes_representation_to_seconds(box_score[TraditionalBoxScoreTeamStatsDeserializer.minutes_played_index]),
                                                field_goals_made=box_score[TraditionalBoxScoreTeamStatsDeserializer.field_goals_made_index],
                                                field_goal_attempts=box_score[TraditionalBoxScoreTeamStatsDeserializer.field_goal_attempts_index],
