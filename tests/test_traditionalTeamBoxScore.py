@@ -1,14 +1,13 @@
 from unittest import TestCase
 
 from stats.data.team import Team
-from stats.data.unit import Unit
 from stats.data.traditional_team_box_score import TraditionalTeamBoxScore
 
 
 class TestTraditionalTeamBoxScore(TestCase):
     def test_create(self):
         test_team_id = 1610612738
-        box_score = TraditionalTeamBoxScore.create(team_id=test_team_id, seconds_played=1, unit_name="Starters",
+        box_score = TraditionalTeamBoxScore.create(team_id=test_team_id, seconds_played=1,
                                                    field_goals_made=2, field_goal_attempts=3,
                                                    three_point_field_goals_made=4,
                                                    three_point_field_goal_attempts=5, free_throws_made=6,
@@ -19,7 +18,6 @@ class TestTraditionalTeamBoxScore(TestCase):
         self.assertIsNotNone(box_score)
         self.assertEqual(box_score.team, Team.boston_celtics)
         self.assertEqual(box_score.seconds_played, 1)
-        self.assertEqual(box_score.unit, Unit.starters)
         self.assertEqual(box_score.field_goals_made, 2)
         self.assertEqual(box_score.field_goal_attempts, 3)
         self.assertEqual(box_score.three_point_field_goals_made, 4)
