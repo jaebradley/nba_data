@@ -39,3 +39,13 @@ class TestQueryParameterGenerator(TestCase):
                              "PlayerId": 1
                          })
 
+    def test_generate_box_score_request_parameters(self):
+        self.assertEqual(QueryParameterGenerator.generate_box_score_request_parameters(game_id=1),
+                         {
+                             "GameId": 1,
+                             "RangeType": 0,
+                             "StartPeriod": 0,
+                             "StartRange": 0,
+                             "EndPeriod": 0,
+                             "EndRange": 0,
+                         })

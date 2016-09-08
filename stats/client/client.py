@@ -3,6 +3,7 @@ import requests
 from deserializers.common_all_players_deserializer import CommonAllPlayersDeserializer
 from deserializers.team_game_log_deserializer import TeamGameLogDeserializer
 from deserializers.common_player_info_deserializer import CommonPlayerInfoDeserializer
+from deserializers.advanced_box_score_deserializer import AdvancedBoxScoreDeserializer
 from stats.client.query_parameter_generator import QueryParameterGenerator
 from stats.client.uri_generator import UriGenerator
 from stats.data.current_season_only import CurrentSeasonOnly
@@ -35,4 +36,12 @@ class Client:
         response = requests.get(UriGenerator.generate_common_player_info_uri(),
                                 params=QueryParameterGenerator.generate_request_parameters(player_id=player_id))
 
-        return CommonPlayerInfoDeserializer.deserialize_common_player_info(response)
+        return CommonPlayerInfoDeserializer.deserialize_common_player_info(response.json())
+
+    @staticmethod
+    def get_advanced_box_score(game_id):
+        response = requests.get(UriGenerator.generate_advanced_box_score_uri(),
+                                params=QueryParameterGenerator.generate_box_score_request_parameters(game_id=game_id))
+
+        return AdvancedBoxScoreDeserializer.deserialize_advanced_box_score(response.json())
+

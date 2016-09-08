@@ -1,12 +1,19 @@
 from stats.data.current_season_only import CurrentSeasonOnly
 from stats.data.league import League
+from stats.data.player import Player
 from stats.data.season import Season
 from stats.data.season_type import SeasonType
 from stats.data.team import Team
-from stats.data.player import Player
 
 
 class QueryParameterGenerator:
+
+    game_id_parameter_name = "GameId"
+    start_period_parameter_name = "StartPeriod"
+    end_period_parameter_name = "EndPeriod"
+    start_range_parameter_name = "StartRange"
+    end_range_parameter_name = "EndRange"
+    range_type_parameter_name = "RangeType"
 
     def __init__(self):
         pass
@@ -33,5 +40,19 @@ class QueryParameterGenerator:
 
         if player_id is not None:
             parameters[Player.get_query_parameter_name()] = player_id
+
+        return parameters
+
+    @staticmethod
+    def generate_box_score_request_parameters(game_id, start_period=0, end_period=0, start_range=0, end_range=0,
+                                              range_type=0):
+        parameters = {}
+
+        parameters[QueryParameterGenerator.game_id_parameter_name] = game_id
+        parameters[QueryParameterGenerator.start_period_parameter_name] = start_period
+        parameters[QueryParameterGenerator.end_period_parameter_name] = end_period
+        parameters[QueryParameterGenerator.start_range_parameter_name] = start_range
+        parameters[QueryParameterGenerator.end_range_parameter_name] = end_range
+        parameters[QueryParameterGenerator.range_type_parameter_name] = range_type
 
         return parameters
