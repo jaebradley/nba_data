@@ -3,6 +3,7 @@ class UriGenerator:
     common_all_players_path = "commonallplayers"
     team_game_log_path = "teamgamelog"
     common_player_info_path = "commonplayerinfo"
+    advanced_box_score_path = "boxscoreadvancedv2"
 
     def __init__(self):
         pass
@@ -18,3 +19,7 @@ class UriGenerator:
     @staticmethod
     def generate_common_player_info_uri():
         return UriGenerator.base_uri + UriGenerator.common_player_info_path
+
+    @staticmethod
+    def generate_advanced_box_score_uri():
+        return UriGenerator.base_uri + UriGenerator.advanced_box_score_path
