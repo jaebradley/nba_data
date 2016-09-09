@@ -1,7 +1,8 @@
-from distutils.core import setup
+from setuptools import setup, find_packages
 setup(
   name = 'nba_data',
-  packages = ['nba_data'], # this must be the same as the name above
+  packages = find_packages(exclude=['tests*']),
+  install_requires=['requests', 'enum34'],
   version = '0.2',
   description = 'A nba stats client',
   author = 'Jae Bradley',
