@@ -1,6 +1,6 @@
 from unittest import TestCase
 
-from nba_data.client.deserializers.utils.box_score_deserializer_utils import BoxScoreDeserializerUtils
+from nba_data.deserializers.utils.box_score_deserializer_utils import BoxScoreDeserializerUtils
 
 
 class TestBoxScoreDeserializerUtils(TestCase):

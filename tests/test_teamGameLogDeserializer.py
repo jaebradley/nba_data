@@ -3,11 +3,11 @@ import os
 from datetime import datetime
 from unittest import TestCase
 
-from nba_data.client.deserializers.team_game_log_deserializer import TeamGameLogDeserializer
 from nba_data.data.outcome import Outcome
 from nba_data.data.season import Season
 from nba_data.data.season_type import SeasonType
 from nba_data.data.team import Team
+from nba_data.deserializers.team_game_log_deserializer import TeamGameLogDeserializer
 from tests.config import ROOT_DIRECTORY
 
 

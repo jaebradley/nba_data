@@ -1,6 +1,6 @@
 from unittest import TestCase
 
-from nba_data.client.uri_generator import UriGenerator
+from nba_data.nba_stats_api_utils.uri_generator import UriGenerator
 
 
 class TestUriGenerator(TestCase):
@@ -8,13 +8,13 @@ class TestUriGenerator(TestCase):
         self.assertIsNotNone(UriGenerator())
 
     def test_generate_common_all_players_uri(self):
-        self.assertEqual(UriGenerator.generate_common_all_players_uri(), "http://nba_data.nba.com/nba_data/commonallplayers")
+        self.assertEqual(UriGenerator.generate_common_all_players_uri(), "http://stats.nba.com/stats/commonallplayers")
 
     def test_generate_team_game_log_uri(self):
-        self.assertEqual(UriGenerator.generate_team_game_log_uri(), "http://nba_data.nba.com/nba_data/teamgamelog")
+        self.assertEqual(UriGenerator.generate_team_game_log_uri(), "http://stats.nba.com/stats/teamgamelog")
 
     def test_generate_common_player_info_uri(self):
-        self.assertEqual(UriGenerator.generate_common_player_info_uri(), "http://nba_data.nba.com/nba_data/commonplayerinfo")
+        self.assertEqual(UriGenerator.generate_common_player_info_uri(), "http://stats.nba.com/stats/commonplayerinfo")
 
     def test_generate_advanced_box_score_uri(self):
-        self.assertEqual(UriGenerator.generate_advanced_box_score_uri(), "http://nba_data.nba.com/nba_data/boxscoreadvancedv2")
+        self.assertEqual(UriGenerator.generate_advanced_box_score_uri(), "http://stats.nba.com/stats/boxscoreadvancedv2")

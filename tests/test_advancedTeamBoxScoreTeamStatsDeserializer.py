@@ -1,11 +1,11 @@
-from decimal import Decimal
-import os
 import json
+import os
+from decimal import Decimal
 from unittest import TestCase
 
-from tests.config import ROOT_DIRECTORY
 from nba_data.data.team import Team
-from nba_data.client.deserializers.advanced_team_box_score_deserializer import AdvancedBoxScoreTeamStatsDeserializer
+from nba_data.deserializers.advanced_team_box_score_deserializer import AdvancedBoxScoreTeamStatsDeserializer
+from tests.config import ROOT_DIRECTORY
 
 
 class TestAdvancedBoxScoreTeamStatsDeserializer(TestCase):

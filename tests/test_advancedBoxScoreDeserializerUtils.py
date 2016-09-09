@@ -1,7 +1,7 @@
 from decimal import Decimal
 from unittest import TestCase
 
-from nba_data.client.deserializers.utils.advanced_box_score_deserializer_utils import AdvancedBoxScoreDeserializerUtils
+from nba_data.deserializers.utils.advanced_box_score_deserializer_utils import AdvancedBoxScoreDeserializerUtils
 
 
 class TestAdvancedBoxScorePlayerStatsDeserializer(TestCase):
