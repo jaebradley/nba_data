@@ -10,7 +10,7 @@ from stats.data.team import Team
 from stats.data.game import Game
 
 
-# @skip("skip non-local testing")
+@skip("skip non-local testing")
 class TestClient(TestCase):
     def test_instantiation(self):
         self.assertIsNotNone(Client())
