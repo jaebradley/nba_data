@@ -3,13 +3,14 @@ from unittest import TestCase, skip
 from stats.data.season import Season
 from stats.client.client import Client
 from stats.data.advanced_box_score import AdvancedBoxScore
+from stats.data.box_score import BoxScore
 from stats.data.player import Player
 from stats.data.player_details import PlayerDetails
 from stats.data.team import Team
 from stats.data.game import Game
 
 
-@skip("skip non-local testing")
+# @skip("skip non-local testing")
 class TestClient(TestCase):
     def test_instantiation(self):
         self.assertIsNotNone(Client())
@@ -35,5 +36,10 @@ class TestClient(TestCase):
         advanced_box_score = Client.get_advanced_box_score(game_id="0021501205")
         self.assertIsNotNone(advanced_box_score)
         self.assertIsInstance(advanced_box_score, AdvancedBoxScore)
+
+    def test_get_traditional_box_score(self):
+        traditional_box_score = Client.get_traditional_box_score(game_id="0021501205")
+        self.assertIsNotNone(traditional_box_score)
+        self.assertIsInstance(traditional_box_score, BoxScore)
 
 

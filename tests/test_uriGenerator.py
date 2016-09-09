@@ -18,3 +18,6 @@ class TestUriGenerator(TestCase):
 
     def test_generate_advanced_box_score_uri(self):
         self.assertEqual(UriGenerator.generate_advanced_box_score_uri(), "http://stats.nba.com/stats/boxscoreadvancedv2")
+
+    def test_generate_traditional_box_score_uri(self):
+        self.assertEqual(UriGenerator.generate_traditional_box_score_uri(), "http://stats.nba.com/stats/boxscoretraditionalv2")
