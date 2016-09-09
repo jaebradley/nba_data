@@ -1,5 +1,5 @@
-from stats.data.player import Player
-from stats.data.position import Position
+from nba_data.data.player import Player
+from nba_data.data.position import Position
 
 
 class PlayerDetails:

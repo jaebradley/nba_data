@@ -1,12 +1,12 @@
 from unittest import TestCase, skip
 
-from stats.client import Client
-from stats.data.advanced_box_score import AdvancedBoxScore
-from stats.data.game import Game
-from stats.data.player import Player
-from stats.data.player_details import PlayerDetails
-from stats.data.season import Season
-from stats.data.team import Team
+from nba_data.client import Client
+from nba_data.data.advanced_box_score import AdvancedBoxScore
+from nba_data.data.game import Game
+from nba_data.data.player import Player
+from nba_data.data.player_details import PlayerDetails
+from nba_data.data.season import Season
+from nba_data.data.team import Team
 
 
 @skip("skip non-local testing")

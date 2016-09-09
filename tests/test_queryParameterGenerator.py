@@ -1,11 +1,11 @@
 from unittest import TestCase
 
-from stats.client.query_parameter_generator import QueryParameterGenerator
-from stats.data.league import League
-from stats.data.season import Season
-from stats.data.season_type import SeasonType
-from stats.data.current_season_only import CurrentSeasonOnly
-from stats.data.team import Team
+from nba_data.client.query_parameter_generator import QueryParameterGenerator
+from nba_data.data.league import League
+from nba_data.data.season import Season
+from nba_data.data.season_type import SeasonType
+from nba_data.data.current_season_only import CurrentSeasonOnly
+from nba_data.data.team import Team
 
 
 class TestQueryParameterGenerator(TestCase):

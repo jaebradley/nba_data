@@ -3,9 +3,9 @@ import os
 from datetime import datetime
 from unittest import TestCase
 
-from stats.client.deserializers.common_player_info_deserializer import CommonPlayerInfoDeserializer
-from stats.data.team import Team
-from stats.data.position import Position
+from nba_data.client.deserializers.common_player_info_deserializer import CommonPlayerInfoDeserializer
+from nba_data.data.team import Team
+from nba_data.data.position import Position
 from tests.config import ROOT_DIRECTORY
 
 

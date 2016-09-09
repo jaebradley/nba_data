@@ -1,6 +1,6 @@
 from unittest import TestCase
 
-from stats.data.outcome import Outcome, outcome_abbreviation_to_outcome_map
+from nba_data.data.outcome import Outcome, outcome_abbreviation_to_outcome_map
 
 
 class TestOutcome(TestCase):

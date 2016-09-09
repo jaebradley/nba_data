@@ -1,14 +1,14 @@
 import requests
 
-from stats.client.deserializers.common_all_players_deserializer import CommonAllPlayersDeserializer
-from stats.client.deserializers.team_game_log_deserializer import TeamGameLogDeserializer
-from stats.client.deserializers.common_player_info_deserializer import CommonPlayerInfoDeserializer
-from stats.client.deserializers.advanced_box_score_deserializer import AdvancedBoxScoreDeserializer
-from stats.client.query_parameter_generator import QueryParameterGenerator
-from stats.client.uri_generator import UriGenerator
-from stats.data.current_season_only import CurrentSeasonOnly
-from stats.data.league import League
-from stats.data.season_type import SeasonType
+from nba_data.client.deserializers.common_all_players_deserializer import CommonAllPlayersDeserializer
+from nba_data.client.deserializers.team_game_log_deserializer import TeamGameLogDeserializer
+from nba_data.client.deserializers.common_player_info_deserializer import CommonPlayerInfoDeserializer
+from nba_data.client.deserializers.advanced_box_score_deserializer import AdvancedBoxScoreDeserializer
+from nba_data.client.query_parameter_generator import QueryParameterGenerator
+from nba_data.client.uri_generator import UriGenerator
+from nba_data.data.current_season_only import CurrentSeasonOnly
+from nba_data.data.league import League
+from nba_data.data.season_type import SeasonType
 
 
 class Client:

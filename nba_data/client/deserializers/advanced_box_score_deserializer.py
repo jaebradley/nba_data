@@ -1,6 +1,6 @@
-from stats.client.deserializers.advanced_player_box_score_deserializer import AdvancedBoxScorePlayerStatsDeserializer
-from stats.client.deserializers.advanced_team_box_score_deserializer import AdvancedBoxScoreTeamStatsDeserializer
-from stats.data.advanced_box_score import AdvancedBoxScore
+from nba_data.client.deserializers.advanced_player_box_score_deserializer import AdvancedBoxScorePlayerStatsDeserializer
+from nba_data.client.deserializers.advanced_team_box_score_deserializer import AdvancedBoxScoreTeamStatsDeserializer
+from nba_data.data.advanced_box_score import AdvancedBoxScore
 
 
 class AdvancedBoxScoreDeserializer:

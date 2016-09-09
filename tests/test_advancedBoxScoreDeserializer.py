@@ -3,8 +3,8 @@ import json
 import os
 from unittest import TestCase
 
-from stats.data.team import Team
-from stats.client.deserializers.advanced_box_score_deserializer import AdvancedBoxScoreDeserializer
+from nba_data.data.team import Team
+from nba_data.client.deserializers.advanced_box_score_deserializer import AdvancedBoxScoreDeserializer
 from tests.config import ROOT_DIRECTORY
 
 

@@ -1,6 +1,6 @@
 from unittest import TestCase
 
-from stats.data.season import Season, season_name_map
+from nba_data.data.season import Season, season_name_map
 
 
 class TestSeason(TestCase):

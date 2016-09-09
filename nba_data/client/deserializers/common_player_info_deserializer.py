@@ -1,6 +1,6 @@
 from datetime import datetime
 
-from stats.data.player_details import PlayerDetails
+from nba_data.data.player_details import PlayerDetails
 
 
 class CommonPlayerInfoDeserializer:

@@ -1,6 +1,6 @@
 from unittest import TestCase
 
-from stats.data.current_season_only import CurrentSeasonOnly
+from nba_data.data.current_season_only import CurrentSeasonOnly
 
 
 class TestCurrentSeasonOnly(TestCase):

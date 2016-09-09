@@ -1,5 +1,5 @@
 class UriGenerator:
-    base_uri = "http://stats.nba.com/stats/"
+    base_uri = "http://nba_data.nba.com/nba_data/"
     common_all_players_path = "commonallplayers"
     team_game_log_path = "teamgamelog"
     common_player_info_path = "commonplayerinfo"

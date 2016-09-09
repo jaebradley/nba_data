@@ -1,10 +1,10 @@
 from datetime import datetime
 
-from stats.data.game import Game
-from stats.data.matchup import Matchup
-from stats.data.outcome import Outcome
-from stats.data.season import Season
-from stats.data.season_type import SeasonType
+from nba_data.data.game import Game
+from nba_data.data.matchup import Matchup
+from nba_data.data.outcome import Outcome
+from nba_data.data.season import Season
+from nba_data.data.season_type import SeasonType
 
 
 class TeamGameLogDeserializer:

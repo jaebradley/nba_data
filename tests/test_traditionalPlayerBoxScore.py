@@ -1,7 +1,7 @@
 from unittest import TestCase
 
-from stats.data.team import Team
-from stats.data.traditional_player_box_score import TraditionalPlayerBoxScore
+from nba_data.data.team import Team
+from nba_data.data.traditional_player_box_score import TraditionalPlayerBoxScore
 
 
 class TestTraditionalPlayerBoxScore(TestCase):
