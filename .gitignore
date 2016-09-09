@@ -1,3 +1,5 @@
 .idea/
 *.pyc
 .coverage
+dist/
+nba_data.egg-info
