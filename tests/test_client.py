@@ -11,10 +11,13 @@ from stats.data.game import Game
 
 @skip("skip non-local testing")
 class TestClient(TestCase):
+    def test_instantiation(self):
+        self.assertIsNotNone(Client())
+
     def test_get_players_for_season(self):
         players = Client.get_players_for_season(season=Season.season_2015)
         self.assertIsNotNone(players)
-        self.assertEqual(len(players), 2000)
+        self.assertEqual(len(players), 479)
         self.assertIsInstance(players[0], Player)
 
     def test_get_games_for_team(self):
