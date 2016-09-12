@@ -37,7 +37,7 @@ class CommonPlayerInfoDeserializer:
         height = None
         try:
             height = CommonPlayerInfoDeserializer.parse_height(result[CommonPlayerInfoDeserializer.height_index])
-        except ValueError:
+        except (ValueError, AssertionError):
             pass
 
         jersey_number = None
