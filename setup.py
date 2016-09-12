@@ -8,7 +8,7 @@ setup(
   author = 'Jae Bradley',
   author_email = 'jae.b.bradley@gmail.com',
   url = 'https://github.com/jaebradley/nba_data', # use the URL to the github repo
-  download_url = 'https://github.com/jaebradley/nba_data/tarball/0.8', # I'll explain this in a second
+  download_url = 'https://github.com/jaebradley/nba_data/tarball/0.9', # I'll explain this in a second
   keywords = ['nba', 'nba_data'], # arbitrary keywords
   classifiers = [],
 )
