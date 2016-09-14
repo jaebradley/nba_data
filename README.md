@@ -21,7 +21,7 @@ Additionally, this client is by no means complete, and will be in active develop
 
 ## Installation
 
-This project is available on [PyPi](https://pypi.python.org/pypi/nba_data/0.6).
+This project is available on [PyPi](https://pypi.python.org/pypi/nba_data).
 
 To install
 ```
