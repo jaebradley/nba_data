@@ -68,6 +68,7 @@ class Client:
     @staticmethod
     def get_traditional_box_score(game_id):
         response = requests.get(UriGenerator.generate_traditional_box_score_uri(),
+                                headers=Client.headers,
                                 params=QueryParameterGenerator.generate_box_score_request_parameters(game_id=game_id))
 
         response.raise_for_status()
