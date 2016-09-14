@@ -4,7 +4,7 @@
 [![Build Status](https://travis-ci.org/jaebradley/nba_data.svg?branch=master)](https://travis-ci.org/jaebradley/nba_data)
 
 # Introduction
-Getting (free) NBA statistics, even the most basic, can be a real pain. Luckily, the NBA Stats API (http://stats.nba.com/stats/)
+Getting (free) NBA statistics, even the most basic, can be a real pain. Luckily, the NBA Stats API (base uri: http://stats.nba.com/stats/)
 can provide many of these statistics. This project, and more specifically, this client, serves as an abstraction on top
 of the NBA Stats API.
 
@@ -13,7 +13,7 @@ of the NBA Stats API.
 Unfortunately, the NBA Stats API makes no guarantees about uptime, breaking changes, and does not have much (i.e. any)
 documentation around it, so identifying all the available endpoints and their implementation is non-trivial.
 
-Thus, this client makes similar guarantees (or lack thereof).
+Thus, due to these contraints this client is only as dependable and consistent as the NBA Stats service.
 
 Additionally, this client is by no means complete, and will be in active development.
 
