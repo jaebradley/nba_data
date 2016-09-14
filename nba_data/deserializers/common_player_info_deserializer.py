@@ -30,7 +30,7 @@ class CommonPlayerInfoDeserializer:
 
         weight = None
         try:
-            weight = int(result[CommonPlayerInfoDeserializer.weight_index] != CommonPlayerInfoDeserializer.unknown_value)
+            weight = int(result[CommonPlayerInfoDeserializer.weight_index])
         except ValueError:
             pass
 

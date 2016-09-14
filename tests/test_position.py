@@ -16,8 +16,11 @@ class TestPosition(TestCase):
         self.assertEqual(abbreviation_to_position_map,
                          {
                             "G": Position.guard,
+                            "G-F": Position.guard_forward,
+                            "F-G": Position.forward_guard,
                             "F": Position.forward,
                             "C": Position.center,
+                            "F-C": Position.forward_center,
                          })
 
     def test_get_position_from_name(self):
@@ -32,6 +35,9 @@ class TestPosition(TestCase):
         self.assertEqual(name_to_position_map,
                          {
                             "GUARD": Position.guard,
+                            "GUARD-FORWARD": Position.guard_forward,
+                            "FORWARD-GUARD": Position.forward_guard,
                             "FORWARD": Position.forward,
                             "CENTER": Position.center,
+                            "FORWARD-CENTER": Position.forward_center,
                          })
