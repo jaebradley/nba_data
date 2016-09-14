@@ -1,6 +1,6 @@
 from unittest import TestCase
 
-from stats.data.unit import Unit
+from nba_data.data.unit import Unit
 
 
 class TestUnit(TestCase):

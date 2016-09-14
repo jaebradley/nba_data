@@ -1,10 +1,11 @@
 from datetime import datetime
 
-from stats.data.player_details import PlayerDetails
+from nba_data.data.player_details import PlayerDetails
 
 
 class CommonPlayerInfoDeserializer:
     game_date_format = "%Y-%m-%dT%H:%M:%S"
+    unknown_value = ""
 
     result_set_index = 0
     nba_id_index = 0
@@ -26,13 +27,32 @@ class CommonPlayerInfoDeserializer:
         assert len(results) == 1
 
         result = results[0]
+
+        weight = None
+        try:
+            weight = int(result[CommonPlayerInfoDeserializer.weight_index] != CommonPlayerInfoDeserializer.unknown_value)
+        except ValueError:
+            pass
+
+        height = None
+        try:
+            height = CommonPlayerInfoDeserializer.parse_height(result[CommonPlayerInfoDeserializer.height_index])
+        except (ValueError, AssertionError):
+            pass
+
+        jersey_number = None
+        try:
+            jersey_number = int(result[CommonPlayerInfoDeserializer.jersey_number_index])
+        except ValueError:
+            pass
+
         return PlayerDetails.create(nba_id=result[CommonPlayerInfoDeserializer.nba_id_index],
                                     name=result[CommonPlayerInfoDeserializer.name_index],
                                     team_id=result[CommonPlayerInfoDeserializer.team_id_index],
                                     birth_date=CommonPlayerInfoDeserializer.parse_date(result[CommonPlayerInfoDeserializer.birth_date_index]),
-                                    height=CommonPlayerInfoDeserializer.parse_height(result[CommonPlayerInfoDeserializer.height_index]),
-                                    weight=int(result[CommonPlayerInfoDeserializer.weight_index]),
-                                    jersey_number=int(result[CommonPlayerInfoDeserializer.jersey_number_index]),
+                                    height=height,
+                                    weight=weight,
+                                    jersey_number=jersey_number,
                                     position_name=result[CommonPlayerInfoDeserializer.position_name_index])
 
     @staticmethod

@@ -1,6 +1,6 @@
 from unittest import TestCase
 
-from stats.client.query_parameter_generator import League
+from nba_data.nba_stats_api_utils.query_parameter_generator import League
 
 
 class TestLeague(TestCase):

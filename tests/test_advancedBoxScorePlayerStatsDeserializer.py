@@ -1,10 +1,10 @@
-from decimal import Decimal
 import json
 import os
+from decimal import Decimal
 from unittest import TestCase
 
-from stats.client.deserializers.advanced_player_box_score_deserializer import AdvancedBoxScorePlayerStatsDeserializer
-from stats.data.team import Team
+from nba_data.data.team import Team
+from nba_data.deserializers.advanced_player_box_score_deserializer import AdvancedBoxScorePlayerStatsDeserializer
 from tests.config import ROOT_DIRECTORY
 
 

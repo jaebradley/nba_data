@@ -1,6 +1,6 @@
 from unittest import TestCase
 
-from stats.data.base_query_parameter import BaseQueryParameter
+from nba_data.data.base_query_parameter import BaseQueryParameter
 
 
 class TestBaseQueryParameter(TestCase):

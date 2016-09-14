@@ -2,8 +2,8 @@ import json
 import os
 from unittest import TestCase
 
-from stats.client.deserializers.common_all_players_deserializer import CommonAllPlayersDeserializer
-from stats.data.team import Team
+from nba_data.data.team import Team
+from nba_data.deserializers.common_all_players_deserializer import CommonAllPlayersDeserializer
 from tests.config import ROOT_DIRECTORY
 
 

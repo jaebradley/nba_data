@@ -1,6 +1,6 @@
 from unittest import TestCase
 
-from stats.data.advanced_box_score import AdvancedBoxScore
+from nba_data.data.advanced_box_score import AdvancedBoxScore
 
 
 class TestAdvancedBoxScore(TestCase):

@@ -1,6 +1,6 @@
 from unittest import TestCase
 
-from stats.data.position import Position, abbreviation_to_position_map, name_to_position_map
+from nba_data.data.position import Position, abbreviation_to_position_map, name_to_position_map
 
 
 class TestPosition(TestCase):

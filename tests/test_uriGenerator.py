@@ -1,6 +1,6 @@
 from unittest import TestCase
 
-from stats.client.uri_generator import UriGenerator
+from nba_data.nba_stats_api_utils.uri_generator import UriGenerator
 
 
 class TestUriGenerator(TestCase):

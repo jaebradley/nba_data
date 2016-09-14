@@ -1,5 +1,5 @@
-from stats.client.deserializers.utils.box_score_deserializer_utils import BoxScoreDeserializerUtils
-from stats.data.traditional_team_box_score import TraditionalTeamBoxScore
+from nba_data.data.traditional_team_box_score import TraditionalTeamBoxScore
+from nba_data.deserializers.utils.box_score_deserializer_utils import BoxScoreDeserializerUtils
 
 
 class TraditionalBoxScoreTeamStatsDeserializer:

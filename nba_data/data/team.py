@@ -67,7 +67,7 @@ class Team(BaseQueryParameter, Enum):
         return team
 
 """
-https://github.com/seemethere/nba_py/wiki/stats.nba.com-Endpoint-Documentation#current-teams
+https://github.com/seemethere/nba_py/wiki/nba_data.nba.com-Endpoint-Documentation#current-teams
 """
 
 team_id_to_name_map = {

@@ -2,9 +2,9 @@ import json
 import os
 from unittest import TestCase
 
-from stats.client.deserializers.traditional_player_box_score_deserializer import TraditionalBoxScorePlayerStatsDeserializer
-from stats.data.traditional_player_box_score import TraditionalPlayerBoxScore
-from stats.data.team import Team
+from nba_data.data.team import Team
+from nba_data.data.traditional_player_box_score import TraditionalPlayerBoxScore
+from nba_data.deserializers.traditional_player_box_score_deserializer import TraditionalBoxScorePlayerStatsDeserializer
 from tests.config import ROOT_DIRECTORY
 
 

@@ -1,4 +1,4 @@
-from stats.data.player import Player
+from nba_data.data.player import Player
 
 
 class CommonAllPlayersDeserializer:

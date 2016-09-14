@@ -1,6 +1,6 @@
 from unittest import TestCase
 
-from stats.data.box_score import BoxScore
+from nba_data.data.box_score import BoxScore
 
 
 class TestBoxScore(TestCase):
