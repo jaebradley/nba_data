@@ -5,6 +5,7 @@ from nba_data.data.current_season_only import CurrentSeasonOnly
 from nba_data.data.league import League
 from nba_data.data.season_type import SeasonType
 from nba_data.deserializers.advanced_box_score_deserializer import AdvancedBoxScoreDeserializer
+from nba_data.deserializers.traditional_box_score_deserializer import TraditionalBoxScoreDeserializer
 from nba_data.deserializers.common_all_players_deserializer import CommonAllPlayersDeserializer
 from nba_data.deserializers.common_player_info_deserializer import CommonPlayerInfoDeserializer
 from nba_data.deserializers.team_game_log_deserializer import TeamGameLogDeserializer
@@ -63,3 +64,12 @@ class Client:
         response.raise_for_status()
 
         return AdvancedBoxScoreDeserializer.deserialize_advanced_box_score(response.json())
+
+    @staticmethod
+    def get_traditional_box_score(game_id):
+        response = requests.get(UriGenerator.generate_traditional_box_score_uri(),
+                                params=QueryParameterGenerator.generate_box_score_request_parameters(game_id=game_id))
+
+        response.raise_for_status()
+
+        return TraditionalBoxScoreDeserializer.deserialize_traditional_box_score(traditional_box_score_json=response.json())
