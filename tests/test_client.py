@@ -20,6 +20,12 @@ class TestClient(TestCase):
         self.assertEqual(len(players), 478)
         self.assertIsInstance(players[0], Player)
 
+    def test_get_players_for_all_seasons(self):
+        for season in Season:
+            players = Client.get_players_for_season(season=season)
+            self.assertIsNotNone(players)
+            self.assertGreater(len(players), 0)
+
     def test_get_games_for_team(self):
         games = Client.get_games_for_team(season=Season.season_2015, team=Team.boston_celtics)
         self.assertIsNotNone(games)
