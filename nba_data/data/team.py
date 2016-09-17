@@ -33,7 +33,6 @@ class Team(BaseQueryParameter, Enum):
     toronto_raptors = "Toronto Raptors"
     utah_jazz = "Utah Jazz"
     washington_wizards = "Washington Wizards"
-    undefined = "Undefined"
 
     @staticmethod
     def get_query_parameter_name():
@@ -41,30 +40,15 @@ class Team(BaseQueryParameter, Enum):
 
     @staticmethod
     def get_team_by_id(team_id):
-        team = team_id_to_name_map.get(team_id)
-
-        if team is None:
-            raise ValueError("Unknown team_id: %s", team)
-
-        return team
+        return team_id_to_name_map.get(team_id)
 
     @staticmethod
     def get_id(team):
-        team_id = team_name_to_id_map.get(team)
-
-        if team_id is None:
-            raise ValueError("Team: %s does not have an id", team)
-
-        return team_id
+        return team_name_to_id_map.get(team)
 
     @staticmethod
     def get_team_by_abbreviation(abbreviation):
-        team = team_abbreviation_to_name_map.get(abbreviation.upper())
-
-        if team is None:
-            raise ValueError("Unknown abbreviation: %s", abbreviation)
-
-        return team
+        return team_abbreviation_to_name_map.get(abbreviation.upper())
 
 """
 https://github.com/seemethere/nba_py/wiki/nba_data.nba.com-Endpoint-Documentation#current-teams
