@@ -53,9 +53,9 @@ players across all seasons
 ### Get Players For Season
 
 ```python
-from nba_data.client import Client
-from nba_data.data.season import Season
-from nba_data.data.current_season_only import CurrentSeasonOnly
+from nba_data import Client
+from nba_data import CurrentSeasonOnly
+from nba_data import Season
 
 
 def get_players_for_2015_season():
@@ -64,15 +64,16 @@ def get_players_for_2015_season():
 
 def get_players_for_every_season():
     return Client.get_players_for_season(season=Season.season_2015, current_season_only=CurrentSeasonOnly.no)
+
 ```
 
 ### Get Games For Team
 
 ```python
-from nba_data.client import Client
-from nba_data.data.season import Season
-from nba_data.data.season_type import SeasonType
-from nba_data.data.team import Team
+from nba_data import Client
+from nba_data import Season
+from nba_data import SeasonType
+from nba_data import Team
 
 
 def get_regular_season_games_for_2015_boston_celtics():
