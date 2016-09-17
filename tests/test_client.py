@@ -42,6 +42,9 @@ class TestClient(TestCase):
         self.assertEqual(len(games), 82)
         self.assertIsInstance(games[0], Game)
 
+    def test_get_player_info_arguments(self):
+        self.assertRaises(AssertionError, Client.get_player_info, player_id="bae jadley")
+
     def test_get_player_info(self):
         player_details = Client.get_player_info(player_id=201566)
         self.assertIsNotNone(player_details)
@@ -52,11 +55,17 @@ class TestClient(TestCase):
     #         player_details = Client.get_player_info(player_id=player.nba_id)
     #         self.assertIsNotNone(player_details)
     #         self.assertIsInstance(player_details, PlayerDetails)
-    
+
+    def test_get_advanced_box_score_arguments(self):
+        self.assertRaises(AssertionError, Client.get_advanced_box_score, game_id=1234)
+
     def test_get_advanced_box_score(self):
         advanced_box_score = Client.get_advanced_box_score(game_id="0021501205")
         self.assertIsNotNone(advanced_box_score)
         self.assertIsInstance(advanced_box_score, AdvancedBoxScore)
+
+    def test_get_traditional_box_score_arguments(self):
+        self.assertRaises(AssertionError, Client.get_traditional_box_score, game_id=1234)
 
     def test_get_traditional_box_score(self):
         traditional_box_score = Client.get_traditional_box_score(game_id="0021501205")
