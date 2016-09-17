@@ -57,6 +57,8 @@ class Client:
 
     @staticmethod
     def get_player_info(player_id):
+        assert isinstance(player_id, int)
+
         response = requests.get(UriGenerator.generate_common_player_info_uri(),
                                 headers=Client.headers,
                                 params=QueryParameterGenerator.generate_request_parameters(player_id=player_id))
@@ -66,6 +68,8 @@ class Client:
 
     @staticmethod
     def get_advanced_box_score(game_id):
+        assert isinstance(game_id, str)
+
         response = requests.get(UriGenerator.generate_advanced_box_score_uri(),
                                 headers=Client.headers,
                                 params=QueryParameterGenerator.generate_box_score_request_parameters(game_id=game_id))
@@ -76,6 +80,8 @@ class Client:
 
     @staticmethod
     def get_traditional_box_score(game_id):
+        assert isinstance(game_id, str)
+
         response = requests.get(UriGenerator.generate_traditional_box_score_uri(),
                                 headers=Client.headers,
                                 params=QueryParameterGenerator.generate_box_score_request_parameters(game_id=game_id))
