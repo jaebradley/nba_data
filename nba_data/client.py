@@ -1,6 +1,7 @@
 import requests
 
 from nba_data.data.season import Season
+from nba_data.data.team import Team
 from nba_data.data.current_season_only import CurrentSeasonOnly
 from nba_data.data.league import League
 from nba_data.data.season_type import SeasonType
@@ -39,9 +40,12 @@ class Client:
 
         return CommonAllPlayersDeserializer.deserialize_common_all_players(response.json())
 
-
     @staticmethod
     def get_games_for_team(season, team, season_type=SeasonType.regular_season):
+        assert isinstance(season, Season)
+        assert isinstance(team, Team)
+        assert isinstance(season_type, SeasonType)
+
         response = requests.get(UriGenerator.generate_team_game_log_uri(),
                                 headers=Client.headers,
                                 params=QueryParameterGenerator.generate_request_parameters(season=season,
