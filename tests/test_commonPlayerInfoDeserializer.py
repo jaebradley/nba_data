@@ -26,3 +26,11 @@ class TestCommonPlayerInfoDeserializer(TestCase):
             self.assertEqual(deserialized_player.weight, 200)
             self.assertEqual(deserialized_player.jersey_number, 0)
             self.assertEqual(deserialized_player.position, Position.guard)
+
+    def test_common_player_info_errored_deserialization(self):
+        with open(os.path.join(ROOT_DIRECTORY, 'tests/files/errorcommonplayerinfo.json')) as data_file:
+            data = json.load(data_file)
+            deserialized_player = CommonPlayerInfoDeserializer.deserialize_common_player_info(data)
+            self.assertIsNone(deserialized_player.height)
+            self.assertIsNone(deserialized_player.weight)
+            self.assertIsNone(deserialized_player.jersey_number)

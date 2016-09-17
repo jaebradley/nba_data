@@ -1,13 +1,13 @@
-from unittest import TestCase, skip
+from unittest import TestCase
 
 from nba_data.client import Client
 from nba_data.data.advanced_box_score import AdvancedBoxScore
+from nba_data.data.box_score import BoxScore
 from nba_data.data.game import Game
 from nba_data.data.player import Player
 from nba_data.data.player_details import PlayerDetails
 from nba_data.data.season import Season
 from nba_data.data.team import Team
-from nba_data.data.box_score import BoxScore
 
 
 class TestClient(TestCase):

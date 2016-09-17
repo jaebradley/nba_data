@@ -1,5 +1,6 @@
-from base_query_parameter import BaseQueryParameter
 from enum import Enum
+
+from base_query_parameter import BaseQueryParameter
 
 
 class Season(BaseQueryParameter, Enum):

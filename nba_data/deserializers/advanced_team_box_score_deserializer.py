@@ -1,8 +1,7 @@
 from decimal import Decimal
 
-from nba_data.deserializers.utils.advanced_box_score_deserializer_utils import AdvancedBoxScoreDeserializerUtils
-
 from nba_data.data.advanced_team_box_score import AdvancedTeamBoxScore
+from nba_data.deserializers.utils.advanced_box_score_deserializer_utils import AdvancedBoxScoreDeserializerUtils
 from nba_data.deserializers.utils.box_score_deserializer_utils import BoxScoreDeserializerUtils
 
 
