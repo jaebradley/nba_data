@@ -1,5 +1,6 @@
 import requests
 
+from nba_data.data.season import Season
 from nba_data.data.current_season_only import CurrentSeasonOnly
 from nba_data.data.league import League
 from nba_data.data.season_type import SeasonType
@@ -24,6 +25,10 @@ class Client:
 
     @staticmethod
     def get_players_for_season(season, league=League.nba, current_season_only=CurrentSeasonOnly.yes):
+        assert isinstance(season, Season)
+        assert isinstance(league, League)
+        assert isinstance(current_season_only, CurrentSeasonOnly)
+
         response = requests.get(UriGenerator.generate_common_all_players_uri(),
                                 headers=Client.headers,
                                 params=QueryParameterGenerator.generate_request_parameters(season=season,

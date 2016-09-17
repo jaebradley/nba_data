@@ -14,6 +14,11 @@ class TestClient(TestCase):
     def test_instantiation(self):
         self.assertIsNotNone(Client())
 
+    def test_get_players_for_season_arguments(self):
+        self.assertRaises(AssertionError, Client.get_players_for_season, season=None)
+        self.assertRaises(AssertionError, Client.get_players_for_season, season=Season.season_2015, league=None)
+        self.assertRaises(AssertionError, Client.get_players_for_season, season=Season.season_2015, current_season_only=None)
+
     def test_get_players_for_season(self):
         players = Client.get_players_for_season(season=Season.season_2015)
         self.assertIsNotNone(players)
