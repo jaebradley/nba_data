@@ -24,21 +24,33 @@ class QueryParameterGenerator:
         parameters = {}
 
         if league is not None:
+            assert isinstance(league, League)
+
             parameters[League.get_query_parameter_name()] = league.value
 
         if season_type is not None:
+            assert isinstance(season_type, SeasonType)
+
             parameters[SeasonType.get_query_parameter_name()] = season_type.value
 
         if season is not None:
+            assert isinstance(season, Season)
+
             parameters[Season.get_query_parameter_name()] = season.value
 
         if current_season_only is not None:
+            assert isinstance(current_season_only, CurrentSeasonOnly)
+
             parameters[CurrentSeasonOnly.get_query_parameter_name()] = current_season_only.value
 
         if team is not None:
+            assert isinstance(team, Team)
+
             parameters[Team.get_query_parameter_name()] = Team.get_id(team=team)
 
         if player_id is not None:
+            assert isinstance(player_id, int)
+
             parameters[Player.get_query_parameter_name()] = player_id
 
         return parameters
@@ -46,6 +58,21 @@ class QueryParameterGenerator:
     @staticmethod
     def generate_box_score_request_parameters(game_id, start_period=0, end_period=0, start_range=0, end_range=0,
                                               range_type=0):
+        assert isinstance(game_id, str)
+        assert isinstance(start_period, int)
+        assert isinstance(end_period, int)
+        assert isinstance(start_range, int)
+        assert isinstance(end_range, int)
+        assert isinstance(range_type, int)
+
+        assert start_period >= 0
+        assert end_period >= 0
+        assert end_period >= start_period
+        assert start_range >= 0
+        assert end_range >= 0
+        assert end_range >= start_range
+        assert range_type >= 0
+        
         parameters = {}
 
         parameters[QueryParameterGenerator.game_id_parameter_name] = game_id
