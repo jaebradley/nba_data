@@ -31,6 +31,11 @@ class TestClient(TestCase):
             self.assertIsNotNone(players)
             self.assertGreater(len(players), 0)
 
+    def test_get_games_for_team_arguments(self):
+        self.assertRaises(AssertionError, Client.get_games_for_team, season=None, team=Team.boston_celtics)
+        self.assertRaises(AssertionError, Client.get_games_for_team, season=Season.season_2015, team=None)
+        self.assertRaises(AssertionError, Client.get_games_for_team, season=Season.season_2015, team=Team.boston_celtics, season_type=None)
+
     def test_get_games_for_team(self):
         games = Client.get_games_for_team(season=Season.season_2015, team=Team.boston_celtics)
         self.assertIsNotNone(games)
