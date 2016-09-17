@@ -22,5 +22,5 @@ class TestPlayer(TestCase):
 
         undefined_team_player = Player.create("jae bradley", "foo", 2)
         self.assertEqual(undefined_team_player.name, "jae bradley")
-        self.assertEqual(undefined_team_player.team, Team.undefined)
+        self.assertEqual(undefined_team_player.team, None)
         self.assertEqual(undefined_team_player.nba_id, 2)
