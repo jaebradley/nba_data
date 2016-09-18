@@ -72,7 +72,7 @@ class QueryParameterGenerator:
         assert end_range >= 0
         assert end_range >= start_range
         assert range_type >= 0
-        
+
         parameters = {}
 
         parameters[QueryParameterGenerator.game_id_parameter_name] = game_id
