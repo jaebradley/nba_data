@@ -5,12 +5,29 @@ from nba_data.data.traditional_player_box_score import TraditionalPlayerBoxScore
 
 
 class TestTraditionalPlayerBoxScore(TestCase):
+    def test_assertions(self):
+        self.assertRaises(AssertionError, TraditionalPlayerBoxScore.create, player_name=1, player_id=2, team_id=3,
+                          comment="boo", seconds_played=100, field_goal_attempts=1, field_goals_made=2,
+                          three_point_field_goals_made=3, three_point_field_goal_attempts=4, free_throws_made=5,
+                          free_throws_attempts=6, offensive_rebounds=7, defensive_rebounds=8, assists=9, steals=10,
+                          blocks=11, turnovers=12, personal_fouls=13, plus_minus=14)
+        self.assertRaises(AssertionError, TraditionalPlayerBoxScore.create, player_name="bae", player_id="jadley", team_id=3,
+                          comment="boo", seconds_played=100, field_goal_attempts=1, field_goals_made=2,
+                          three_point_field_goals_made=3, three_point_field_goal_attempts=4, free_throws_made=5,
+                          free_throws_attempts=6, offensive_rebounds=7, defensive_rebounds=8, assists=9, steals=10,
+                          blocks=11, turnovers=12, personal_fouls=13, plus_minus=14)
+        self.assertRaises(AssertionError, TraditionalPlayerBoxScore.create, player_name="bae", player_id=1, team_id="jadley",
+                          comment="boo", seconds_played=100, field_goal_attempts=1, field_goals_made=2,
+                          three_point_field_goals_made=3, three_point_field_goal_attempts=4, free_throws_made=5,
+                          free_throws_attempts=6, offensive_rebounds=7, defensive_rebounds=8, assists=9, steals=10,
+                          blocks=11, turnovers=12, personal_fouls=13, plus_minus=14)
+
     def test_create(self):
         test_player_name = "jae"
         test_player_nba_id = 1
         test_team_nba_id = 1610612738
 
-        box_score = TraditionalPlayerBoxScore.create(player_name=test_player_name, player_nba_id=test_player_nba_id,
+        box_score = TraditionalPlayerBoxScore.create(player_name=test_player_name, player_id=test_player_nba_id,
                                                      team_id=test_team_nba_id, comment="boo", seconds_played=100,
                                                      field_goal_attempts=1, field_goals_made=2,
                                                      three_point_field_goals_made=3, three_point_field_goal_attempts=4,
@@ -20,7 +37,7 @@ class TestTraditionalPlayerBoxScore(TestCase):
 
         self.assertIsNotNone(box_score)
         self.assertEqual(box_score.player.name, test_player_name)
-        self.assertEqual(box_score.player.nba_id, test_player_nba_id)
+        self.assertEqual(box_score.player.id, test_player_nba_id)
         self.assertEqual(box_score.player.team, Team.boston_celtics)
         self.assertEqual(box_score.comment, "boo")
         self.assertEqual(box_score.seconds_played, 100)

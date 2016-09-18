@@ -19,7 +19,7 @@ class TestCommonPlayerInfoDeserializer(TestCase):
             data = json.load(data_file)
             deserialized_player = CommonPlayerInfoDeserializer.deserialize_common_player_info(data)
             self.assertEqual(deserialized_player.player.name, "Russell Westbrook")
-            self.assertEqual(deserialized_player.player.nba_id, 201566)
+            self.assertEqual(deserialized_player.player.id, 201566)
             self.assertEqual(deserialized_player.player.team, Team.oklahoma_city_thunder)
             self.assertEqual(deserialized_player.birth_date, datetime(year=1988, month=11, day=12).date())
             self.assertEqual(deserialized_player.height, 75)

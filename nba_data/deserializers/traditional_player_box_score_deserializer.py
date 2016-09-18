@@ -32,7 +32,7 @@ class TraditionalBoxScorePlayerStatsDeserializer:
         for box_score in traditional_box_score_player_stats_json["rowSet"]:
             deserialized_box_scores.append(
                 TraditionalPlayerBoxScore.create(player_name=str(box_score[TraditionalBoxScorePlayerStatsDeserializer.player_name_index]),
-                                                 player_nba_id=int(box_score[TraditionalBoxScorePlayerStatsDeserializer.player_id_index]),
+                                                 player_id=int(box_score[TraditionalBoxScorePlayerStatsDeserializer.player_id_index]),
                                                  team_id=int(box_score[TraditionalBoxScorePlayerStatsDeserializer.team_id_index]),
                                                  comment=box_score[TraditionalBoxScorePlayerStatsDeserializer.comment_index],
                                                  seconds_played=BoxScoreDeserializerUtils.parse_minutes_representation_to_seconds(box_score[TraditionalBoxScorePlayerStatsDeserializer.minutes_played_index]),

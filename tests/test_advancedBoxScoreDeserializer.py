@@ -20,7 +20,7 @@ class TestAdvancedBoxScoreDeserializer(TestCase):
             self.assertEqual(len(advanced_box_score.player_box_scores), 26)
 
             nicolas_batum_box_score = advanced_box_score.player_box_scores[0]
-            self.assertEqual(nicolas_batum_box_score.player.nba_id, 201587)
+            self.assertEqual(nicolas_batum_box_score.player.id, 201587)
             self.assertEqual(nicolas_batum_box_score.player.name, "Nicolas Batum")
             self.assertEqual(nicolas_batum_box_score.player.team, Team.charlotte_hornets)
             self.assertEqual(nicolas_batum_box_score.comment, "")

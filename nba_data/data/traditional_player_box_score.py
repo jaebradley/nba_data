@@ -6,6 +6,9 @@ class TraditionalPlayerBoxScore:
                  three_point_field_goals_made, three_point_field_goal_attempts,
                  free_throws_made, free_throws_attempts, offensive_rebounds, defensive_rebounds, assists,
                  steals, blocks, turnovers, personal_fouls, plus_minus):
+
+        assert isinstance(player, Player)
+
         self.player = player
         self.comment = comment
         self.seconds_played = seconds_played
@@ -25,11 +28,16 @@ class TraditionalPlayerBoxScore:
         self.plus_minus = plus_minus
 
     @staticmethod
-    def create(player_name, player_nba_id, team_id, comment, seconds_played, field_goals_made, field_goal_attempts,
+    def create(player_name, player_id, team_id, comment, seconds_played, field_goals_made, field_goal_attempts,
                three_point_field_goals_made, three_point_field_goal_attempts,
                free_throws_made, free_throws_attempts, offensive_rebounds, defensive_rebounds, assists,
                steals, blocks, turnovers, personal_fouls, plus_minus):
-        return TraditionalPlayerBoxScore(player=Player.create(name=player_name, team_id=team_id, nba_id=player_nba_id),
+
+        assert isinstance(player_name, str)
+        assert isinstance(player_id, int)
+        assert isinstance(team_id, int)
+
+        return TraditionalPlayerBoxScore(player=Player.create(name=player_name, team_id=team_id, id=player_id),
                                          comment=comment, seconds_played=seconds_played, field_goals_made=field_goals_made,
                                          field_goal_attempts=field_goal_attempts,
                                          three_point_field_goals_made=three_point_field_goals_made,
