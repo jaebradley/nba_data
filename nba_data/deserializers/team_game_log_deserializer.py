@@ -29,7 +29,7 @@ class TeamGameLogDeserializer:
             matchup = TeamGameLogDeserializer.parse_matchup(result[TeamGameLogDeserializer.matchup_index])
             home_team_outcome = Outcome.get_outcome_from_abbreviation(result[TeamGameLogDeserializer.home_team_outcome_index])
             deserialized_results.append(
-                Game(nba_id=result[TeamGameLogDeserializer.game_id_index],
+                Game(nba_id=str(result[TeamGameLogDeserializer.game_id_index]),
                      matchup=matchup,
                      date=TeamGameLogDeserializer.parse_date(result[TeamGameLogDeserializer.game_date_index]),
                      season=season,
@@ -42,13 +42,13 @@ class TeamGameLogDeserializer:
 
         if " vs. " in matchup:
             teams = matchup.split(" vs. ")
-            return Matchup.create(home_team_abbreviation=teams[0],
-                                  away_team_abbreviation=teams[1])
+            return Matchup.create(home_team_abbreviation=str(teams[0]),
+                                  away_team_abbreviation=str(teams[1]))
 
         elif " @ " in matchup:
             teams = matchup.split(" @ ")
-            return Matchup.create(home_team_abbreviation=teams[1],
-                                  away_team_abbreviation=teams[0])
+            return Matchup.create(home_team_abbreviation=str(teams[1]),
+                                  away_team_abbreviation=str(teams[0]))
 
         else:
             raise RuntimeError("Unexpected matchup: %s", matchup)

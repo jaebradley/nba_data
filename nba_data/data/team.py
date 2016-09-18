@@ -41,14 +41,20 @@ class Team(BaseQueryParameter, Enum):
 
     @staticmethod
     def get_team_by_id(team_id):
+        assert isinstance(team_id, int)
+
         return team_id_to_name_map.get(team_id)
 
     @staticmethod
     def get_id(team):
+        assert isinstance(team, Team)
+
         return team_name_to_id_map.get(team)
 
     @staticmethod
     def get_team_by_abbreviation(abbreviation):
+        assert isinstance(abbreviation, str)
+
         return team_abbreviation_to_name_map.get(abbreviation.upper())
 
 """

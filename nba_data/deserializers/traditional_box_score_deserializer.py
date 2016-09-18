@@ -13,4 +13,4 @@ class TraditionalBoxScoreDeserializer:
         game_id = traditional_box_score_json["parameters"]["GameID"]
         box_score_player_stats = TraditionalBoxScorePlayerStatsDeserializer.deserialize_traditional_box_score_player_stats(traditional_box_score_json["resultSets"][0])
         box_score_team_stats = TraditionalBoxScoreTeamStatsDeserializer.deserialize_traditional_box_score_team_stats(traditional_box_score_json["resultSets"][1])
-        return BoxScore(game_id=game_id, player_box_scores=box_score_player_stats, team_box_scores=box_score_team_stats)
+        return BoxScore(game_id=str(game_id), player_box_scores=box_score_player_stats, team_box_scores=box_score_team_stats)

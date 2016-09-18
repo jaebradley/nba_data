@@ -14,6 +14,10 @@ class Player(BaseQueryParameter):
 
     @staticmethod
     def create(name, team_id, nba_id):
+        assert isinstance(name, str)
+        assert isinstance(team_id, int)
+        assert isinstance(nba_id, int)
+
         return Player(name=name,
                       team=Team.get_team_by_id(team_id=team_id),
                       nba_id=nba_id)
