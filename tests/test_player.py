@@ -20,9 +20,9 @@ class TestPlayer(TestCase):
         self.assertEqual(player.team, Team.boston_celtics)
         self.assertEqual(player.nba_id, 1)
 
-        undefined_team_player = Player.create("jae bradley", "foo", 2)
+        undefined_team_player = Player.create("jae bradley", 1, 2)
         self.assertEqual(undefined_team_player.name, "jae bradley")
-        self.assertEqual(undefined_team_player.team, None)
+        self.assertIsNone(undefined_team_player.team)
         self.assertEqual(undefined_team_player.nba_id, 2)
 
     def test_create_assertions(self):

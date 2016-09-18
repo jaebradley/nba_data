@@ -46,14 +46,14 @@ class CommonPlayerInfoDeserializer:
         except ValueError:
             pass
 
-        return PlayerDetails.create(nba_id=result[CommonPlayerInfoDeserializer.nba_id_index],
-                                    name=result[CommonPlayerInfoDeserializer.name_index],
-                                    team_id=result[CommonPlayerInfoDeserializer.team_id_index],
+        return PlayerDetails.create(nba_id=int(result[CommonPlayerInfoDeserializer.nba_id_index]),
+                                    name=str(result[CommonPlayerInfoDeserializer.name_index]),
+                                    team_id=int(result[CommonPlayerInfoDeserializer.team_id_index]),
                                     birth_date=CommonPlayerInfoDeserializer.parse_date(result[CommonPlayerInfoDeserializer.birth_date_index]),
                                     height=height,
                                     weight=weight,
                                     jersey_number=jersey_number,
-                                    position_name=result[CommonPlayerInfoDeserializer.position_name_index])
+                                    position_name=str(result[CommonPlayerInfoDeserializer.position_name_index]))
 
     @staticmethod
     def parse_height(height_string):

@@ -1,7 +1,6 @@
 from unittest import TestCase
 
 from nba_data.client import Client
-from nba_data.data.advanced_box_score import AdvancedBoxScore
 from nba_data.data.box_score import BoxScore
 from nba_data.data.game import Game
 from nba_data.data.player import Player
@@ -62,7 +61,7 @@ class TestClient(TestCase):
     def test_get_advanced_box_score(self):
         advanced_box_score = Client.get_advanced_box_score(game_id="0021501205")
         self.assertIsNotNone(advanced_box_score)
-        self.assertIsInstance(advanced_box_score, AdvancedBoxScore)
+        self.assertIsInstance(advanced_box_score, BoxScore)
 
     def test_get_traditional_box_score_arguments(self):
         self.assertRaises(AssertionError, Client.get_traditional_box_score, game_id=1234)
