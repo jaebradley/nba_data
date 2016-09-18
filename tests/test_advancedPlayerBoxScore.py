@@ -20,7 +20,7 @@ class TestAdvancedPlayerBoxScore(TestCase):
                                                   usage_percentage=Decimal("7.89"))
 
         self.assertEqual(box_score.player.name, "jae")
-        self.assertEqual(box_score.player.nba_id, test_player_nba_id)
+        self.assertEqual(box_score.player.id, test_player_nba_id)
         self.assertEqual(box_score.player.team, Team.boston_celtics)
         self.assertEqual(box_score.comment, "bae jadley")
         self.assertEqual(box_score.seconds_played, 123)

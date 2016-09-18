@@ -24,7 +24,7 @@ class TestTraditionalBoxScorePlayerStatsDeserializer(TestCase):
             self.assertIsInstance(kawhi_leonard_box_score, TraditionalPlayerBoxScore)
             self.assertEqual(kawhi_leonard_box_score.player.name, "Kawhi Leonard")
             self.assertEqual(kawhi_leonard_box_score.player.team, Team.san_antonio_spurs)
-            self.assertEqual(kawhi_leonard_box_score.player.nba_id, 202695)
+            self.assertEqual(kawhi_leonard_box_score.player.id, 202695)
             self.assertEqual(kawhi_leonard_box_score.seconds_played, 1471)
             self.assertEqual(kawhi_leonard_box_score.field_goals_made, 6)
             self.assertEqual(kawhi_leonard_box_score.field_goal_attempts, 12)

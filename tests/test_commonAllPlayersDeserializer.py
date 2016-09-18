@@ -18,5 +18,5 @@ class TestCommonAllPlayersDeserializer(TestCase):
             deserialized_players = CommonAllPlayersDeserializer.deserialize_common_all_players(data)
             quincy_acy = deserialized_players[0]
             self.assertEqual(quincy_acy.name, "Quincy Acy")
-            self.assertEqual(quincy_acy.nba_id, 203112)
+            self.assertEqual(quincy_acy.id, 203112)
             self.assertEqual(quincy_acy.team, Team.sacramento_kings)
