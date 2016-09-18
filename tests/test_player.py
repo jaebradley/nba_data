@@ -24,3 +24,8 @@ class TestPlayer(TestCase):
         self.assertEqual(undefined_team_player.name, "jae bradley")
         self.assertEqual(undefined_team_player.team, None)
         self.assertEqual(undefined_team_player.nba_id, 2)
+
+    def test_create_assertions(self):
+        self.assertRaises(AssertionError, Player.create, name=0, team_id=1, nba_id=2)
+        self.assertRaises(AssertionError, Player.create, name="foo", team_id="bar", nba_id=2)
+        self.assertRaises(AssertionError, Player.create, name="foo", team_id=1, nba_id="bar")

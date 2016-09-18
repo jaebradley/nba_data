@@ -4,6 +4,11 @@ from nba_data.data.team import Team
 
 
 class TestTeam(TestCase):
+    def test_assertions(self):
+        self.assertRaises(AssertionError, Team.get_team_by_id, "foo")
+        self.assertRaises(AssertionError, Team.get_id, "foo")
+        self.assertRaises(AssertionError, Team.get_team_by_abbreviation, 1)
+
     def test_get_query_parameter_name(self):
         self.assertEqual(Team.get_query_parameter_name(), "TeamId")
 
