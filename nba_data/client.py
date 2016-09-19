@@ -25,6 +25,10 @@ class Client:
         pass
 
     @staticmethod
+    def get_all_aba_players():
+        return Client.get_players_for_season(season=Season.season_2015, league=League.aba, current_season_only=CurrentSeasonOnly.no)
+
+    @staticmethod
     def get_all_nba_players():
         return Client.get_players_for_season(season=Season.season_2015, current_season_only=CurrentSeasonOnly.no)
 
