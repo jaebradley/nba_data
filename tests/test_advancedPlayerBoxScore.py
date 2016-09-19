@@ -6,6 +6,29 @@ from nba_data.data.team import Team
 
 
 class TestAdvancedPlayerBoxScore(TestCase):
+    def test_assertions(self):
+        self.assertRaises(AssertionError, AdvancedPlayerBoxScore.create, player_name=1, player_nba_id=2,
+                          team_id=3, comment="bae jadley", seconds_played=123, offensive_rating=Decimal("110.1"),
+                          defensive_rating=Decimal("110.2"), teammate_assist_percentage=Decimal("50.0"),
+                          assist_to_turnover_ratio=Decimal("2.1"), assists_per_100_possessions=Decimal("41.4"),
+                          offensive_rebound_percentage=Decimal("12.3"), defensive_rebound_percentage=Decimal("45.6"),
+                          turnovers_per_100_possessions=Decimal("78.9"), effective_field_goal_percentage=Decimal("10.1"),
+                          true_shooting_percentage=Decimal("4.56"), usage_percentage=Decimal("7.89"))
+        self.assertRaises(AssertionError, AdvancedPlayerBoxScore.create, player_name="bae", player_nba_id="jadley",
+                          team_id=3, comment="bae jadley", seconds_played=123, offensive_rating=Decimal("110.1"),
+                          defensive_rating=Decimal("110.2"), teammate_assist_percentage=Decimal("50.0"),
+                          assist_to_turnover_ratio=Decimal("2.1"), assists_per_100_possessions=Decimal("41.4"),
+                          offensive_rebound_percentage=Decimal("12.3"), defensive_rebound_percentage=Decimal("45.6"),
+                          turnovers_per_100_possessions=Decimal("78.9"), effective_field_goal_percentage=Decimal("10.1"),
+                          true_shooting_percentage=Decimal("4.56"), usage_percentage=Decimal("7.89"))
+        self.assertRaises(AssertionError, AdvancedPlayerBoxScore.create, player_name="bae", player_nba_id=2,
+                          team_id="jadley", comment="bae jadley", seconds_played=123, offensive_rating=Decimal("110.1"),
+                          defensive_rating=Decimal("110.2"), teammate_assist_percentage=Decimal("50.0"),
+                          assist_to_turnover_ratio=Decimal("2.1"), assists_per_100_possessions=Decimal("41.4"),
+                          offensive_rebound_percentage=Decimal("12.3"), defensive_rebound_percentage=Decimal("45.6"),
+                          turnovers_per_100_possessions=Decimal("78.9"), effective_field_goal_percentage=Decimal("10.1"),
+                          true_shooting_percentage=Decimal("4.56"), usage_percentage=Decimal("7.89"))
+
     def test_create(self):
         test_player_name = "jae"
         test_player_nba_id = 1
