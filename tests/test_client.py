@@ -18,12 +18,6 @@ class TestClient(TestCase):
         self.assertRaises(AssertionError, Client.get_players_for_season, season=Season.season_2015, league=None)
         self.assertRaises(AssertionError, Client.get_players_for_season, season=Season.season_2015, current_season_only=None)
 
-    def test_get_all_aba_players(self):
-        players = Client.get_all_aba_players()
-        self.assertIsNotNone(players)
-        self.assertIsInstance(players, list)
-        self.assertGreater(len(players), 0)
-
     def test_get_all_nba_players(self):
         players = Client.get_all_nba_players()
         self.assertIsNotNone(players)
