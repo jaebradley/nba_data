@@ -6,9 +6,22 @@ from nba_data.data.team import Team
 
 
 class TestAdvancedTeamBoxScore(TestCase):
+    def test_assertions(self):
+        self.assertRaises(AssertionError, AdvancedTeamBoxScore.create, team_id=0, seconds_played=1, offensive_rating=Decimal("123.4"),
+                          defensive_rating=Decimal("567.8"), teammate_assist_percentage=Decimal("111.1"), assist_to_turnover_ratio=Decimal("222.2"),
+                          assists_per_100_possessions=Decimal("333.3"), offensive_rebound_percentage=Decimal("444.4"),
+                          defensive_rebound_percentage=Decimal("555.5"), turnovers_per_100_possessions=Decimal("666.6"),
+                          effective_field_goal_percentage=Decimal("777.7"), true_shooting_percentage=Decimal("888.8"))
+        self.assertRaises(AssertionError, AdvancedTeamBoxScore, team=0, seconds_played=1, offensive_rating=Decimal("123.4"),
+                          defensive_rating=Decimal("567.8"), teammate_assist_percentage=Decimal("111.1"),
+                          assist_to_turnover_ratio=Decimal("222.2"), assists_per_100_possessions=Decimal("333.3"),
+                          offensive_rebound_percentage=Decimal("444.4"), defensive_rebound_percentage=Decimal("555.5"),
+                          turnovers_per_100_possessions=Decimal("666.6"), effective_field_goal_percentage=Decimal("777.7"),
+                          true_shooting_percentage=Decimal("888.8"))
+
     def test_create(self):
         test_team_id = 1610612738
-        box_score = AdvancedTeamBoxScore.create(team_nba_id=test_team_id,
+        box_score = AdvancedTeamBoxScore.create(team_id=test_team_id,
                                                 seconds_played=100,
                                                 offensive_rating=Decimal("123.4"),
                                                 defensive_rating=Decimal("567.8"),

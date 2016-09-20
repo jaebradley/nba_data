@@ -28,7 +28,7 @@ class AdvancedBoxScoreTeamStatsDeserializer:
         deserialized_box_scores = []
         for box_score in advanced_box_score_player_stats_json["rowSet"]:
             deserialized_box_scores.append(
-                AdvancedTeamBoxScore.create(team_nba_id=int(box_score[AdvancedBoxScoreTeamStatsDeserializer.team_id_index]),
+                AdvancedTeamBoxScore.create(team_id=int(box_score[AdvancedBoxScoreTeamStatsDeserializer.team_id_index]),
                                             seconds_played=BoxScoreDeserializerUtils.parse_minutes_representation_to_seconds(box_score[AdvancedBoxScoreTeamStatsDeserializer.minutes_played_index]),
                                             offensive_rating=AdvancedBoxScoreDeserializerUtils.parse_float(box_score[AdvancedBoxScoreTeamStatsDeserializer.offensive_rating_index]),
                                             defensive_rating=AdvancedBoxScoreDeserializerUtils.parse_float(box_score[AdvancedBoxScoreTeamStatsDeserializer.defensive_rating_index]),
