@@ -6,6 +6,9 @@ class TraditionalTeamBoxScore:
                  three_point_field_goals_made, three_point_field_goal_attempts,
                  free_throws_made, free_throws_attempts, offensive_rebounds, defensive_rebounds, assists,
                  steals, blocks, turnovers, personal_fouls):
+
+        assert isinstance(team, Team)
+
         self.team = team
         self.seconds_played = seconds_played
         self.field_goals_made = field_goals_made
@@ -27,6 +30,9 @@ class TraditionalTeamBoxScore:
                three_point_field_goals_made, three_point_field_goal_attempts,
                free_throws_made, free_throws_attempts, offensive_rebounds, defensive_rebounds, assists,
                steals, blocks, turnovers, personal_fouls):
+
+        assert isinstance(team_id, int)
+
         return TraditionalTeamBoxScore(team=Team.get_team_by_id(team_id=team_id),
                                        seconds_played=seconds_played,
                                        field_goals_made=field_goals_made,
