@@ -5,6 +5,16 @@ from nba_data.data.traditional_team_box_score import TraditionalTeamBoxScore
 
 
 class TestTraditionalTeamBoxScore(TestCase):
+    def test_assertions(self):
+        self.assertRaises(AssertionError, TraditionalTeamBoxScore.create, team_id=0, seconds_played=1, field_goals_made=2,
+                          field_goal_attempts=3, three_point_field_goals_made=4, three_point_field_goal_attempts=5,
+                          free_throws_made=6, free_throws_attempts=7, offensive_rebounds=8, defensive_rebounds=9,
+                          steals=10, blocks=11, turnovers=12, personal_fouls=13, assists=14)
+        self.assertRaises(AssertionError, TraditionalTeamBoxScore, team=0, seconds_played=1, field_goals_made=2,
+                          field_goal_attempts=3, three_point_field_goals_made=4, three_point_field_goal_attempts=5,
+                          free_throws_made=6, free_throws_attempts=7, offensive_rebounds=8, defensive_rebounds=9,
+                          steals=10, blocks=11, turnovers=12, personal_fouls=13, assists=14)
+
     def test_create(self):
         test_team_id = 1610612738
         box_score = TraditionalTeamBoxScore.create(team_id=test_team_id, seconds_played=1,
