@@ -23,7 +23,7 @@ class TeamGameLogDeserializer:
     def deserialize_team_game_log(team_game_log_json):
         deserialized_results = []
         results = team_game_log_json["resultSets"][TeamGameLogDeserializer.result_set_index]["rowSet"]
-        season = Season.get_season(team_game_log_json["parameters"][Season.get_query_parameter_name()])
+        season = Season.get_season_by_name(team_game_log_json["parameters"][Season.get_query_parameter_name()])
         season_type = SeasonType.get_season_type(team_game_log_json["parameters"][SeasonType.get_query_parameter_name()])
         for result in results:
             matchup = TeamGameLogDeserializer.parse_matchup(result[TeamGameLogDeserializer.matchup_index])
