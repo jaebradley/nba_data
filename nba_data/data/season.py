@@ -27,11 +27,11 @@ class Season(BaseQueryParameter, Enum):
         return "Season"
 
     @staticmethod
-    def get_season(season_name):
-        season = season_name_map.get(season_name)
+    def get_season_by_name(name):
+        season = season_name_map.get(name)
 
         if season is None:
-            raise ValueError("Unknown season name: %s", season_name)
+            raise ValueError("Unknown season name: %s", name)
 
         return season
 
