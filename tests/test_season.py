@@ -12,6 +12,7 @@ class TestSeason(TestCase):
         self.assertRaises(ValueError, Season.get_season_by_name, "jae")
         self.assertEqual(season_name_map,
                          {
+                             "2016-17": Season.season_2016,
                              "2015-16": Season.season_2015,
                              "2014-15": Season.season_2014,
                              "2013-14": Season.season_2013,
@@ -79,5 +80,5 @@ class TestSeason(TestCase):
                         })
 
     def test_get_season_by_start_and_end_year(self):
-        self.assertEqual(Season.get_season_by_start_and_end_year(start_year=2001, end_year=2002). Season.season_2001)
-        self.assertRaises(ValueError, Season.get_season_by_start_and_end_year(start_year="jae", end_year="jae"))
+        self.assertEqual(Season.get_season_by_start_and_end_year(start_year=2001, end_year=2002), Season.season_2001)
+        self.assertRaises(ValueError, Season.get_season_by_start_and_end_year, "jae", "jae")
