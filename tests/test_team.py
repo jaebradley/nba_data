@@ -14,7 +14,7 @@ class TestTeam(TestCase):
 
     def test_get_team_by_id(self):
         self.assertEqual(Team.get_team_by_id(1610612737), Team.atlanta_hawks)
-        self.assertRaises(ValueError, Team.get_team_by_id, -1)
+        self.assertIsNone(Team.get_team_by_id(1))
 
     def test_get_id(self):
         self.assertEqual(Team.get_id(Team.atlanta_hawks), 1610612737)

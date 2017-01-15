@@ -43,12 +43,7 @@ class Team(BaseQueryParameter, Enum):
     def get_team_by_id(team_id):
         assert isinstance(team_id, int)
 
-        team = team_id_map.get(team_id)
-
-        if team is None:
-            raise ValueError('Unknown team id: %s', team_id)
-
-        return team
+        return team_id_map.get(team_id)
 
     @staticmethod
     def get_id(team):
