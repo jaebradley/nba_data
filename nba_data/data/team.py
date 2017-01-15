@@ -43,29 +43,24 @@ class Team(BaseQueryParameter, Enum):
     def get_team_by_id(team_id):
         assert isinstance(team_id, int)
 
-        team_id = team_id_map.get(team_id)
+        team = team_id_map.get(team_id)
 
-        if team_id is None:
+        if team is None:
             raise ValueError('Unknown team id: %s', team_id)
 
-        return team_id_map.get(team_id)
+        return team
 
     @staticmethod
     def get_id(team):
         assert isinstance(team, Team)
 
-        team_id = team_to_id_map.get(team)
-
-        if team_id is None:
-            raise ValueError('Unknown team: %s', team)
-
-        return team_id
+        return team_to_id_map.get(team)
 
     @staticmethod
     def get_team_by_abbreviation(abbreviation):
         assert isinstance(abbreviation, str)
 
-        team = team_abbreviation_map.get(abbreviation)
+        team = team_abbreviation_map.get(abbreviation.upper())
 
         if team is None:
             raise ValueError('Unknown team abbreviation: %s', abbreviation)
@@ -76,7 +71,7 @@ class Team(BaseQueryParameter, Enum):
     def get_team_by_name(name):
         assert isinstance(name, str)
 
-        team = team_name_map.get(name.upper())
+        team = team_name_map.get(name)
 
         if team is None:
             raise ValueError('Unknown team name: %s', name)

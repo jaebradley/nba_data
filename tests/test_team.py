@@ -14,7 +14,7 @@ class TestTeam(TestCase):
 
     def test_get_team_by_id(self):
         self.assertEqual(Team.get_team_by_id(1610612737), Team.atlanta_hawks)
-        self.assertIsNone(Team.get_team_by_id(team_id=1))
+        self.assertRaises(ValueError, Team.get_team_by_id, -1)
 
     def test_get_id(self):
         self.assertEqual(Team.get_id(Team.atlanta_hawks), 1610612737)
@@ -22,4 +22,8 @@ class TestTeam(TestCase):
     def test_get_team_by_abbreviation(self):
         self.assertEqual(Team.get_team_by_abbreviation("bos"), Team.boston_celtics)
         self.assertEqual(Team.get_team_by_abbreviation("BOS"), Team.boston_celtics)
-        self.assertIsNone(Team.get_team_by_abbreviation("jae"))
+        self.assertRaises(ValueError, Team.get_team_by_abbreviation, "jae")
+
+    def test_get_team_by_name(self):
+        self.assertEqual(Team.get_team_by_name(Team.boston_celtics.value), Team.boston_celtics)
+        self.assertRaises(ValueError, Team.get_team_by_name, "jae")
