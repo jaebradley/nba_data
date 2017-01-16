@@ -5,11 +5,15 @@ from nba_data.data.league import League
 from nba_data.data.season import Season
 from nba_data.data.season_type import SeasonType
 from nba_data.data.team import Team
+from nba_data.data.date_range import DateRange
+
 from nba_data.deserializers.advanced_box_score_deserializer import AdvancedBoxScoreDeserializer
 from nba_data.deserializers.common_all_players_deserializer import CommonAllPlayersDeserializer
 from nba_data.deserializers.common_player_info_deserializer import CommonPlayerInfoDeserializer
 from nba_data.deserializers.team_game_log_deserializer import TeamGameLogDeserializer
 from nba_data.deserializers.traditional_box_score_deserializer import TraditionalBoxScoreDeserializer
+from nba_data.deserializers.calendar import CalendarDeserializer
+
 from nba_data.nba_stats_api_utils.query_parameter_generator import QueryParameterGenerator
 from nba_data.nba_stats_api_utils.uri_generator import UriGenerator
 
@@ -93,3 +97,15 @@ class Client:
         response.raise_for_status()
 
         return TraditionalBoxScoreDeserializer.deserialize_traditional_box_score(traditional_box_score_json=response.json())
+
+    @staticmethod
+    def get_game_counts_in_date_range(date_range=DateRange(), ignore_dates_without_games=True):
+        assert isinstance(date_range, DateRange)
+
+        response = requests.get(UriGenerator.generate_calendar_data_uri(),
+                                headers=Client.headers)
+
+        response.raise_for_status()
+
+        return CalendarDeserializer.deserialize(calendar_json=response.json(), date_range=date_range,
+                                                ignore_dates_without_games=ignore_dates_without_games)

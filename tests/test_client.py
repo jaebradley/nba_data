@@ -77,4 +77,8 @@ class TestClient(TestCase):
         self.assertIsNotNone(traditional_box_score)
         self.assertIsInstance(traditional_box_score, BoxScore)
 
+    def test_get_game_counts_in_date_range(self):
+        game_counts = Client.get_game_counts_in_date_range()
+        self.assertIsNotNone(game_counts)
+
 
