@@ -13,4 +13,4 @@ class DateRange:
     def is_date_in_range(self, value):
         assert isinstance(value, date)
 
-        return self.start <= value and value >= self.end
+        return self.start <= value <= self.end
