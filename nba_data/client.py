@@ -99,7 +99,7 @@ class Client:
         return TraditionalBoxScoreDeserializer.deserialize_traditional_box_score(traditional_box_score_json=response.json())
 
     @staticmethod
-    def get_calendar(date_range=DateRange()):
+    def get_game_counts_in_date_range(date_range=DateRange()):
         assert isinstance(date_range, DateRange)
 
         response = requests.get(UriGenerator.generate_calendar_data_uri(),
