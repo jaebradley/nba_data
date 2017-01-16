@@ -21,3 +21,6 @@ class TestUriGenerator(TestCase):
 
     def test_generate_traditional_box_score_uri(self):
         self.assertEqual(UriGenerator.generate_traditional_box_score_uri(), "http://stats.nba.com/stats/boxscoretraditionalv2")
+
+    def test_generate_calendar_data_uri(self):
+        self.assertEqual(UriGenerator.generate_calendar_data_uri(), "http://data.nba.net/data/10s/prod/v1/calendar.json")

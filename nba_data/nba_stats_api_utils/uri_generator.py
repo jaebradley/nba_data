@@ -34,8 +34,8 @@ class UriGenerator:
 
     @staticmethod
     def generate_data_uri(path):
-        return UriGenerator.data_base_uri + "/data/10s/prod/v1/" + path
+        return UriGenerator.data_base_uri + "data/10s/prod/v1/" + path
 
     @staticmethod
     def generate_calendar_data_uri():
-        return UriGenerator.generate_data_uri(UriGenerator.calendar_path)
+        return UriGenerator.generate_data_uri(UriGenerator.calendar_path) + '.json'
