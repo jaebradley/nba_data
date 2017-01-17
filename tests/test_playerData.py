@@ -10,6 +10,7 @@ class TestPlayerData(TestCase):
         jersey = 0
         team_seasons = list()
         self.assertIsNotNone(PlayerData(player_id=player_id, name=name, jersey=jersey, team_seasons=team_seasons))
+        self.assertIsNotNone(PlayerData(player_id=player_id, name=name, jersey=None, team_seasons=team_seasons))
         self.assertRaises(AssertionError, PlayerData, 1, name, jersey, team_seasons)
         self.assertRaises(AssertionError, PlayerData, player_id, 1, jersey, team_seasons)
         self.assertRaises(AssertionError, PlayerData, player_id, name, '1', team_seasons)
