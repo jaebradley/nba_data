@@ -88,3 +88,8 @@ class TestClient(TestCase):
         self.assertIsNotNone(games)
         self.assertIsNot(len(games), 0)
 
+    def test_get_players(self):
+        players = Client.get_players(season=Season.season_2016)
+        self.assertIsNotNone(players)
+        self.assertEqual(len(players), 778)
+
