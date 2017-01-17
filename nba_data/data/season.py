@@ -21,6 +21,11 @@ class Season(BaseQueryParameter, Enum):
     season_2002 = "2002-03"
     season_2001 = "2001-02"
     season_2000 = "2000-01"
+    season_1999 = "1999-00"
+    season_1998 = "1998-99"
+    season_1997 = "1997-98"
+    season_1996 = "1996-97"
+    season_1995 = "1995-96"
 
     @staticmethod
     def get_query_parameter_name():
@@ -81,6 +86,11 @@ season_name_map = {
     "2002-03": Season.season_2002,
     "2001-02": Season.season_2001,
     "2000-01": Season.season_2000,
+    "1999-00": Season.season_1999,
+    "1998-99": Season.season_1998,
+    "1997-98": Season.season_1997,
+    "1996-97": Season.season_1996,
+    "1995-96": Season.season_1995
 }
 
 season_start_year_map = {
@@ -101,6 +111,11 @@ season_start_year_map = {
     2002: Season.season_2002,
     2001: Season.season_2001,
     2000: Season.season_2000,
+    1999: Season.season_1999,
+    1998: Season.season_1998,
+    1997: Season.season_1997,
+    1996: Season.season_1996,
+    1995: Season.season_1995,
 }
 
 season_end_year_map = {
@@ -121,4 +136,9 @@ season_end_year_map = {
     2003: Season.season_2002,
     2002: Season.season_2001,
     2001: Season.season_2000,
+    2000: Season.season_1999,
+    1999: Season.season_1998,
+    1998: Season.season_1997,
+    1997: Season.season_1996,
+    1996: Season.season_1995,
 }

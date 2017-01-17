@@ -6,7 +6,7 @@ class PlayerData:
     def __init__(self, player_id, name, jersey, team_seasons):
         assert isinstance(player_id, str)
         assert isinstance(name, str)
-        assert isinstance(jersey, int)
+        assert isinstance(jersey, (int, type(None)))
         assert isinstance(team_seasons, list)
 
         self.player_id = player_id

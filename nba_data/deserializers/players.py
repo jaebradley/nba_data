@@ -26,11 +26,16 @@ class PlayersDeserializer:
     def deserialize(players_json):
         players = list()
         for player in players_json[PlayersDeserializer.league_field_name][PlayersDeserializer.standard_field_name]:
-            player_id = players_json[PlayersDeserializer.player_id_field_name]
-            first_name = players_json[PlayersDeserializer.first_name_field_name]
-            last_name = players_json[PlayersDeserializer.last_name_field_name]
-            jersey = int(players_json[PlayersDeserializer.jersey_field_name])
-            team_seasons = PlayersDeserializer.deserialize_team_season(team_season_json=player[PlayersDeserializer.team_seasons_field_name])
+            player_id = str(player[PlayersDeserializer.player_id_field_name])
+            first_name = str(player[PlayersDeserializer.first_name_field_name])
+            last_name = str(player[PlayersDeserializer.last_name_field_name])
+            jersey_value = player[PlayersDeserializer.jersey_field_name]
+            jersey = int(jersey_value) if jersey_value.isdigit() else None
+
+            team_seasons = list()
+            for team_season_json in player[PlayersDeserializer.team_seasons_field_name]:
+                team_seasons.append(PlayersDeserializer.deserialize_team_season(team_season_json=team_season_json))
+
             players.append(PlayerData(player_id=player_id, name=first_name + ' ' + last_name, jersey=jersey,
                                       team_seasons=team_seasons))
         return players
