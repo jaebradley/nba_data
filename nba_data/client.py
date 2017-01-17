@@ -12,6 +12,7 @@ from nba_data.deserializers.advanced_box_score_deserializer import AdvancedBoxSc
 from nba_data.deserializers.calendar import CalendarDeserializer
 from nba_data.deserializers.common_all_players_deserializer import CommonAllPlayersDeserializer
 from nba_data.deserializers.common_player_info_deserializer import CommonPlayerInfoDeserializer
+from nba_data.deserializers.players import PlayersDeserializer
 from nba_data.deserializers.scoreboard import ScoreboardDeserializer
 from nba_data.deserializers.team_game_log_deserializer import TeamGameLogDeserializer
 from nba_data.deserializers.traditional_box_score_deserializer import TraditionalBoxScoreDeserializer
@@ -122,3 +123,14 @@ class Client:
         response.raise_for_status()
 
         return ScoreboardDeserializer.deserialize(scoreboard_json=response.json())
+
+    @staticmethod
+    def get_players(season):
+        assert isinstance(season, Season)
+
+        response = requests.get(UriGenerator.generate_players_data_uri(season=season),
+                                headers=Client.headers)
+
+        response.raise_for_status()
+
+        return PlayersDeserializer.deserialize(players_json=response.json())

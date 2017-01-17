@@ -1,5 +1,6 @@
 from datetime import date
 
+from nba_data.data.season import Season
 
 class UriGenerator:
     date_format = "%Y%m%d"
@@ -13,6 +14,7 @@ class UriGenerator:
     traditional_box_score_path = "boxscoretraditionalv2"
     calendar_path = "calendar"
     scoreboard_path = "scoreboard"
+    players_path = "players"
 
     def __init__(self):
         pass
@@ -50,4 +52,11 @@ class UriGenerator:
         assert isinstance(date_value, date)
 
         path = date_value.strftime(UriGenerator.date_format) + '/' + UriGenerator.scoreboard_path
+        return UriGenerator.generate_data_uri(path=path)
+
+    @staticmethod
+    def generate_players_data_uri(season):
+        assert isinstance(season, Season)
+
+        path = str(Season.get_start_year_by_season(season=season)) + '/' + UriGenerator.players_path
         return UriGenerator.generate_data_uri(path=path)

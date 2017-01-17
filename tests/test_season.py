@@ -1,6 +1,6 @@
 from unittest import TestCase
 
-from nba_data.data.season import Season, season_name_map, season_start_year_map, season_end_year_map
+from nba_data.data.season import Season, season_name_map, start_year_to_season_map, season_end_year_map
 
 
 class TestSeason(TestCase):
@@ -34,7 +34,7 @@ class TestSeason(TestCase):
     def test_get_season_by_start_year(self):
         self.assertEqual(Season.get_season_by_start_year(year=2016), Season.season_2016)
         self.assertRaises(ValueError, Season.get_season_by_start_year, "jae")
-        self.assertEqual(season_start_year_map,
+        self.assertEqual(start_year_to_season_map,
                          {
                             2016: Season.season_2016,
                             2015: Season.season_2015,
@@ -82,3 +82,7 @@ class TestSeason(TestCase):
     def test_get_season_by_start_and_end_year(self):
         self.assertEqual(Season.get_season_by_start_and_end_year(start_year=2001, end_year=2002), Season.season_2001)
         self.assertRaises(ValueError, Season.get_season_by_start_and_end_year, "jae", "jae")
+
+    def test_get_start_year_by_season(self):
+        self.assertEqual(Season.get_start_year_by_season(season=Season.season_2016), 2016)
+        self.assertRaises(AssertionError, Season.get_start_year_by_season, "jae")
