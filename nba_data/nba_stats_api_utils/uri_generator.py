@@ -1,4 +1,8 @@
+from datetime import date
+
+
 class UriGenerator:
+    date_format = "%Y%m%d"
     stats_base_uri = "http://stats.nba.com/stats/"
     data_base_uri = "http://data.nba.net/"
 
@@ -8,6 +12,7 @@ class UriGenerator:
     advanced_box_score_path = "boxscoreadvancedv2"
     traditional_box_score_path = "boxscoretraditionalv2"
     calendar_path = "calendar"
+    scoreboard_path = "scoreboard"
 
     def __init__(self):
         pass
@@ -34,8 +39,15 @@ class UriGenerator:
 
     @staticmethod
     def generate_data_uri(path):
-        return UriGenerator.data_base_uri + "data/10s/prod/v1/" + path
+        return UriGenerator.data_base_uri + 'data/10s/prod/v1/' + path + '.json'
 
     @staticmethod
     def generate_calendar_data_uri():
-        return UriGenerator.generate_data_uri(UriGenerator.calendar_path) + '.json'
+        return UriGenerator.generate_data_uri(path=UriGenerator.calendar_path)
+
+    @staticmethod
+    def generate_scoreboard_data_uri(date_value):
+        assert isinstance(date_value, date)
+
+        path = date_value.strftime(UriGenerator.date_format) + '/' + UriGenerator.scoreboard_path
+        return UriGenerator.generate_data_uri(path=path)
