@@ -33,10 +33,11 @@ class ScoreboardDeserializer:
 
     @staticmethod
     def deserialize_game(game_json):
-        game_id = game_json[ScoreboardDeserializer.game_id_field_name]
+        game_id = str(game_json[ScoreboardDeserializer.game_id_field_name])
         season = Season.get_season_by_start_year(year=int(game_json[ScoreboardDeserializer.season_year_field_name]))
-        start_time = datetime.strptime(date_string=game_json[ScoreboardDeserializer.start_time_field_name],
-                                       format=ScoreboardDeserializer.start_time_format)
+        start_time = datetime.strptime(game_json[ScoreboardDeserializer.start_time_field_name],
+                                       ScoreboardDeserializer.start_time_format)\
+                             .replace(tzinfo=ScoreboardDeserializer.start_time_time_zone)
         home_team = ScoreboardDeserializer.identify_team(team_json=game_json[ScoreboardDeserializer.home_team_field_name])
         away_team = ScoreboardDeserializer.identify_team(team_json=game_json[ScoreboardDeserializer.visiting_team_field_name])
         return ScoreboardGame(game_id=game_id, season=season, start_time=start_time,
@@ -44,4 +45,4 @@ class ScoreboardDeserializer:
 
     @staticmethod
     def identify_team(team_json):
-        return Team.get_team_by_id(team_id=team_json[ScoreboardDeserializer.team_id_field_name])
+        return Team.get_team_by_id(team_id=int(team_json[ScoreboardDeserializer.team_id_field_name]))
