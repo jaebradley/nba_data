@@ -1,4 +1,5 @@
 from unittest import TestCase
+from datetime import date
 
 from nba_data.client import Client
 from nba_data.data.box_score import BoxScore
@@ -81,4 +82,9 @@ class TestClient(TestCase):
         game_counts = Client.get_game_counts_in_date_range()
         self.assertIsNotNone(game_counts)
 
+    def test_get_games_for_date(self):
+        date_value = date(year=2016, month=1, day=1)
+        games = Client.get_games_for_date(date_value=date_value)
+        self.assertIsNotNone(games)
+        self.assertIsNot(len(games), 0)
 
