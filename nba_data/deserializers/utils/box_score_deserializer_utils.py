@@ -20,3 +20,6 @@ class BoxScoreDeserializerUtils:
             return int(minutes_parts[0]) * 60 + int(minutes_parts[1])
 
         raise ValueError("Unknown minutes value: %s", minutes)
+
+    @staticmethod
+    def
