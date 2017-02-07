@@ -1,4 +1,5 @@
-from player import Player
+from box_score_player import BoxScorePlayer
+from player_status import PlayerStatus
 
 
 class AdvancedPlayerBoxScore:
@@ -26,8 +27,9 @@ class AdvancedPlayerBoxScore:
                teammate_assist_percentage, assist_to_turnover_ratio, assists_per_100_possessions,
                offensive_rebound_percentage, defensive_rebound_percentage, turnovers_per_100_possessions,
                effective_field_goal_percentage, true_shooting_percentage, usage_percentage):
-        return AdvancedPlayerBoxScore(player=Player.create(name=player_name, team_id=team_id, nba_id=player_nba_id),
-                                      comment=comment, seconds_played=seconds_played, offensive_rating=offensive_rating,
+        return AdvancedPlayerBoxScore(player=BoxScorePlayer.create(name=player_name, team_id=team_id, nba_id=player_nba_id,
+                                                                   status=PlayerStatus.from_comment(comment=comment)),
+                                      seconds_played=seconds_played, offensive_rating=offensive_rating,
                                       defensive_rating=defensive_rating, teammate_assist_percentage=teammate_assist_percentage,
                                       assist_to_turnover_ratio=assist_to_turnover_ratio, assists_per_100_possessions=assists_per_100_possessions,
                                       offensive_rebound_percentage=offensive_rebound_percentage, defensive_rebound_percentage=defensive_rebound_percentage,
