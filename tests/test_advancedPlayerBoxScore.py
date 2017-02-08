@@ -3,6 +3,7 @@ from unittest import TestCase
 
 from nba_data.data.advanced_player_box_score import AdvancedPlayerBoxScore
 from nba_data.data.team import Team
+from nba_data.data.player_status import PlayerStatusType
 
 
 class TestAdvancedPlayerBoxScore(TestCase):
@@ -11,7 +12,7 @@ class TestAdvancedPlayerBoxScore(TestCase):
         test_player_nba_id = 1
         test_team_nba_id = 1610612738
         box_score = AdvancedPlayerBoxScore.create(player_name=test_player_name, player_nba_id=test_player_nba_id,
-                                                  team_id=test_team_nba_id, comment="bae jadley", seconds_played=123,
+                                                  team_id=test_team_nba_id, comment="DNP - jadley", seconds_played=123,
                                                   offensive_rating=Decimal("110.1"), defensive_rating=Decimal("110.2"),
                                                   teammate_assist_percentage=Decimal("50.0"), assist_to_turnover_ratio=Decimal("2.1"),
                                                   assists_per_100_possessions=Decimal("41.4"), offensive_rebound_percentage=Decimal("12.3"),
@@ -22,7 +23,8 @@ class TestAdvancedPlayerBoxScore(TestCase):
         self.assertEqual(box_score.player.name, "jae")
         self.assertEqual(box_score.player.nba_id, test_player_nba_id)
         self.assertEqual(box_score.player.team, Team.boston_celtics)
-        self.assertEqual(box_score.comment, "bae jadley")
+        self.assertEqual(box_score.player.status.type, PlayerStatusType.did_not_play)
+        self.assertEqual(box_score.player.status.comment, "jadley")
         self.assertEqual(box_score.seconds_played, 123)
         self.assertEqual(box_score.offensive_rating, Decimal("110.1"))
         self.assertEqual(box_score.defensive_rating, Decimal("110.2"))

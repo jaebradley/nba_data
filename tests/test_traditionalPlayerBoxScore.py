@@ -2,6 +2,7 @@ from unittest import TestCase
 
 from nba_data.data.team import Team
 from nba_data.data.traditional_player_box_score import TraditionalPlayerBoxScore
+from nba_data.data.player_status import PlayerStatusType
 
 
 class TestTraditionalPlayerBoxScore(TestCase):
@@ -11,7 +12,7 @@ class TestTraditionalPlayerBoxScore(TestCase):
         test_team_nba_id = 1610612738
 
         box_score = TraditionalPlayerBoxScore.create(player_name=test_player_name, player_nba_id=test_player_nba_id,
-                                                     team_id=test_team_nba_id, comment="boo", seconds_played=100,
+                                                     team_id=test_team_nba_id, comment="", seconds_played=100,
                                                      field_goal_attempts=1, field_goals_made=2,
                                                      three_point_field_goals_made=3, three_point_field_goal_attempts=4,
                                                      free_throws_made=5, free_throws_attempts=6, offensive_rebounds=7,
@@ -22,7 +23,8 @@ class TestTraditionalPlayerBoxScore(TestCase):
         self.assertEqual(box_score.player.name, test_player_name)
         self.assertEqual(box_score.player.nba_id, test_player_nba_id)
         self.assertEqual(box_score.player.team, Team.boston_celtics)
-        self.assertEqual(box_score.comment, "boo")
+        self.assertEqual(box_score.player.status.type, PlayerStatusType.active)
+        self.assertIsNone(box_score.player.status.comment)
         self.assertEqual(box_score.seconds_played, 100)
         self.assertEqual(box_score.field_goal_attempts, 1)
         self.assertEqual(box_score.field_goals_made, 2)
