@@ -4,6 +4,10 @@ from nba_data.data.position import Position, abbreviation_to_position_map, name_
 
 
 class TestPosition(TestCase):
+    def test_assertions(self):
+        self.assertRaises(AssertionError, Position.get_position_from_abbreviation, 1)
+        self.assertRaises(AssertionError, Position.get_position_from_name, 1)
+
     def test_get_position_from_abbreviation(self):
         guard = Position.get_position_from_abbreviation("g")
         self.assertEqual(guard, Position.guard)
@@ -11,7 +15,7 @@ class TestPosition(TestCase):
         another_guard = Position.get_position_from_abbreviation("G")
         self.assertEqual(another_guard, Position.guard)
 
-        self.assertRaises(ValueError, Position.get_position_from_abbreviation, "jae")
+        self.assertIsNone(Position.get_position_from_abbreviation("jae"))
 
         self.assertEqual(abbreviation_to_position_map,
                          {
@@ -30,7 +34,7 @@ class TestPosition(TestCase):
         another_guard = Position.get_position_from_name("guard")
         self.assertEqual(another_guard, Position.guard)
 
-        self.assertRaises(ValueError, Position.get_position_from_name, "jae")
+        self.assertIsNone(Position.get_position_from_name("jae"))
 
         self.assertEqual(name_to_position_map,
                          {

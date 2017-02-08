@@ -39,13 +39,39 @@ class TestQueryParameterGenerator(TestCase):
                              "PlayerId": 1
                          })
 
+    def test_assertion_checking_for_request_parameters(self):
+        self.assertRaises(AssertionError, QueryParameterGenerator.generate_request_parameters, league="foo")
+        self.assertRaises(AssertionError, QueryParameterGenerator.generate_request_parameters, season_type="foo")
+        self.assertRaises(AssertionError, QueryParameterGenerator.generate_request_parameters, season="foo")
+        self.assertRaises(AssertionError, QueryParameterGenerator.generate_request_parameters, current_season_only="foo")
+        self.assertRaises(AssertionError, QueryParameterGenerator.generate_request_parameters, team="foo")
+        self.assertRaises(AssertionError, QueryParameterGenerator.generate_request_parameters, player_id="foo")
+
     def test_generate_box_score_request_parameters(self):
-        self.assertEqual(QueryParameterGenerator.generate_box_score_request_parameters(game_id=1),
+        self.assertEqual(QueryParameterGenerator.generate_box_score_request_parameters(game_id="1234"),
                          {
-                             "GameId": 1,
+                             "GameId": "1234",
                              "RangeType": 0,
                              "StartPeriod": 0,
                              "StartRange": 0,
                              "EndPeriod": 0,
                              "EndRange": 0,
                          })
+
+    def test_assertion_checking_for_box_score_request_parameters(self):
+        self.assertRaises(AssertionError, QueryParameterGenerator.generate_box_score_request_parameters, game_id=1)
+        self.assertRaises(AssertionError, QueryParameterGenerator.generate_box_score_request_parameters, game_id="foo", start_period="bar")
+        self.assertRaises(AssertionError, QueryParameterGenerator.generate_box_score_request_parameters, game_id="foo", end_period="bar")
+        self.assertRaises(AssertionError, QueryParameterGenerator.generate_box_score_request_parameters, game_id="foo", start_range="bar")
+        self.assertRaises(AssertionError, QueryParameterGenerator.generate_box_score_request_parameters, game_id="foo", end_range="bar")
+        self.assertRaises(AssertionError, QueryParameterGenerator.generate_box_score_request_parameters, game_id="foo", range_type="bar")
+
+        self.assertRaises(AssertionError, QueryParameterGenerator.generate_box_score_request_parameters, game_id="foo", start_period=-1)
+        self.assertRaises(AssertionError, QueryParameterGenerator.generate_box_score_request_parameters, game_id="foo", end_period=-1)
+        self.assertRaises(AssertionError, QueryParameterGenerator.generate_box_score_request_parameters, game_id="foo", start_range=-1)
+        self.assertRaises(AssertionError, QueryParameterGenerator.generate_box_score_request_parameters, game_id="foo", end_range=-1)
+        self.assertRaises(AssertionError, QueryParameterGenerator.generate_box_score_request_parameters, game_id="foo", range_type=-1)
+
+        self.assertRaises(AssertionError, QueryParameterGenerator.generate_box_score_request_parameters, game_id="foo", start_period=5, end_period=1)
+        self.assertRaises(AssertionError, QueryParameterGenerator.generate_box_score_request_parameters, game_id="foo", start_range=5, end_range=1)
+

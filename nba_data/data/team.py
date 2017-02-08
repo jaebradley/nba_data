@@ -1,5 +1,6 @@
-from base_query_parameter import BaseQueryParameter
 from enum import Enum
+
+from base_query_parameter import BaseQueryParameter
 
 
 class Team(BaseQueryParameter, Enum):
@@ -33,7 +34,6 @@ class Team(BaseQueryParameter, Enum):
     toronto_raptors = "Toronto Raptors"
     utah_jazz = "Utah Jazz"
     washington_wizards = "Washington Wizards"
-    undefined = "Undefined"
 
     @staticmethod
     def get_query_parameter_name():
@@ -41,28 +41,35 @@ class Team(BaseQueryParameter, Enum):
 
     @staticmethod
     def get_team_by_id(team_id):
-        team = team_id_to_name_map.get(team_id)
+        assert isinstance(team_id, int)
 
-        if team is None:
-            raise ValueError("Unknown team_id: %s", team)
-
-        return team
+        return team_id_map.get(team_id)
 
     @staticmethod
     def get_id(team):
-        team_id = team_name_to_id_map.get(team)
+        assert isinstance(team, Team)
 
-        if team_id is None:
-            raise ValueError("Team: %s does not have an id", team)
-
-        return team_id
+        return team_to_id_map.get(team)
 
     @staticmethod
     def get_team_by_abbreviation(abbreviation):
-        team = team_abbreviation_to_name_map.get(abbreviation.upper())
+        assert isinstance(abbreviation, str)
+
+        team = team_abbreviation_map.get(abbreviation.upper())
 
         if team is None:
-            raise ValueError("Unknown abbreviation: %s", abbreviation)
+            raise ValueError('Unknown team abbreviation: %s', abbreviation)
+
+        return team_abbreviation_map.get(abbreviation.upper())
+
+    @staticmethod
+    def get_team_by_name(name):
+        assert isinstance(name, str)
+
+        team = team_name_map.get(name)
+
+        if team is None:
+            raise ValueError('Unknown team name: %s', name)
 
         return team
 
@@ -70,7 +77,7 @@ class Team(BaseQueryParameter, Enum):
 https://github.com/seemethere/nba_py/wiki/nba_data.nba.com-Endpoint-Documentation#current-teams
 """
 
-team_id_to_name_map = {
+team_id_map = {
     1610612737: Team.atlanta_hawks,
     1610612738: Team.boston_celtics,
     1610612751: Team.brooklyn_nets,
@@ -103,7 +110,7 @@ team_id_to_name_map = {
     1610612764: Team.washington_wizards,
 }
 
-team_name_to_id_map = {
+team_to_id_map = {
     Team.atlanta_hawks: 1610612737,
     Team.boston_celtics: 1610612738,
     Team.brooklyn_nets: 1610612751,
@@ -136,7 +143,7 @@ team_name_to_id_map = {
     Team.washington_wizards: 1610612764
 }
 
-team_abbreviation_to_name_map = {
+team_abbreviation_map = {
     "ATL": Team.atlanta_hawks,
     "BOS": Team.boston_celtics,
     "BKN": Team.brooklyn_nets,
@@ -167,5 +174,38 @@ team_abbreviation_to_name_map = {
     "TOR": Team.toronto_raptors,
     "UTA": Team.utah_jazz,
     "WAS": Team.washington_wizards,
+}
+
+team_name_map = {
+    "Atlanta Hawks": Team.atlanta_hawks,
+    "Boston Celtics": Team.boston_celtics,
+    "Brooklyn Nets": Team.brooklyn_nets,
+    "Charlotte Hornets": Team.charlotte_hornets,
+    "Chicago Bulls": Team.chicago_bulls,
+    "Cleveland Cavaliers": Team.cleveland_cavaliers,
+    "Dallas Mavericks": Team.dallas_mavericks,
+    "Denver Nuggets": Team.denver_nuggets,
+    "Detroit Pistons": Team.detroit_pistons,
+    "Golden State Warriors": Team.golden_state_warriors,
+    "Houston Rockets": Team.houston_rockets,
+    "Indiana Pacers": Team.indiana_pacers,
+    "Los Angeles Clippers": Team.los_angeles_clippers,
+    "Los Angeles Lakers": Team.los_angeles_lakers,
+    "Memphis Grizzlies": Team.memphis_grizzlies,
+    "Miami Heat": Team.miami_heat,
+    "Milwaukee Bucks": Team.milwaukee_bucks,
+    "Minnesota Timberwolves": Team.minnesota_timberwolves,
+    "New Orleans Pelicans": Team.new_orleans_pelicans,
+    "New York Knicks": Team.new_york_knicks,
+    "Oklahoma City Thunder": Team.oklahoma_city_thunder,
+    "Orlando Magic": Team.orlando_magic,
+    "Philadelphia 76ers": Team.philadelphia_76ers,
+    "Phoenix Suns": Team.phoenix_suns,
+    "Portland Trail Blazers": Team.portland_trail_blazers,
+    "Sacramento Kings": Team.sacramento_kings,
+    "San Antonio Spurs": Team.san_antonio_spurs,
+    "Toronto Raptors": Team.toronto_raptors,
+    "Utah Jazz": Team.utah_jazz,
+    "Washington Wizards": Team.washington_wizards
 }
 

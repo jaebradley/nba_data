@@ -1,0 +1,1745 @@
+{
+  "_internal": {
+    "pubDateTime": "2017-01-16 15:34:50.858",
+    "xslt": "xsl/league/schedule/marty_daily_scoreboard.xsl",
+    "eventName": "linescores"
+  },
+  "numGames": 9,
+  "games": [
+    {
+      "seasonStageId": 2,
+      "seasonYear": "2016",
+      "gameId": "0021600613",
+      "isGameActivated": false,
+      "statusNum": 3,
+      "extendedStatusNum": 0,
+      "startTimeUTC": "2017-01-16T18:00:00.000Z",
+      "startDateEastern": "20170116",
+      "clock": "",
+      "isBuzzerBeater": false,
+      "isPreviewArticleAvail": true,
+      "isRecapArticleAvail": false,
+      "tickets": {
+        "mobileApp": "http://www.ticketmaster.com/new-york-knicks-vs-atlanta-hawks-new-york-new-york-01-16-2017/event/3B005111E9212516?brand=nba&extcmp=gw511815&wt.mc_id=NBA_TEAM_NY_MOBILE_APP_SCHED_PG",
+        "desktopWeb": "http://www.ticketmaster.com/new-york-knicks-vs-atlanta-hawks-new-york-new-york-01-16-2017/event/3B005111E9212516?brand=knicks&extcmp=gw503432&wt.mc_id=NBA_TEAM_SCHED_PG_PRI_NY&camefrom=NBAKNICKS_SCHEDULE",
+        "mobileWeb": ""
+      },
+      "hasGameBookPdf": true,
+      "isStartTimeTBD": false,
+      "nugget": {
+        "text": " "
+      },
+      "attendance": "19812",
+      "gameDuration": {
+        "hours": "2",
+        "minutes": "13"
+      },
+      "period": {
+        "current": 4,
+        "type": 0,
+        "maxRegular": 4,
+        "isHalftime": false,
+        "isEndOfPeriod": false
+      },
+      "vTeam": {
+        "teamId": "1610612737",
+        "triCode": "ATL",
+        "win": "24",
+        "loss": "17",
+        "seriesWin": "1",
+        "seriesLoss": "1",
+        "score": "108",
+        "linescore": [
+          {
+            "score": "26"
+          },
+          {
+            "score": "27"
+          },
+          {
+            "score": "35"
+          },
+          {
+            "score": "20"
+          }
+        ]
+      },
+      "hTeam": {
+        "teamId": "1610612752",
+        "triCode": "NYK",
+        "win": "18",
+        "loss": "24",
+        "seriesWin": "1",
+        "seriesLoss": "1",
+        "score": "107",
+        "linescore": [
+          {
+            "score": "27"
+          },
+          {
+            "score": "27"
+          },
+          {
+            "score": "29"
+          },
+          {
+            "score": "24"
+          }
+        ]
+      },
+      "watch": {
+        "broadcast": {
+          "broadcasters": {
+            "national": [
+              {
+                "shortName": "NBA TV",
+                "longName": "NBA TV"
+              }
+            ],
+            "canadian": [
+              {
+                "shortName": "NBAC",
+                "longName": "NBATV Canada"
+              }
+            ],
+            "vTeam": [
+              {
+                "shortName": "FSSE-ATL",
+                "longName": "Fox Sports Southeast - Atlanta"
+              }
+            ],
+            "hTeam": [
+              {
+                "shortName": "MSG",
+                "longName": "Madison Square Garden"
+              }
+            ]
+          },
+          "video": {
+            "regionalBlackoutCodes": "torr_nykr_atlr",
+            "canPurchase": false,
+            "isLeaguePass": false,
+            "isTNTOT": false,
+            "tntotIsOnAir": false,
+            "streams": [
+              {
+                "streamType": "vTeam",
+                "isOnAir": false,
+                "doesArchiveExist": true,
+                "isArchiveAvailToWatch": false,
+                "streamId": "",
+                "duration": 6067
+              },
+              {
+                "streamType": "hTeam",
+                "isOnAir": false,
+                "doesArchiveExist": true,
+                "isArchiveAvailToWatch": false,
+                "streamId": "",
+                "duration": 5923
+              },
+              {
+                "streamType": "mobile",
+                "isOnAir": false,
+                "doesArchiveExist": true,
+                "isArchiveAvailToWatch": false,
+                "streamId": "",
+                "duration": 5917
+              },
+              {
+                "streamType": "condensed",
+                "isOnAir": false,
+                "doesArchiveExist": false,
+                "isArchiveAvailToWatch": false,
+                "streamId": "",
+                "duration": 0
+              }
+            ],
+            "deepLink": [
+              {
+                "broadcaster": "MSG",
+                "regionalMarketCodes": "nykr",
+                "iosApp": "",
+                "androidApp": "",
+                "desktopWeb": "http://www.msggo.com/",
+                "mobileWeb": ""
+              },
+              {
+                "broadcaster": "FSSE-ATL",
+                "regionalMarketCodes": "atlr",
+                "iosApp": "fsgo://video?guid=Y5_JH_1bejRlul3HZpKmMThXTYce2jxJ|0V4TBdQu3F86Ca_VGurhBcGYolJpk27B|CcSeyNAETDJ0AdTiRUa5Bi3aUXtdy7Ee&referrer=nba",
+                "androidApp": "fsgo://video?guid=Y5_JH_1bejRlul3HZpKmMThXTYce2jxJ|0V4TBdQu3F86Ca_VGurhBcGYolJpk27B|CcSeyNAETDJ0AdTiRUa5Bi3aUXtdy7Ee&referrer=nba",
+                "desktopWeb": "http://www.foxsportsgo.com",
+                "mobileWeb": "http://www.foxsportsgo.com"
+              }
+            ]
+          },
+          "audio": {
+            "national": {
+              "streams": [
+                {
+                  "language": "English",
+                  "isOnAir": false,
+                  "streamId": ""
+                },
+                {
+                  "language": "Spanish",
+                  "isOnAir": false,
+                  "streamId": ""
+                }
+              ],
+              "broadcasters": []
+            },
+            "vTeam": {
+              "streams": [
+                {
+                  "language": "English",
+                  "isOnAir": false,
+                  "streamId": ""
+                },
+                {
+                  "language": "Spanish",
+                  "isOnAir": false,
+                  "streamId": ""
+                }
+              ],
+              "broadcasters": [
+                {
+                  "shortName": "92.9 FM The Game",
+                  "longName": "92.9 FM The Game"
+                }
+              ]
+            },
+            "hTeam": {
+              "streams": [
+                {
+                  "language": "English",
+                  "isOnAir": false,
+                  "streamId": ""
+                },
+                {
+                  "language": "Spanish",
+                  "isOnAir": false,
+                  "streamId": ""
+                }
+              ],
+              "broadcasters": [
+                {
+                  "shortName": "ESPN NY 98.7",
+                  "longName": "ESPN NY 98.7"
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    {
+      "seasonStageId": 2,
+      "seasonYear": "2016",
+      "gameId": "0021600614",
+      "isGameActivated": true,
+      "statusNum": 2,
+      "extendedStatusNum": 0,
+      "startTimeUTC": "2017-01-16T19:00:00.000Z",
+      "startDateEastern": "20170116",
+      "clock": "5:56",
+      "isBuzzerBeater": false,
+      "isPreviewArticleAvail": true,
+      "isRecapArticleAvail": false,
+      "tickets": {
+        "mobileApp": "http://m.ticketmaster.com/washington-wizards-vs-portland-trail-blazers-washington-district-of-columbia-01-16-2017/event/1500510AC2703C5B?brand=wizards&extcmp=gw511823&wt.mc_id=NBA_TEAM_WAS_MOBILE_APP_SCHED_PG",
+        "desktopWeb": "http://www.ticketmaster.com/washington-wizards-vs-portland-trail-blazers-washington-district-of-columbia-01-16-2017/event/1500510AC2703C5B?brand=wizards&extcmp=gw503762&wt.mc_id=NBA_TEAM_SCHED_PG_PRI_WAS&camefrom=CFC_WWIZ_MSE_0000005446",
+        "mobileWeb": ""
+      },
+      "hasGameBookPdf": true,
+      "isStartTimeTBD": false,
+      "nugget": {
+        "text": "Watch free on NBA LEAGUE PASS"
+      },
+      "attendance": "0",
+      "gameDuration": {
+        "hours": "0",
+        "minutes": "59"
+      },
+      "period": {
+        "current": 3,
+        "type": 0,
+        "maxRegular": 4,
+        "isHalftime": false,
+        "isEndOfPeriod": false
+      },
+      "vTeam": {
+        "teamId": "1610612757",
+        "triCode": "POR",
+        "win": "18",
+        "loss": "24",
+        "seriesWin": "0",
+        "seriesLoss": "0",
+        "score": "63",
+        "linescore": [
+          {
+            "score": "21"
+          },
+          {
+            "score": "29"
+          },
+          {
+            "score": "13"
+          },
+          {
+            "score": "0"
+          }
+        ]
+      },
+      "hTeam": {
+        "teamId": "1610612764",
+        "triCode": "WAS",
+        "win": "20",
+        "loss": "19",
+        "seriesWin": "0",
+        "seriesLoss": "0",
+        "score": "91",
+        "linescore": [
+          {
+            "score": "37"
+          },
+          {
+            "score": "38"
+          },
+          {
+            "score": "16"
+          },
+          {
+            "score": "0"
+          }
+        ]
+      },
+      "watch": {
+        "broadcast": {
+          "broadcasters": {
+            "national": [],
+            "canadian": [],
+            "vTeam": [
+              {
+                "shortName": "CSN-POR",
+                "longName": "Comcast Sportsnet - Portland"
+              }
+            ],
+            "hTeam": [
+              {
+                "shortName": "CSN-W",
+                "longName": "Comcast Sportsnet - Washington"
+              }
+            ]
+          },
+          "video": {
+            "regionalBlackoutCodes": "wasr_porr",
+            "canPurchase": false,
+            "isLeaguePass": true,
+            "isTNTOT": false,
+            "tntotIsOnAir": false,
+            "streams": [
+              {
+                "streamType": "vTeam",
+                "isOnAir": true,
+                "doesArchiveExist": false,
+                "isArchiveAvailToWatch": false,
+                "streamId": "100216006141210",
+                "duration": 0
+              },
+              {
+                "streamType": "hTeam",
+                "isOnAir": true,
+                "doesArchiveExist": false,
+                "isArchiveAvailToWatch": false,
+                "streamId": "100216006141110",
+                "duration": 0
+              },
+              {
+                "streamType": "mobile",
+                "isOnAir": true,
+                "doesArchiveExist": false,
+                "isArchiveAvailToWatch": false,
+                "streamId": "100216006141310",
+                "duration": 0
+              },
+              {
+                "streamType": "condensed",
+                "isOnAir": false,
+                "doesArchiveExist": false,
+                "isArchiveAvailToWatch": false,
+                "streamId": "",
+                "duration": 0
+              }
+            ],
+            "deepLink": []
+          },
+          "audio": {
+            "national": {
+              "streams": [
+                {
+                  "language": "English",
+                  "isOnAir": false,
+                  "streamId": ""
+                },
+                {
+                  "language": "Spanish",
+                  "isOnAir": false,
+                  "streamId": ""
+                }
+              ],
+              "broadcasters": []
+            },
+            "vTeam": {
+              "streams": [
+                {
+                  "language": "English",
+                  "isOnAir": true,
+                  "streamId": "100216006142211"
+                },
+                {
+                  "language": "Spanish",
+                  "isOnAir": false,
+                  "streamId": ""
+                }
+              ],
+              "broadcasters": [
+                {
+                  "shortName": "Rip City Radio 620",
+                  "longName": "Rip City Radio 620"
+                }
+              ]
+            },
+            "hTeam": {
+              "streams": [
+                {
+                  "language": "English",
+                  "isOnAir": true,
+                  "streamId": "100216006142111"
+                },
+                {
+                  "language": "Spanish",
+                  "isOnAir": false,
+                  "streamId": ""
+                }
+              ],
+              "broadcasters": [
+                {
+                  "shortName": "1500 AM",
+                  "longName": "1500 AM"
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    {
+      "seasonStageId": 2,
+      "seasonYear": "2016",
+      "gameId": "0021600615",
+      "isGameActivated": true,
+      "statusNum": 1,
+      "extendedStatusNum": 0,
+      "startTimeUTC": "2017-01-16T20:30:00.000Z",
+      "startDateEastern": "20170116",
+      "clock": "",
+      "isBuzzerBeater": false,
+      "isPreviewArticleAvail": true,
+      "isRecapArticleAvail": false,
+      "tickets": {
+        "mobileApp": "http://m.ticketmaster.com/milwaukee-bucks-vs-philadelphia-76ers-milwaukee-wisconsin-01-16-2017/event/070051108C3B13C2?brand=bucks&extcmp=gw511813&wt.mc_id=NBA_TEAM_MIL_MOBILE_APP_SCHED_PG",
+        "desktopWeb": "http://www.ticketmaster.com/event/070051108C3B13C2?brand=bucks&camefrom=NBABUCKS_schedule",
+        "mobileWeb": ""
+      },
+      "hasGameBookPdf": false,
+      "isStartTimeTBD": false,
+      "nugget": {
+        "text": "Watch free on NBA LEAGUE PASS"
+      },
+      "attendance": "0",
+      "gameDuration": {
+        "hours": "",
+        "minutes": ""
+      },
+      "period": {
+        "current": 0,
+        "type": 0,
+        "maxRegular": 4,
+        "isHalftime": false,
+        "isEndOfPeriod": false
+      },
+      "vTeam": {
+        "teamId": "1610612755",
+        "triCode": "PHI",
+        "win": "12",
+        "loss": "26",
+        "seriesWin": "0",
+        "seriesLoss": "0",
+        "score": "0",
+        "linescore": []
+      },
+      "hTeam": {
+        "teamId": "1610612749",
+        "triCode": "MIL",
+        "win": "20",
+        "loss": "19",
+        "seriesWin": "0",
+        "seriesLoss": "0",
+        "score": "0",
+        "linescore": []
+      },
+      "watch": {
+        "broadcast": {
+          "broadcasters": {
+            "national": [],
+            "canadian": [],
+            "vTeam": [
+              {
+                "shortName": "CSN-P",
+                "longName": "Comcast Sportsnet - Philadelphia"
+              }
+            ],
+            "hTeam": [
+              {
+                "shortName": "FSNWI",
+                "longName": "Fox Sports Network Wisconsin"
+              }
+            ]
+          },
+          "video": {
+            "regionalBlackoutCodes": "milr_phir",
+            "canPurchase": false,
+            "isLeaguePass": true,
+            "isTNTOT": false,
+            "tntotIsOnAir": false,
+            "streams": [
+              {
+                "streamType": "vTeam",
+                "isOnAir": true,
+                "doesArchiveExist": false,
+                "isArchiveAvailToWatch": false,
+                "streamId": "100216006151210",
+                "duration": 0
+              },
+              {
+                "streamType": "hTeam",
+                "isOnAir": true,
+                "doesArchiveExist": false,
+                "isArchiveAvailToWatch": false,
+                "streamId": "100216006151110",
+                "duration": 0
+              },
+              {
+                "streamType": "mobile",
+                "isOnAir": true,
+                "doesArchiveExist": false,
+                "isArchiveAvailToWatch": false,
+                "streamId": "100216006151310",
+                "duration": 0
+              },
+              {
+                "streamType": "condensed",
+                "isOnAir": false,
+                "doesArchiveExist": false,
+                "isArchiveAvailToWatch": false,
+                "streamId": "",
+                "duration": 0
+              }
+            ],
+            "deepLink": [
+              {
+                "broadcaster": "FSNWI",
+                "regionalMarketCodes": "milr",
+                "iosApp": "fsgo://video?guid=7BICDaLzonhP_X9qZHAZdb3hDpCIrQ_M|oeHSqvK3xN1nIMn5_OhH7ilqyVZtjdG_|JD_ONO6leHR_4P7QmqWN8ZEQptFkFyYv|4dRvslnAbgrmzEUx2ryAdJr7d5_6HB9l|HIPcw4VhlvUj1dDEvscP0Q__cwjlc2Wi&referrer=nba",
+                "androidApp": "fsgo://video?guid=7BICDaLzonhP_X9qZHAZdb3hDpCIrQ_M|oeHSqvK3xN1nIMn5_OhH7ilqyVZtjdG_|JD_ONO6leHR_4P7QmqWN8ZEQptFkFyYv|4dRvslnAbgrmzEUx2ryAdJr7d5_6HB9l|HIPcw4VhlvUj1dDEvscP0Q__cwjlc2Wi&referrer=nba",
+                "desktopWeb": "http://www.foxsportsgo.com",
+                "mobileWeb": "http://www.foxsportsgo.com"
+              }
+            ]
+          },
+          "audio": {
+            "national": {
+              "streams": [
+                {
+                  "language": "English",
+                  "isOnAir": false,
+                  "streamId": ""
+                },
+                {
+                  "language": "Spanish",
+                  "isOnAir": false,
+                  "streamId": ""
+                }
+              ],
+              "broadcasters": []
+            },
+            "vTeam": {
+              "streams": [
+                {
+                  "language": "English",
+                  "isOnAir": true,
+                  "streamId": "100216006152211"
+                },
+                {
+                  "language": "Spanish",
+                  "isOnAir": false,
+                  "streamId": ""
+                }
+              ],
+              "broadcasters": [
+                {
+                  "shortName": "97.5 The Fanatic",
+                  "longName": "97.5 The Fanatic"
+                }
+              ]
+            },
+            "hTeam": {
+              "streams": [
+                {
+                  "language": "English",
+                  "isOnAir": true,
+                  "streamId": "100216006152111"
+                },
+                {
+                  "language": "Spanish",
+                  "isOnAir": false,
+                  "streamId": ""
+                }
+              ],
+              "broadcasters": [
+                {
+                  "shortName": "AM 620 WTMJ",
+                  "longName": "AM 620 WTMJ"
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    {
+      "seasonStageId": 2,
+      "seasonYear": "2016",
+      "gameId": "0021600616",
+      "isGameActivated": false,
+      "statusNum": 1,
+      "extendedStatusNum": 0,
+      "startTimeUTC": "2017-01-16T21:00:00.000Z",
+      "startDateEastern": "20170116",
+      "clock": "",
+      "isBuzzerBeater": false,
+      "isPreviewArticleAvail": true,
+      "isRecapArticleAvail": false,
+      "tickets": {
+        "mobileApp": "http://m.ticketmaster.com/indiana-pacers-vs-new-orleans-pelicans-indianapolis-indiana-01-16-2017/event/05005123228749EF?brand=pacers&extcmp=gw511809&wt.mc_id=NBA_TEAM_IND_MOBILE_APP_SCHED_PG",
+        "desktopWeb": "http://www.ticketmaster.com/indiana-pacers-vs-new-orleans-pelicans-indianapolis-indiana-01-16-2017/event/05005123228749EF?brand=pacers&extcmp=gw503104&wt.mc_id=NBA_TEAM_SCHED_PG_PRI_IND&camefrom=NBAPACERS_SITE_SCHEDULE_SCHEDULE",
+        "mobileWeb": ""
+      },
+      "hasGameBookPdf": false,
+      "isStartTimeTBD": false,
+      "nugget": {
+        "text": "Watch free on NBA LEAGUE PASS"
+      },
+      "attendance": "0",
+      "gameDuration": {
+        "hours": "",
+        "minutes": ""
+      },
+      "period": {
+        "current": 0,
+        "type": 0,
+        "maxRegular": 4,
+        "isHalftime": false,
+        "isEndOfPeriod": false
+      },
+      "vTeam": {
+        "teamId": "1610612740",
+        "triCode": "NOP",
+        "win": "16",
+        "loss": "25",
+        "seriesWin": "1",
+        "seriesLoss": "0",
+        "score": "0",
+        "linescore": []
+      },
+      "hTeam": {
+        "teamId": "1610612754",
+        "triCode": "IND",
+        "win": "20",
+        "loss": "19",
+        "seriesWin": "0",
+        "seriesLoss": "1",
+        "score": "0",
+        "linescore": []
+      },
+      "watch": {
+        "broadcast": {
+          "broadcasters": {
+            "national": [],
+            "canadian": [],
+            "vTeam": [
+              {
+                "shortName": "FSNO",
+                "longName": "Fox Sports Net New Orleans"
+              }
+            ],
+            "hTeam": [
+              {
+                "shortName": "FSI",
+                "longName": "Fox Sports Indiana"
+              }
+            ]
+          },
+          "video": {
+            "regionalBlackoutCodes": "indr_nopr",
+            "canPurchase": false,
+            "isLeaguePass": true,
+            "isTNTOT": false,
+            "tntotIsOnAir": false,
+            "streams": [
+              {
+                "streamType": "vTeam",
+                "isOnAir": true,
+                "doesArchiveExist": false,
+                "isArchiveAvailToWatch": false,
+                "streamId": "100216006161210",
+                "duration": 0
+              },
+              {
+                "streamType": "hTeam",
+                "isOnAir": true,
+                "doesArchiveExist": false,
+                "isArchiveAvailToWatch": false,
+                "streamId": "100216006161110",
+                "duration": 0
+              },
+              {
+                "streamType": "mobile",
+                "isOnAir": true,
+                "doesArchiveExist": false,
+                "isArchiveAvailToWatch": false,
+                "streamId": "100216006161310",
+                "duration": 0
+              },
+              {
+                "streamType": "condensed",
+                "isOnAir": false,
+                "doesArchiveExist": false,
+                "isArchiveAvailToWatch": false,
+                "streamId": "",
+                "duration": 0
+              }
+            ],
+            "deepLink": [
+              {
+                "broadcaster": "FSI",
+                "regionalMarketCodes": "indr",
+                "iosApp": "fsgo://video?guid=eF4JoXTdSUt2ASmBC7NTb89wtNVALWjo|YMPhZI8ba0rAfI__QdOgZXA_8MH7DYOg|F_K0xpGpxRJMmM5QtiHNcKPw_kxhUiaY|P_c5k_IOF6YCb3q18a2WMLTXfAG0UMIP|PmnhaLmk7sYi_k1YJfsIsooEzc1vOOA7|2kSpssU4ZZUEPVph1ZKbxno2sfFF7U_S|81dZrhGsoNnpYN0CvJYCPjnE1bMS61Op|7lL_egXIRUZRffVT6nj7FTyIoVNbSftl|dMubfNDeA81I3U2EHlsk1HbV_bW37zsW|P_Uz3ic0d1ea5kzhl8E21x0jQB3Qb7_E|1dppy3Y6zOM2QKYvKnORMLMFOlyYhESC|aGnI5hd2OjnNowYK2VzQZhrpbJ56qchh|hLKuw0qI1OcFY10hTZdOUbruLoKSQ1Nj|eA1BOnj4JjwXrPVicglNfIKQA2M5L0nA|aFF6GtlFwhGQ2toOodILoRRfEqpsBHqH|yf_SF6fSRUVOvFeZLI_LD32DKOiK4WkL|_a587bLySSHaD_H23L1PzKI9x972oh_v|_ykVBioBHsXBQg0kfaXvA1ZmpnQ13w7H|wowrGHdY19NFwDLdynuXL15lyiEQ71q9|eTBeT_I55twhcqkNOVfRD6aLuXd3iU8k|KSSDmlI2ktPnoe6gMe0MOARiwGCW_h0f|raMorThc0u9EY4d81ZuWlDhJyAJifwf8|AQVy6LQEhY_JLv8a2AIw6Wzqfbk8Wj1a|FHxV8_Lrq_JQMCU2s5RYVeXD7mBxNaNc&referrer=nba",
+                "androidApp": "fsgo://video?guid=eF4JoXTdSUt2ASmBC7NTb89wtNVALWjo|YMPhZI8ba0rAfI__QdOgZXA_8MH7DYOg|F_K0xpGpxRJMmM5QtiHNcKPw_kxhUiaY|P_c5k_IOF6YCb3q18a2WMLTXfAG0UMIP|PmnhaLmk7sYi_k1YJfsIsooEzc1vOOA7|2kSpssU4ZZUEPVph1ZKbxno2sfFF7U_S|81dZrhGsoNnpYN0CvJYCPjnE1bMS61Op|7lL_egXIRUZRffVT6nj7FTyIoVNbSftl|dMubfNDeA81I3U2EHlsk1HbV_bW37zsW|P_Uz3ic0d1ea5kzhl8E21x0jQB3Qb7_E|1dppy3Y6zOM2QKYvKnORMLMFOlyYhESC|aGnI5hd2OjnNowYK2VzQZhrpbJ56qchh|hLKuw0qI1OcFY10hTZdOUbruLoKSQ1Nj|eA1BOnj4JjwXrPVicglNfIKQA2M5L0nA|aFF6GtlFwhGQ2toOodILoRRfEqpsBHqH|yf_SF6fSRUVOvFeZLI_LD32DKOiK4WkL|_a587bLySSHaD_H23L1PzKI9x972oh_v|_ykVBioBHsXBQg0kfaXvA1ZmpnQ13w7H|wowrGHdY19NFwDLdynuXL15lyiEQ71q9|eTBeT_I55twhcqkNOVfRD6aLuXd3iU8k|KSSDmlI2ktPnoe6gMe0MOARiwGCW_h0f|raMorThc0u9EY4d81ZuWlDhJyAJifwf8|AQVy6LQEhY_JLv8a2AIw6Wzqfbk8Wj1a|FHxV8_Lrq_JQMCU2s5RYVeXD7mBxNaNc&referrer=nba",
+                "desktopWeb": "http://www.foxsportsgo.com",
+                "mobileWeb": "http://www.foxsportsgo.com"
+              },
+              {
+                "broadcaster": "FSNO",
+                "regionalMarketCodes": "nopr",
+                "iosApp": "fsgo://video?guid=eF4JoXTdSUt2ASmBC7NTb89wtNVALWjo|YMPhZI8ba0rAfI__QdOgZXA_8MH7DYOg|F_K0xpGpxRJMmM5QtiHNcKPw_kxhUiaY|P_c5k_IOF6YCb3q18a2WMLTXfAG0UMIP|PmnhaLmk7sYi_k1YJfsIsooEzc1vOOA7|2kSpssU4ZZUEPVph1ZKbxno2sfFF7U_S|81dZrhGsoNnpYN0CvJYCPjnE1bMS61Op|7lL_egXIRUZRffVT6nj7FTyIoVNbSftl|dMubfNDeA81I3U2EHlsk1HbV_bW37zsW|P_Uz3ic0d1ea5kzhl8E21x0jQB3Qb7_E|1dppy3Y6zOM2QKYvKnORMLMFOlyYhESC|aGnI5hd2OjnNowYK2VzQZhrpbJ56qchh|hLKuw0qI1OcFY10hTZdOUbruLoKSQ1Nj|eA1BOnj4JjwXrPVicglNfIKQA2M5L0nA|aFF6GtlFwhGQ2toOodILoRRfEqpsBHqH|yf_SF6fSRUVOvFeZLI_LD32DKOiK4WkL|_a587bLySSHaD_H23L1PzKI9x972oh_v|_ykVBioBHsXBQg0kfaXvA1ZmpnQ13w7H|wowrGHdY19NFwDLdynuXL15lyiEQ71q9|eTBeT_I55twhcqkNOVfRD6aLuXd3iU8k|KSSDmlI2ktPnoe6gMe0MOARiwGCW_h0f|raMorThc0u9EY4d81ZuWlDhJyAJifwf8|AQVy6LQEhY_JLv8a2AIw6Wzqfbk8Wj1a|FHxV8_Lrq_JQMCU2s5RYVeXD7mBxNaNc&referrer=nba",
+                "androidApp": "fsgo://video?guid=eF4JoXTdSUt2ASmBC7NTb89wtNVALWjo|YMPhZI8ba0rAfI__QdOgZXA_8MH7DYOg|F_K0xpGpxRJMmM5QtiHNcKPw_kxhUiaY|P_c5k_IOF6YCb3q18a2WMLTXfAG0UMIP|PmnhaLmk7sYi_k1YJfsIsooEzc1vOOA7|2kSpssU4ZZUEPVph1ZKbxno2sfFF7U_S|81dZrhGsoNnpYN0CvJYCPjnE1bMS61Op|7lL_egXIRUZRffVT6nj7FTyIoVNbSftl|dMubfNDeA81I3U2EHlsk1HbV_bW37zsW|P_Uz3ic0d1ea5kzhl8E21x0jQB3Qb7_E|1dppy3Y6zOM2QKYvKnORMLMFOlyYhESC|aGnI5hd2OjnNowYK2VzQZhrpbJ56qchh|hLKuw0qI1OcFY10hTZdOUbruLoKSQ1Nj|eA1BOnj4JjwXrPVicglNfIKQA2M5L0nA|aFF6GtlFwhGQ2toOodILoRRfEqpsBHqH|yf_SF6fSRUVOvFeZLI_LD32DKOiK4WkL|_a587bLySSHaD_H23L1PzKI9x972oh_v|_ykVBioBHsXBQg0kfaXvA1ZmpnQ13w7H|wowrGHdY19NFwDLdynuXL15lyiEQ71q9|eTBeT_I55twhcqkNOVfRD6aLuXd3iU8k|KSSDmlI2ktPnoe6gMe0MOARiwGCW_h0f|raMorThc0u9EY4d81ZuWlDhJyAJifwf8|AQVy6LQEhY_JLv8a2AIw6Wzqfbk8Wj1a|FHxV8_Lrq_JQMCU2s5RYVeXD7mBxNaNc&referrer=nba",
+                "desktopWeb": "http://www.foxsportsgo.com",
+                "mobileWeb": "http://www.foxsportsgo.com"
+              }
+            ]
+          },
+          "audio": {
+            "national": {
+              "streams": [
+                {
+                  "language": "English",
+                  "isOnAir": false,
+                  "streamId": ""
+                },
+                {
+                  "language": "Spanish",
+                  "isOnAir": false,
+                  "streamId": ""
+                }
+              ],
+              "broadcasters": []
+            },
+            "vTeam": {
+              "streams": [
+                {
+                  "language": "English",
+                  "isOnAir": false,
+                  "streamId": ""
+                },
+                {
+                  "language": "Spanish",
+                  "isOnAir": false,
+                  "streamId": ""
+                }
+              ],
+              "broadcasters": [
+                {
+                  "shortName": "WRNO 99.5FM",
+                  "longName": "WRNO 99.5FM"
+                }
+              ]
+            },
+            "hTeam": {
+              "streams": [
+                {
+                  "language": "English",
+                  "isOnAir": false,
+                  "streamId": ""
+                },
+                {
+                  "language": "Spanish",
+                  "isOnAir": false,
+                  "streamId": ""
+                }
+              ],
+              "broadcasters": [
+                {
+                  "shortName": "1070 The Fan",
+                  "longName": "1070 The Fan"
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    {
+      "seasonStageId": 2,
+      "seasonYear": "2016",
+      "gameId": "0021600617",
+      "isGameActivated": false,
+      "statusNum": 1,
+      "extendedStatusNum": 0,
+      "startTimeUTC": "2017-01-16T22:00:00.000Z",
+      "startDateEastern": "20170116",
+      "clock": "",
+      "isBuzzerBeater": false,
+      "isPreviewArticleAvail": true,
+      "isRecapArticleAvail": false,
+      "tickets": {
+        "mobileApp": "http://www.altitudetickets.com/event/denver-nuggets-v-orlando-magic-jan-16-6809/?tags=DG_NBA3_AFFILT_0_275417341 &utm_source=DG_AFFILT&utm_medium=DG&utm_campaign=NBA3_275417341",
+        "desktopWeb": "http://www.altitudetickets.com/event/denver-nuggets-v-orlando-magic-jan-16-6809/?tags=DG_NBA1_AFFILT_0_275416094 &utm_source=DG_AFFILT&utm_medium=DG&utm_campaign=NBA1_275416094",
+        "mobileWeb": ""
+      },
+      "hasGameBookPdf": false,
+      "isStartTimeTBD": false,
+      "nugget": {
+        "text": ""
+      },
+      "attendance": "0",
+      "gameDuration": {
+        "hours": "",
+        "minutes": ""
+      },
+      "period": {
+        "current": 0,
+        "type": 0,
+        "maxRegular": 4,
+        "isHalftime": false,
+        "isEndOfPeriod": false
+      },
+      "vTeam": {
+        "teamId": "1610612753",
+        "triCode": "ORL",
+        "win": "17",
+        "loss": "25",
+        "seriesWin": "0",
+        "seriesLoss": "1",
+        "score": "0",
+        "linescore": []
+      },
+      "hTeam": {
+        "teamId": "1610612743",
+        "triCode": "DEN",
+        "win": "15",
+        "loss": "23",
+        "seriesWin": "1",
+        "seriesLoss": "0",
+        "score": "0",
+        "linescore": []
+      },
+      "watch": {
+        "broadcast": {
+          "broadcasters": {
+            "national": [
+              {
+                "shortName": "NBA TV",
+                "longName": "NBA TV"
+              }
+            ],
+            "canadian": [
+              {
+                "shortName": "NBAC",
+                "longName": "NBATV Canada"
+              }
+            ],
+            "vTeam": [
+              {
+                "shortName": "FSFL",
+                "longName": "Fox Sports Network - Florida"
+              }
+            ],
+            "hTeam": [
+              {
+                "shortName": "ASE",
+                "longName": "Altitude Sports and Entertainment"
+              }
+            ]
+          },
+          "video": {
+            "regionalBlackoutCodes": "torr_denr_orlr",
+            "canPurchase": false,
+            "isLeaguePass": false,
+            "isTNTOT": false,
+            "tntotIsOnAir": false,
+            "streams": [
+              {
+                "streamType": "vTeam",
+                "isOnAir": false,
+                "doesArchiveExist": false,
+                "isArchiveAvailToWatch": false,
+                "streamId": "",
+                "duration": 0
+              },
+              {
+                "streamType": "hTeam",
+                "isOnAir": false,
+                "doesArchiveExist": false,
+                "isArchiveAvailToWatch": false,
+                "streamId": "",
+                "duration": 0
+              },
+              {
+                "streamType": "mobile",
+                "isOnAir": false,
+                "doesArchiveExist": false,
+                "isArchiveAvailToWatch": false,
+                "streamId": "",
+                "duration": 0
+              },
+              {
+                "streamType": "condensed",
+                "isOnAir": false,
+                "doesArchiveExist": false,
+                "isArchiveAvailToWatch": false,
+                "streamId": "",
+                "duration": 0
+              }
+            ],
+            "deepLink": [
+              {
+                "broadcaster": "FSFL",
+                "regionalMarketCodes": "orlr",
+                "iosApp": "fsgo://video?guid=jM0zIsgP5_j2njMRoukdu1yQJ5Ga2mK4|UONeNwzdrL8ovIqMYwFui2eF2zfqUVx8|Z_UJbuAogo5QDwdCdH0kXamvVxGFN8J7&referrer=nba",
+                "androidApp": "fsgo://video?guid=jM0zIsgP5_j2njMRoukdu1yQJ5Ga2mK4|UONeNwzdrL8ovIqMYwFui2eF2zfqUVx8|Z_UJbuAogo5QDwdCdH0kXamvVxGFN8J7&referrer=nba",
+                "desktopWeb": "http://www.foxsportsgo.com",
+                "mobileWeb": "http://www.foxsportsgo.com"
+              }
+            ]
+          },
+          "audio": {
+            "national": {
+              "streams": [
+                {
+                  "language": "English",
+                  "isOnAir": false,
+                  "streamId": ""
+                },
+                {
+                  "language": "Spanish",
+                  "isOnAir": false,
+                  "streamId": ""
+                }
+              ],
+              "broadcasters": []
+            },
+            "vTeam": {
+              "streams": [
+                {
+                  "language": "English",
+                  "isOnAir": false,
+                  "streamId": ""
+                },
+                {
+                  "language": "Spanish",
+                  "isOnAir": false,
+                  "streamId": ""
+                }
+              ],
+              "broadcasters": [
+                {
+                  "shortName": "ESPN 580 / Salsa 98.1 FM (ESP)",
+                  "longName": "ESPN 580 / Salsa 98.1 FM (ESP)"
+                }
+              ]
+            },
+            "hTeam": {
+              "streams": [
+                {
+                  "language": "English",
+                  "isOnAir": false,
+                  "streamId": ""
+                },
+                {
+                  "language": "Spanish",
+                  "isOnAir": false,
+                  "streamId": ""
+                }
+              ],
+              "broadcasters": [
+                {
+                  "shortName": "KKSE 950AM",
+                  "longName": "KKSE 950AM"
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    {
+      "seasonStageId": 2,
+      "seasonYear": "2016",
+      "gameId": "0021600618",
+      "isGameActivated": false,
+      "statusNum": 1,
+      "extendedStatusNum": 0,
+      "startTimeUTC": "2017-01-17T00:30:00.000Z",
+      "startDateEastern": "20170116",
+      "clock": "",
+      "isBuzzerBeater": false,
+      "isPreviewArticleAvail": true,
+      "isRecapArticleAvail": false,
+      "tickets": {
+        "mobileApp": "http://m.ticketmaster.com/boston-celtics-vs-charlotte-hornets-boston-massachusetts-01-16-2017/event/0100510F0F05A45B?brand=celtics&extcmp=gw511802&wt.mc_id=NBA_TEAM_BOS_MOBILE_APP_SCHED_PG",
+        "desktopWeb": "http://www.ticketmaster.com/boston-celtics-vs-charlotte-hornets-boston-massachusetts-01-16-2017/event/0100510F0F05A45B?brand=celtics&extcmp=gw502815&wt.mc_id=NBA_TEAM_SCHED_PG_PRI_BOS_SOFT&landing=s",
+        "mobileWeb": ""
+      },
+      "hasGameBookPdf": false,
+      "isStartTimeTBD": false,
+      "nugget": {
+        "text": "Watch free on NBA LEAGUE PASS"
+      },
+      "attendance": "0",
+      "gameDuration": {
+        "hours": "",
+        "minutes": ""
+      },
+      "period": {
+        "current": 0,
+        "type": 0,
+        "maxRegular": 4,
+        "isHalftime": false,
+        "isEndOfPeriod": false
+      },
+      "vTeam": {
+        "teamId": "1610612766",
+        "triCode": "CHA",
+        "win": "20",
+        "loss": "20",
+        "seriesWin": "0",
+        "seriesLoss": "2",
+        "score": "0",
+        "linescore": []
+      },
+      "hTeam": {
+        "teamId": "1610612738",
+        "triCode": "BOS",
+        "win": "25",
+        "loss": "15",
+        "seriesWin": "2",
+        "seriesLoss": "0",
+        "score": "0",
+        "linescore": []
+      },
+      "watch": {
+        "broadcast": {
+          "broadcasters": {
+            "national": [],
+            "canadian": [],
+            "vTeam": [
+              {
+                "shortName": "FSSE-CHA",
+                "longName": "Fox Sports Southest - Charlotte"
+              }
+            ],
+            "hTeam": [
+              {
+                "shortName": "CSN-NE",
+                "longName": "Comcast Sports Net New England"
+              }
+            ]
+          },
+          "video": {
+            "regionalBlackoutCodes": "bosr_char",
+            "canPurchase": false,
+            "isLeaguePass": true,
+            "isTNTOT": false,
+            "tntotIsOnAir": false,
+            "streams": [
+              {
+                "streamType": "vTeam",
+                "isOnAir": false,
+                "doesArchiveExist": false,
+                "isArchiveAvailToWatch": false,
+                "streamId": "",
+                "duration": 0
+              },
+              {
+                "streamType": "hTeam",
+                "isOnAir": false,
+                "doesArchiveExist": false,
+                "isArchiveAvailToWatch": false,
+                "streamId": "",
+                "duration": 0
+              },
+              {
+                "streamType": "mobile",
+                "isOnAir": false,
+                "doesArchiveExist": false,
+                "isArchiveAvailToWatch": false,
+                "streamId": "",
+                "duration": 0
+              },
+              {
+                "streamType": "condensed",
+                "isOnAir": false,
+                "doesArchiveExist": false,
+                "isArchiveAvailToWatch": false,
+                "streamId": "",
+                "duration": 0
+              }
+            ],
+            "deepLink": [
+              {
+                "broadcaster": "FSSE-CHA",
+                "regionalMarketCodes": "char",
+                "iosApp": "fsgo://video?guid=axlgjGt9Z_H81R_1muY1kKIW0Rdz_xn6|AyFNg7CQYr432S12djyXgnkX_4UB1xnv|MO0_eZwQv0P7iBkTvJl64tK8C9QV_lH5&referrer=nba",
+                "androidApp": "fsgo://video?guid=axlgjGt9Z_H81R_1muY1kKIW0Rdz_xn6|AyFNg7CQYr432S12djyXgnkX_4UB1xnv|MO0_eZwQv0P7iBkTvJl64tK8C9QV_lH5&referrer=nba",
+                "desktopWeb": "http://www.foxsportsgo.com",
+                "mobileWeb": "http://www.foxsportsgo.com"
+              }
+            ]
+          },
+          "audio": {
+            "national": {
+              "streams": [
+                {
+                  "language": "English",
+                  "isOnAir": false,
+                  "streamId": ""
+                },
+                {
+                  "language": "Spanish",
+                  "isOnAir": false,
+                  "streamId": ""
+                }
+              ],
+              "broadcasters": []
+            },
+            "vTeam": {
+              "streams": [
+                {
+                  "language": "English",
+                  "isOnAir": false,
+                  "streamId": ""
+                },
+                {
+                  "language": "Spanish",
+                  "isOnAir": false,
+                  "streamId": ""
+                }
+              ],
+              "broadcasters": [
+                {
+                  "shortName": "WFNZ 610 AM",
+                  "longName": "WFNZ 610 AM"
+                }
+              ]
+            },
+            "hTeam": {
+              "streams": [
+                {
+                  "language": "English",
+                  "isOnAir": false,
+                  "streamId": ""
+                },
+                {
+                  "language": "Spanish",
+                  "isOnAir": false,
+                  "streamId": ""
+                }
+              ],
+              "broadcasters": [
+                {
+                  "shortName": "98.5 The Sports Hub",
+                  "longName": "98.5 The Sports Hub"
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    {
+      "seasonStageId": 2,
+      "seasonYear": "2016",
+      "gameId": "0021600619",
+      "isGameActivated": false,
+      "statusNum": 1,
+      "extendedStatusNum": 0,
+      "startTimeUTC": "2017-01-17T01:00:00.000Z",
+      "startDateEastern": "20170116",
+      "clock": "",
+      "isBuzzerBeater": false,
+      "isPreviewArticleAvail": true,
+      "isRecapArticleAvail": false,
+      "tickets": {
+        "mobileApp": "http://m.ticketmaster.com/golden-state-warriors-vs-cleveland-cavaliers-oakland-california-01-16-2017/event/1C00510833247B86?brand=warriors&extcmp=gw511808&wt.mc_id=NBA_TEAM_GSW_MOBILE_APP_SCHED_PG",
+        "desktopWeb": "http://www.ticketmaster.com/golden-state-warriors-vs-cleveland-cavaliers-oakland-california-01-16-2017/event/1C00510833247B86?brand=warriors&extcmp=gw503064&wt.mc_id=NBA_TEAM_SCHED_PG_PRI_GSW&camefrom=CFC_warriors_schedule_page",
+        "mobileWeb": ""
+      },
+      "hasGameBookPdf": false,
+      "isStartTimeTBD": false,
+      "nugget": {
+        "text": "Watch live on TNT Overtime"
+      },
+      "attendance": "0",
+      "gameDuration": {
+        "hours": "",
+        "minutes": ""
+      },
+      "period": {
+        "current": 0,
+        "type": 0,
+        "maxRegular": 4,
+        "isHalftime": false,
+        "isEndOfPeriod": false
+      },
+      "vTeam": {
+        "teamId": "1610612739",
+        "triCode": "CLE",
+        "win": "29",
+        "loss": "10",
+        "seriesWin": "1",
+        "seriesLoss": "0",
+        "score": "0",
+        "linescore": []
+      },
+      "hTeam": {
+        "teamId": "1610612744",
+        "triCode": "GSW",
+        "win": "34",
+        "loss": "6",
+        "seriesWin": "0",
+        "seriesLoss": "1",
+        "score": "0",
+        "linescore": []
+      },
+      "watch": {
+        "broadcast": {
+          "broadcasters": {
+            "national": [
+              {
+                "shortName": "TNT",
+                "longName": "Turner Networks"
+              }
+            ],
+            "canadian": [
+              {
+                "shortName": "TSN1/3/4",
+                "longName": "TSN1/3/4"
+              }
+            ],
+            "vTeam": [],
+            "hTeam": []
+          },
+          "video": {
+            "regionalBlackoutCodes": "tarr",
+            "canPurchase": false,
+            "isLeaguePass": false,
+            "isTNTOT": true,
+            "tntotIsOnAir": false,
+            "streams": [
+              {
+                "streamType": "vTeam",
+                "isOnAir": false,
+                "doesArchiveExist": false,
+                "isArchiveAvailToWatch": false,
+                "streamId": "",
+                "duration": 0
+              },
+              {
+                "streamType": "hTeam",
+                "isOnAir": false,
+                "doesArchiveExist": false,
+                "isArchiveAvailToWatch": false,
+                "streamId": "",
+                "duration": 0
+              },
+              {
+                "streamType": "mobile",
+                "isOnAir": false,
+                "doesArchiveExist": false,
+                "isArchiveAvailToWatch": false,
+                "streamId": "",
+                "duration": 0
+              },
+              {
+                "streamType": "condensed",
+                "isOnAir": false,
+                "doesArchiveExist": false,
+                "isArchiveAvailToWatch": false,
+                "streamId": "",
+                "duration": 0
+              }
+            ],
+            "deepLink": [
+              {
+                "broadcaster": "TNT",
+                "regionalMarketCodes": "",
+                "iosApp": "http://www.tntdrama.com/watchtnt/",
+                "androidApp": "http://www.tntdrama.com/watchtnt/",
+                "desktopWeb": "http://www.tntdrama.com/watchtnt/",
+                "mobileWeb": "http://www.tntdrama.com/watchtnt/"
+              }
+            ]
+          },
+          "audio": {
+            "national": {
+              "streams": [
+                {
+                  "language": "English",
+                  "isOnAir": false,
+                  "streamId": ""
+                },
+                {
+                  "language": "Spanish",
+                  "isOnAir": false,
+                  "streamId": ""
+                }
+              ],
+              "broadcasters": []
+            },
+            "vTeam": {
+              "streams": [
+                {
+                  "language": "English",
+                  "isOnAir": false,
+                  "streamId": ""
+                },
+                {
+                  "language": "Spanish",
+                  "isOnAir": false,
+                  "streamId": ""
+                }
+              ],
+              "broadcasters": [
+                {
+                  "shortName": "WTAM 1100 / 100.7 WMMS / 87.7 FM (ESP)",
+                  "longName": "WTAM 1100 / 100.7 WMMS / 87.7 FM (ESP)"
+                }
+              ]
+            },
+            "hTeam": {
+              "streams": [
+                {
+                  "language": "English",
+                  "isOnAir": false,
+                  "streamId": ""
+                },
+                {
+                  "language": "Spanish",
+                  "isOnAir": false,
+                  "streamId": ""
+                }
+              ],
+              "broadcasters": [
+                {
+                  "shortName": "95.7 The Game",
+                  "longName": "95.7 The Game"
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    {
+      "seasonStageId": 2,
+      "seasonYear": "2016",
+      "gameId": "0021600620",
+      "isGameActivated": false,
+      "statusNum": 1,
+      "extendedStatusNum": 0,
+      "startTimeUTC": "2017-01-17T02:00:00.000Z",
+      "startDateEastern": "20170116",
+      "clock": "",
+      "isBuzzerBeater": false,
+      "isPreviewArticleAvail": true,
+      "isRecapArticleAvail": false,
+      "tickets": {
+        "mobileApp": "http://m.ticketmaster.com/phoenix-suns-vs-utah-jazz-phoenix-arizona-01-16-2017/event/19005108C49C1FCD?brand=suns&extcmp=gw511818&wt.mc_id=NBA_TEAM_PHX_MOBILE_APP_SCHED_PG",
+        "desktopWeb": "http://www.ticketmaster.com/phoenix-suns-vs-utah-jazz-phoenix-arizona-01-16-2017/event/19005108C49C1FCD?brand=suns&extcmp=gw503554&wt.mc_id=NBA_TEAM_SCHED_PG_PRI_PHX&camefrom=CFC_SUNS_SCHEDULE",
+        "mobileWeb": ""
+      },
+      "hasGameBookPdf": false,
+      "isStartTimeTBD": false,
+      "nugget": {
+        "text": "Watch free on NBA LEAGUE PASS"
+      },
+      "attendance": "0",
+      "gameDuration": {
+        "hours": "",
+        "minutes": ""
+      },
+      "period": {
+        "current": 0,
+        "type": 0,
+        "maxRegular": 4,
+        "isHalftime": false,
+        "isEndOfPeriod": false
+      },
+      "vTeam": {
+        "teamId": "1610612762",
+        "triCode": "UTA",
+        "win": "26",
+        "loss": "16",
+        "seriesWin": "2",
+        "seriesLoss": "0",
+        "score": "0",
+        "linescore": []
+      },
+      "hTeam": {
+        "teamId": "1610612756",
+        "triCode": "PHX",
+        "win": "13",
+        "loss": "27",
+        "seriesWin": "0",
+        "seriesLoss": "2",
+        "score": "0",
+        "linescore": []
+      },
+      "watch": {
+        "broadcast": {
+          "broadcasters": {
+            "national": [],
+            "canadian": [],
+            "vTeam": [
+              {
+                "shortName": "ROOT-RM",
+                "longName": "ROOT Sports Rocky Mountain"
+              }
+            ],
+            "hTeam": [
+              {
+                "shortName": "FSA",
+                "longName": "Fox Sports Net Arizona"
+              }
+            ]
+          },
+          "video": {
+            "regionalBlackoutCodes": "phxr_utar",
+            "canPurchase": false,
+            "isLeaguePass": true,
+            "isTNTOT": false,
+            "tntotIsOnAir": false,
+            "streams": [
+              {
+                "streamType": "vTeam",
+                "isOnAir": false,
+                "doesArchiveExist": false,
+                "isArchiveAvailToWatch": false,
+                "streamId": "",
+                "duration": 0
+              },
+              {
+                "streamType": "hTeam",
+                "isOnAir": false,
+                "doesArchiveExist": false,
+                "isArchiveAvailToWatch": false,
+                "streamId": "",
+                "duration": 0
+              },
+              {
+                "streamType": "mobile",
+                "isOnAir": false,
+                "doesArchiveExist": false,
+                "isArchiveAvailToWatch": false,
+                "streamId": "",
+                "duration": 0
+              },
+              {
+                "streamType": "condensed",
+                "isOnAir": false,
+                "doesArchiveExist": false,
+                "isArchiveAvailToWatch": false,
+                "streamId": "",
+                "duration": 0
+              }
+            ],
+            "deepLink": [
+              {
+                "broadcaster": "FSA",
+                "regionalMarketCodes": "phxr",
+                "iosApp": "fsgo://video?guid=Pnwf_vPXJXpPKtY5O1Oc1C7lELXIJ835|vJTZO1mqnbTRxwysV4DfiNnEWK3qudEC|7zZZphNTEDo8_zLXnm1wDnPMlzD4pEHW|tfKDFh_lqLlflaJ5gJWYm8Mcv4LwR5Mq|49DhKXMsze5Y3pnZuzm_XsoifxrteMmA|dUD8AEcnLYV8e2EyaM5G2tWKmfIXx2yw|aEe3w6VnMVkLt_anIYPByXgbobvcl5bH|2J8gk5SGNzeBX8Ah5uHG83deW6fELgLm|LhHZFaAqbrmP5fd2UTHK0UKQfT4pMMZb&referrer=nba",
+                "androidApp": "fsgo://video?guid=Pnwf_vPXJXpPKtY5O1Oc1C7lELXIJ835|vJTZO1mqnbTRxwysV4DfiNnEWK3qudEC|7zZZphNTEDo8_zLXnm1wDnPMlzD4pEHW|tfKDFh_lqLlflaJ5gJWYm8Mcv4LwR5Mq|49DhKXMsze5Y3pnZuzm_XsoifxrteMmA|dUD8AEcnLYV8e2EyaM5G2tWKmfIXx2yw|aEe3w6VnMVkLt_anIYPByXgbobvcl5bH|2J8gk5SGNzeBX8Ah5uHG83deW6fELgLm|LhHZFaAqbrmP5fd2UTHK0UKQfT4pMMZb&referrer=nba",
+                "desktopWeb": "http://www.foxsportsgo.com",
+                "mobileWeb": "http://www.foxsportsgo.com"
+              }
+            ]
+          },
+          "audio": {
+            "national": {
+              "streams": [
+                {
+                  "language": "English",
+                  "isOnAir": false,
+                  "streamId": ""
+                },
+                {
+                  "language": "Spanish",
+                  "isOnAir": false,
+                  "streamId": ""
+                }
+              ],
+              "broadcasters": []
+            },
+            "vTeam": {
+              "streams": [
+                {
+                  "language": "English",
+                  "isOnAir": false,
+                  "streamId": ""
+                },
+                {
+                  "language": "Spanish",
+                  "isOnAir": false,
+                  "streamId": ""
+                }
+              ],
+              "broadcasters": [
+                {
+                  "shortName": "KZNS",
+                  "longName": "KZNS"
+                }
+              ]
+            },
+            "hTeam": {
+              "streams": [
+                {
+                  "language": "English",
+                  "isOnAir": false,
+                  "streamId": ""
+                },
+                {
+                  "language": "Spanish",
+                  "isOnAir": false,
+                  "streamId": ""
+                }
+              ],
+              "broadcasters": [
+                {
+                  "shortName": "Arizona Sports 98.7FM / KSUN 1400AM (ES)",
+                  "longName": "Arizona Sports 98.7FM / KSUN 1400AM (ES)"
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    {
+      "seasonStageId": 2,
+      "seasonYear": "2016",
+      "gameId": "0021600621",
+      "isGameActivated": false,
+      "statusNum": 1,
+      "extendedStatusNum": 0,
+      "startTimeUTC": "2017-01-17T03:30:00.000Z",
+      "startDateEastern": "20170116",
+      "clock": "",
+      "isBuzzerBeater": false,
+      "isPreviewArticleAvail": true,
+      "isRecapArticleAvail": false,
+      "tickets": {
+        "mobileApp": "http://axs.com/events/314047/la-clippers-vs-oklahoma-city-thunder-tickets?skin=clippers",
+        "desktopWeb": "http://axs.com/events/314047/la-clippers-vs-oklahoma-city-thunder-tickets?skin=clippers",
+        "mobileWeb": ""
+      },
+      "hasGameBookPdf": false,
+      "isStartTimeTBD": false,
+      "nugget": {
+        "text": "Watch live on TNT Overtime"
+      },
+      "attendance": "0",
+      "gameDuration": {
+        "hours": "",
+        "minutes": ""
+      },
+      "period": {
+        "current": 0,
+        "type": 0,
+        "maxRegular": 4,
+        "isHalftime": false,
+        "isEndOfPeriod": false
+      },
+      "vTeam": {
+        "teamId": "1610612760",
+        "triCode": "OKC",
+        "win": "25",
+        "loss": "17",
+        "seriesWin": "2",
+        "seriesLoss": "1",
+        "score": "0",
+        "linescore": []
+      },
+      "hTeam": {
+        "teamId": "1610612746",
+        "triCode": "LAC",
+        "win": "28",
+        "loss": "14",
+        "seriesWin": "1",
+        "seriesLoss": "2",
+        "score": "0",
+        "linescore": []
+      },
+      "watch": {
+        "broadcast": {
+          "broadcasters": {
+            "national": [
+              {
+                "shortName": "TNT",
+                "longName": "Turner Networks"
+              }
+            ],
+            "canadian": [
+              {
+                "shortName": "TSN1/4",
+                "longName": "TSN1/4"
+              }
+            ],
+            "vTeam": [],
+            "hTeam": []
+          },
+          "video": {
+            "regionalBlackoutCodes": "tarr",
+            "canPurchase": false,
+            "isLeaguePass": false,
+            "isTNTOT": true,
+            "tntotIsOnAir": false,
+            "streams": [
+              {
+                "streamType": "vTeam",
+                "isOnAir": false,
+                "doesArchiveExist": false,
+                "isArchiveAvailToWatch": false,
+                "streamId": "",
+                "duration": 0
+              },
+              {
+                "streamType": "hTeam",
+                "isOnAir": false,
+                "doesArchiveExist": false,
+                "isArchiveAvailToWatch": false,
+                "streamId": "",
+                "duration": 0
+              },
+              {
+                "streamType": "mobile",
+                "isOnAir": false,
+                "doesArchiveExist": false,
+                "isArchiveAvailToWatch": false,
+                "streamId": "",
+                "duration": 0
+              },
+              {
+                "streamType": "condensed",
+                "isOnAir": false,
+                "doesArchiveExist": false,
+                "isArchiveAvailToWatch": false,
+                "streamId": "",
+                "duration": 0
+              }
+            ],
+            "deepLink": [
+              {
+                "broadcaster": "TNT",
+                "regionalMarketCodes": "",
+                "iosApp": "http://www.tntdrama.com/watchtnt/",
+                "androidApp": "http://www.tntdrama.com/watchtnt/",
+                "desktopWeb": "http://www.tntdrama.com/watchtnt/",
+                "mobileWeb": "http://www.tntdrama.com/watchtnt/"
+              }
+            ]
+          },
+          "audio": {
+            "national": {
+              "streams": [
+                {
+                  "language": "English",
+                  "isOnAir": false,
+                  "streamId": ""
+                },
+                {
+                  "language": "Spanish",
+                  "isOnAir": false,
+                  "streamId": ""
+                }
+              ],
+              "broadcasters": []
+            },
+            "vTeam": {
+              "streams": [
+                {
+                  "language": "English",
+                  "isOnAir": false,
+                  "streamId": ""
+                },
+                {
+                  "language": "Spanish",
+                  "isOnAir": false,
+                  "streamId": ""
+                }
+              ],
+              "broadcasters": [
+                {
+                  "shortName": "WWLS 98.1FM OKC / 930AM (ESP)",
+                  "longName": "WWLS 98.1FM OKC / 930AM (ESP)"
+                }
+              ]
+            },
+            "hTeam": {
+              "streams": [
+                {
+                  "language": "English",
+                  "isOnAir": false,
+                  "streamId": ""
+                },
+                {
+                  "language": "Spanish",
+                  "isOnAir": false,
+                  "streamId": ""
+                }
+              ],
+              "broadcasters": [
+                {
+                  "shortName": "AM 570 SPORTS",
+                  "longName": "AM 570 SPORTS"
+                }
+              ]
+            }
+          }
+        }
+      }
+    }
+  ]
+}

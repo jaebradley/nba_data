@@ -1,6 +1,6 @@
-from nba_data.client import Client
-from nba_data.data.season import Season
-from nba_data.data.current_season_only import CurrentSeasonOnly
+from nba_data import Client
+from nba_data import CurrentSeasonOnly
+from nba_data import Season
 
 
 def get_players_for_2015_season():

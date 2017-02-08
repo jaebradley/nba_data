@@ -13,15 +13,9 @@ class PlayerDetails:
 
     @staticmethod
     def create(nba_id, name, team_id, birth_date, height, weight, jersey_number, position_name):
-        position = None
-        try:
-            position = Position.get_position_from_name(position_name)
-        except ValueError:
-            pass
-
-        return PlayerDetails(player=Player.create(nba_id=nba_id, name=name, team_id=team_id),
+        return PlayerDetails(player=Player.create(id=nba_id, name=name, team_id=team_id),
                              birth_date=birth_date,
                              height=height,
                              weight=weight,
                              jersey_number=jersey_number,
-                             position=position)
+                             position=Position.get_position_from_name(position_name))

@@ -7,6 +7,9 @@ class AdvancedPlayerBoxScore:
                  teammate_assist_percentage, assist_to_turnover_ratio, assists_per_100_possessions,
                  offensive_rebound_percentage, defensive_rebound_percentage, turnovers_per_100_possessions,
                  effective_field_goal_percentage, true_shooting_percentage, usage_percentage):
+
+        assert isinstance(player, BoxScorePlayer)
+
         self.player = player
         self.seconds_played = seconds_played
         self.offensive_rating = offensive_rating
@@ -22,11 +25,11 @@ class AdvancedPlayerBoxScore:
         self.usage_percentage = usage_percentage
 
     @staticmethod
-    def create(player_name, player_nba_id, team_id, comment, seconds_played, offensive_rating, defensive_rating,
+    def create(player_name, player_id, team_id, comment, seconds_played, offensive_rating, defensive_rating,
                teammate_assist_percentage, assist_to_turnover_ratio, assists_per_100_possessions,
                offensive_rebound_percentage, defensive_rebound_percentage, turnovers_per_100_possessions,
                effective_field_goal_percentage, true_shooting_percentage, usage_percentage):
-        return AdvancedPlayerBoxScore(player=BoxScorePlayer.create(name=player_name, team_id=team_id, nba_id=player_nba_id,
+        return AdvancedPlayerBoxScore(player=BoxScorePlayer.create(name=player_name, team_id=team_id, id=player_id,
                                                                    status=PlayerStatus.from_comment(comment=comment)),
                                       seconds_played=seconds_played, offensive_rating=offensive_rating,
                                       defensive_rating=defensive_rating, teammate_assist_percentage=teammate_assist_percentage,

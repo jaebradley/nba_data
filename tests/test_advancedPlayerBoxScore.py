@@ -7,11 +7,12 @@ from nba_data.data.player_status import PlayerStatusType
 
 
 class TestAdvancedPlayerBoxScore(TestCase):
+
     def test_create(self):
         test_player_name = "jae"
         test_player_nba_id = 1
         test_team_nba_id = 1610612738
-        box_score = AdvancedPlayerBoxScore.create(player_name=test_player_name, player_nba_id=test_player_nba_id,
+        box_score = AdvancedPlayerBoxScore.create(player_name=test_player_name, player_id=test_player_nba_id,
                                                   team_id=test_team_nba_id, comment="DNP - jadley", seconds_played=123,
                                                   offensive_rating=Decimal("110.1"), defensive_rating=Decimal("110.2"),
                                                   teammate_assist_percentage=Decimal("50.0"), assist_to_turnover_ratio=Decimal("2.1"),
@@ -21,7 +22,7 @@ class TestAdvancedPlayerBoxScore(TestCase):
                                                   usage_percentage=Decimal("7.89"))
 
         self.assertEqual(box_score.player.name, "jae")
-        self.assertEqual(box_score.player.nba_id, test_player_nba_id)
+        self.assertEqual(box_score.player.id, test_player_nba_id)
         self.assertEqual(box_score.player.team, Team.boston_celtics)
         self.assertEqual(box_score.player.status.type, PlayerStatusType.did_not_play)
         self.assertEqual(box_score.player.status.comment, "jadley")

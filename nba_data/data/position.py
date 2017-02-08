@@ -11,21 +11,15 @@ class Position(Enum):
 
     @staticmethod
     def get_position_from_abbreviation(abbreviation):
-        position = abbreviation_to_position_map.get(abbreviation.upper())
+        assert isinstance(abbreviation, str)
 
-        if position is None:
-            raise ValueError("Unknown position abbreviation: %s", abbreviation)
-
-        return position
+        return abbreviation_to_position_map.get(abbreviation.upper())
 
     @staticmethod
     def get_position_from_name(name):
-        position = name_to_position_map.get(name.upper())
+        assert isinstance(name, str)
 
-        if position is None:
-            raise ValueError("Unknown position name: %s", name)
-
-        return position
+        return name_to_position_map.get(name.upper())
 
 abbreviation_to_position_map = {
     "G": Position.guard,
