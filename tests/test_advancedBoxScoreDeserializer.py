@@ -3,6 +3,7 @@ import os
 from decimal import Decimal
 from unittest import TestCase
 
+from nba_data.data.player_status import PlayerStatusType
 from nba_data.data.team import Team
 from nba_data.deserializers.advanced_box_score_deserializer import AdvancedBoxScoreDeserializer
 from tests.config import ROOT_DIRECTORY
@@ -23,7 +24,8 @@ class TestAdvancedBoxScoreDeserializer(TestCase):
             self.assertEqual(nicolas_batum_box_score.player.nba_id, 201587)
             self.assertEqual(nicolas_batum_box_score.player.name, "Nicolas Batum")
             self.assertEqual(nicolas_batum_box_score.player.team, Team.charlotte_hornets)
-            self.assertEqual(nicolas_batum_box_score.comment, "")
+            self.assertEqual(nicolas_batum_box_score.player.status.type, PlayerStatusType.active)
+            self.assertIsNone(nicolas_batum_box_score.player.status.comment)
             self.assertEqual(nicolas_batum_box_score.seconds_played, 1037)
             self.assertEqual(nicolas_batum_box_score.offensive_rating, Decimal('143.3'))
             self.assertEqual(nicolas_batum_box_score.defensive_rating, Decimal('54.4'))

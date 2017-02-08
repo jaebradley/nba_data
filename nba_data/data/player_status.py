@@ -2,18 +2,18 @@ from enum import Enum
 
 
 class PlayerStatus:
-    def __init__(self, type, reason):
+    def __init__(self, type, comment):
         assert isinstance(type, PlayerStatusType)
 
         self.type = type
-        self.reason = reason
+        self.comment = comment
 
     @staticmethod
     def from_comment(comment):
         assert isinstance(comment, basestring)
 
         if not comment:
-            return PlayerStatus(type=PlayerStatusType.active, reason=None)
+            return PlayerStatus(type=PlayerStatusType.active, comment=None)
 
         comment_parts = comment.split(' - ')
 
@@ -21,7 +21,7 @@ class PlayerStatus:
             raise ValueError('Expected two comment parts for comment: %s', comment)
 
         return PlayerStatus(type=PlayerStatusType.from_abbreviation(abbreviation=comment_parts[0]),
-                            reason=comment_parts[1])
+                            comment=comment_parts[1])
 
 
 class PlayerStatusType(Enum):

@@ -2,9 +2,9 @@ import json
 import os
 from unittest import TestCase
 
+from nba_data.data.player_status import PlayerStatusType
 from nba_data.data.team import Team
 from nba_data.data.traditional_player_box_score import TraditionalPlayerBoxScore
-from nba_data.data.player_status import PlayerStatus, PlayerStatusType
 from nba_data.deserializers.traditional_player_box_score_deserializer import TraditionalBoxScorePlayerStatsDeserializer
 from tests.config import ROOT_DIRECTORY
 
@@ -27,7 +27,7 @@ class TestTraditionalBoxScorePlayerStatsDeserializer(TestCase):
             self.assertEqual(kawhi_leonard_box_score.player.team, Team.san_antonio_spurs)
             self.assertEqual(kawhi_leonard_box_score.player.nba_id, 202695)
             self.assertEqual(kawhi_leonard_box_score.player.status.type, PlayerStatusType.active)
-            self.assertIsNone(kawhi_leonard_box_score.player.status.reason)
+            self.assertIsNone(kawhi_leonard_box_score.player.status.comment)
             self.assertEqual(kawhi_leonard_box_score.seconds_played, 1471)
             self.assertEqual(kawhi_leonard_box_score.field_goals_made, 6)
             self.assertEqual(kawhi_leonard_box_score.field_goal_attempts, 12)
