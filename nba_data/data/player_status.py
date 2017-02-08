@@ -4,15 +4,21 @@ from enum import Enum
 class PlayerStatus:
     def __init__(self, type, reason):
         assert isinstance(type, PlayerStatusType)
-        assert isinstance(reason, basestr)
 
         self.type = type
         self.reason = reason
 
     @staticmethod
     def from_comment(comment):
+        assert isinstance(comment, basestring)
+
+        if not comment:
+            return PlayerStatus(type=PlayerStatusType.active, reason=None)
+
         comment_parts = comment.split(' - ')
-        assert len(comment_parts) == 2
+
+        if len(comment_parts) != 2:
+            raise ValueError('Expected two comment parts for comment: %s', comment)
 
         return PlayerStatus(type=PlayerStatusType.from_abbreviation(abbreviation=comment_parts[0]),
                             reason=comment_parts[1])
@@ -25,9 +31,6 @@ class PlayerStatusType(Enum):
 
     @staticmethod
     def from_abbreviation(abbreviation):
-        if abbreviation is None:
-            return PlayerStatusType.active
-
         player_status_type = player_status_type_abbreviation_map.get(abbreviation)
 
         if player_status_type is None:
