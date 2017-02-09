@@ -34,7 +34,7 @@ class TestTraditionalBoxScorePlayerStatsDeserializer(TestCase):
             self.assertEqual(kawhi_leonard_box_score.three_point_field_goals_made, 0)
             self.assertEqual(kawhi_leonard_box_score.three_point_field_goal_attempts, 1)
             self.assertEqual(kawhi_leonard_box_score.free_throws_made, 3)
-            self.assertEqual(kawhi_leonard_box_score.free_throws_attempts, 3)
+            self.assertEqual(kawhi_leonard_box_score.free_throw_attempts, 3)
             self.assertEqual(kawhi_leonard_box_score.offensive_rebounds, 1)
             self.assertEqual(kawhi_leonard_box_score.defensive_rebounds, 4)
             self.assertEqual(kawhi_leonard_box_score.assists, 2)

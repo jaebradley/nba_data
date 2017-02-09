@@ -8,11 +8,11 @@ class TestTraditionalTeamBoxScore(TestCase):
     def test_assertions(self):
         self.assertRaises(AssertionError, TraditionalTeamBoxScore.create, team_id=0, seconds_played=1, field_goals_made=2,
                           field_goal_attempts=3, three_point_field_goals_made=4, three_point_field_goal_attempts=5,
-                          free_throws_made=6, free_throws_attempts=7, offensive_rebounds=8, defensive_rebounds=9,
+                          free_throws_made=6, free_throw_attempts=7, offensive_rebounds=8, defensive_rebounds=9,
                           steals=10, blocks=11, turnovers=12, personal_fouls=13, assists=14)
         self.assertRaises(AssertionError, TraditionalTeamBoxScore, team=0, seconds_played=1, field_goals_made=2,
                           field_goal_attempts=3, three_point_field_goals_made=4, three_point_field_goal_attempts=5,
-                          free_throws_made=6, free_throws_attempts=7, offensive_rebounds=8, defensive_rebounds=9,
+                          free_throws_made=6, free_throw_attempts=7, offensive_rebounds=8, defensive_rebounds=9,
                           steals=10, blocks=11, turnovers=12, personal_fouls=13, assists=14)
 
     def test_create(self):
@@ -21,7 +21,7 @@ class TestTraditionalTeamBoxScore(TestCase):
                                                    field_goals_made=2, field_goal_attempts=3,
                                                    three_point_field_goals_made=4,
                                                    three_point_field_goal_attempts=5, free_throws_made=6,
-                                                   free_throws_attempts=7,
+                                                   free_throw_attempts=7,
                                                    offensive_rebounds=8, defensive_rebounds=9, steals=10, blocks=11,
                                                    turnovers=12, personal_fouls=13, assists=14)
 
@@ -33,7 +33,7 @@ class TestTraditionalTeamBoxScore(TestCase):
         self.assertEqual(box_score.three_point_field_goals_made, 4)
         self.assertEqual(box_score.three_point_field_goal_attempts, 5)
         self.assertEqual(box_score.free_throws_made, 6)
-        self.assertEqual(box_score.free_throws_attempts, 7)
+        self.assertEqual(box_score.free_throw_attempts, 7)
         self.assertEqual(box_score.offensive_rebounds, 8)
         self.assertEqual(box_score.defensive_rebounds, 9)
         self.assertEqual(box_score.steals, 10)
