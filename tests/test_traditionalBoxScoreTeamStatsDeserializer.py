@@ -29,7 +29,7 @@ class TestTraditionalBoxScoreTeamStatsDeserializer(TestCase):
             self.assertEqual(spurs.three_point_field_goals_made, 4)
             self.assertEqual(spurs.three_point_field_goal_attempts, 19)
             self.assertEqual(spurs.free_throws_made, 18)
-            self.assertEqual(spurs.free_throws_attempts, 19)
+            self.assertEqual(spurs.free_throw_attempts, 19)
             self.assertEqual(spurs.offensive_rebounds, 9)
             self.assertEqual(spurs.defensive_rebounds, 37)
             self.assertEqual(spurs.assists, 28)

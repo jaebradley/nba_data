@@ -41,7 +41,7 @@ class TraditionalBoxScorePlayerStatsDeserializer:
                                                  three_point_field_goals_made=box_score[TraditionalBoxScorePlayerStatsDeserializer.three_point_field_goals_made_index],
                                                  three_point_field_goal_attempts=box_score[TraditionalBoxScorePlayerStatsDeserializer.three_point_field_goal_attempts_index],
                                                  free_throws_made=box_score[TraditionalBoxScorePlayerStatsDeserializer.free_throws_made_index],
-                                                 free_throws_attempts=box_score[TraditionalBoxScorePlayerStatsDeserializer.free_throw_attempts_index],
+                                                 free_throw_attempts=box_score[TraditionalBoxScorePlayerStatsDeserializer.free_throw_attempts_index],
                                                  offensive_rebounds=box_score[TraditionalBoxScorePlayerStatsDeserializer.offensive_rebounds_index],
                                                  defensive_rebounds=box_score[TraditionalBoxScorePlayerStatsDeserializer.defensive_rebounds_index],
                                                  assists=box_score[TraditionalBoxScorePlayerStatsDeserializer.assists_index],

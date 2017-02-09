@@ -16,7 +16,7 @@ class TestTraditionalPlayerBoxScore(TestCase):
                                                      team_id=test_team_nba_id, comment="", seconds_played=100,
                                                      field_goal_attempts=1, field_goals_made=2,
                                                      three_point_field_goals_made=3, three_point_field_goal_attempts=4,
-                                                     free_throws_made=5, free_throws_attempts=6, offensive_rebounds=7,
+                                                     free_throws_made=5, free_throw_attempts=6, offensive_rebounds=7,
                                                      defensive_rebounds=8, assists=9, steals=10, blocks=11, turnovers=12,
                                                      personal_fouls=13, plus_minus=14)
 
@@ -32,7 +32,7 @@ class TestTraditionalPlayerBoxScore(TestCase):
         self.assertEqual(box_score.three_point_field_goals_made, 3)
         self.assertEqual(box_score.three_point_field_goal_attempts, 4)
         self.assertEqual(box_score.free_throws_made, 5)
-        self.assertEqual(box_score.free_throws_attempts, 6)
+        self.assertEqual(box_score.free_throw_attempts, 6)
         self.assertEqual(box_score.offensive_rebounds, 7)
         self.assertEqual(box_score.defensive_rebounds, 8)
         self.assertEqual(box_score.assists, 9)
