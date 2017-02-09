@@ -1,16 +1,16 @@
-from player import Player
+from box_score_player import BoxScorePlayer
+from player_status import PlayerStatus
 
 
 class TraditionalPlayerBoxScore:
-    def __init__(self, player, comment, seconds_played, field_goals_made, field_goal_attempts,
+    def __init__(self, player, seconds_played, field_goals_made, field_goal_attempts,
                  three_point_field_goals_made, three_point_field_goal_attempts,
                  free_throws_made, free_throws_attempts, offensive_rebounds, defensive_rebounds, assists,
                  steals, blocks, turnovers, personal_fouls, plus_minus):
 
-        assert isinstance(player, Player)
+        assert isinstance(player, BoxScorePlayer)
 
         self.player = player
-        self.comment = comment
         self.seconds_played = seconds_played
         self.field_goals_made = field_goals_made
         self.field_goal_attempts = field_goal_attempts
@@ -32,13 +32,9 @@ class TraditionalPlayerBoxScore:
                three_point_field_goals_made, three_point_field_goal_attempts,
                free_throws_made, free_throws_attempts, offensive_rebounds, defensive_rebounds, assists,
                steals, blocks, turnovers, personal_fouls, plus_minus):
-
-        assert isinstance(player_name, str)
-        assert isinstance(player_id, int)
-        assert isinstance(team_id, int)
-
-        return TraditionalPlayerBoxScore(player=Player.create(name=player_name, team_id=team_id, id=player_id),
-                                         comment=comment, seconds_played=seconds_played, field_goals_made=field_goals_made,
+        return TraditionalPlayerBoxScore(player=BoxScorePlayer.create(name=player_name, team_id=team_id, id=player_id,
+                                                                      status=PlayerStatus.from_comment(comment=comment)),
+                                         seconds_played=seconds_played, field_goals_made=field_goals_made,
                                          field_goal_attempts=field_goal_attempts,
                                          three_point_field_goals_made=three_point_field_goals_made,
                                          three_point_field_goal_attempts=three_point_field_goal_attempts,

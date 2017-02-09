@@ -24,7 +24,6 @@ class TestAdvancedBoxScorePlayerStatsDeserializer(TestCase):
             self.assertEqual(nicolas_batum_box_score.player.id, 201587)
             self.assertEqual(nicolas_batum_box_score.player.name, "Nicolas Batum")
             self.assertEqual(nicolas_batum_box_score.player.team, Team.charlotte_hornets)
-            self.assertEqual(nicolas_batum_box_score.comment, "")
             self.assertEqual(nicolas_batum_box_score.seconds_played, 1037)
             self.assertEqual(nicolas_batum_box_score.offensive_rating, Decimal('143.3'))
             self.assertEqual(nicolas_batum_box_score.defensive_rating, Decimal('54.4'))
