@@ -28,7 +28,7 @@ class TraditionalTeamBoxScore:
     @staticmethod
     def create(team_id, seconds_played, field_goals_made, field_goal_attempts,
                three_point_field_goals_made, three_point_field_goal_attempts,
-               free_throws_made, free_throws_attempt, offensive_rebounds, defensive_rebounds, assists,
+               free_throws_made, free_throw_attempts, offensive_rebounds, defensive_rebounds, assists,
                steals, blocks, turnovers, personal_fouls):
 
         assert isinstance(team_id, int)
@@ -40,7 +40,7 @@ class TraditionalTeamBoxScore:
                                        three_point_field_goals_made=three_point_field_goals_made,
                                        three_point_field_goal_attempts=three_point_field_goal_attempts,
                                        free_throws_made=free_throws_made,
-                                       free_throw_attempts=free_throws_attempt,
+                                       free_throw_attempts=free_throw_attempts,
                                        offensive_rebounds=offensive_rebounds,
                                        defensive_rebounds=defensive_rebounds,
                                        assists=assists,

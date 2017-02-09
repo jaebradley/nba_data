@@ -21,7 +21,7 @@ class TestTraditionalTeamBoxScore(TestCase):
                                                    field_goals_made=2, field_goal_attempts=3,
                                                    three_point_field_goals_made=4,
                                                    three_point_field_goal_attempts=5, free_throws_made=6,
-                                                   free_throws_attempt=7,
+                                                   free_throw_attempts=7,
                                                    offensive_rebounds=8, defensive_rebounds=9, steals=10, blocks=11,
                                                    turnovers=12, personal_fouls=13, assists=14)
 
