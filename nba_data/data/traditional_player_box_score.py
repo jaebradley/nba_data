@@ -17,7 +17,7 @@ class TraditionalPlayerBoxScore:
         self.three_point_field_goals_made = three_point_field_goals_made
         self.three_point_field_goal_attempts = three_point_field_goal_attempts
         self.free_throws_made = free_throws_made
-        self.free_throws_attempts = free_throws_attempts
+        self.free_throw_attempts = free_throws_attempts
         self.offensive_rebounds = offensive_rebounds
         self.defensive_rebounds = defensive_rebounds
         self.assists = assists
