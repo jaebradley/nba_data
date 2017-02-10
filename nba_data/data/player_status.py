@@ -28,6 +28,7 @@ class PlayerStatusType(Enum):
     active = 'active'
     did_not_play = 'did not play'
     did_not_dress = 'did not dress'
+    not_with_team = 'not with team'
 
     @staticmethod
     def from_abbreviation(abbreviation):
@@ -41,5 +42,6 @@ class PlayerStatusType(Enum):
 
 player_status_type_abbreviation_map = {
     'DNP': PlayerStatusType.did_not_play,
-    'DND': PlayerStatusType.did_not_dress
+    'DND': PlayerStatusType.did_not_dress,
+    'NWT': PlayerStatusType.not_with_team
 }
