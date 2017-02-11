@@ -15,11 +15,7 @@ class PlayerStatus:
         if not comment:
             return PlayerStatus(type=PlayerStatusType.active, comment=None)
 
-        comment_parts = comment.split(' - ')
-
-        if len(comment_parts) != 2:
-            raise ValueError('Expected two comment parts for comment: %s', comment)
-
+        comment_parts = comment.split(' - ', 1)
         return PlayerStatus(type=PlayerStatusType.from_abbreviation(abbreviation=comment_parts[0]),
                             comment=comment_parts[1])
 
