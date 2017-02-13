@@ -26,6 +26,11 @@ class Season(BaseQueryParameter, Enum):
     season_1997 = "1997-98"
     season_1996 = "1996-97"
     season_1995 = "1995-96"
+    season_1994 = "1994-95"
+    season_1993 = "1993-94"
+    season_1992 = "1992-93"
+    season_1991 = "1991-92"
+    season_1990 = "1990-91"
 
     @staticmethod
     def get_query_parameter_name():
@@ -101,7 +106,12 @@ season_name_map = {
     "1998-99": Season.season_1998,
     "1997-98": Season.season_1997,
     "1996-97": Season.season_1996,
-    "1995-96": Season.season_1995
+    "1995-96": Season.season_1995,
+    "1994-95": Season.season_1994,
+    "1993-94": Season.season_1993,
+    "1992-93": Season.season_1992,
+    "1991-92": Season.season_1991,
+    "1990-91": Season.season_1990,
 }
 
 start_year_to_season_map = {
@@ -127,6 +137,11 @@ start_year_to_season_map = {
     1997: Season.season_1997,
     1996: Season.season_1996,
     1995: Season.season_1995,
+    1994: Season.season_1994,
+    1993: Season.season_1993,
+    1992: Season.season_1992,
+    1991: Season.season_1991,
+    1990: Season.season_1990,
 }
 
 season_to_start_year_map = {
@@ -152,6 +167,11 @@ season_to_start_year_map = {
     Season.season_1997: 1997,
     Season.season_1996: 1996,
     Season.season_1995: 1995,
+    Season.season_1994: 1994,
+    Season.season_1993: 1993,
+    Season.season_1992: 1992,
+    Season.season_1991: 1991,
+    Season.season_1990: 1990,
 }
 
 season_end_year_map = {
@@ -177,4 +197,9 @@ season_end_year_map = {
     1998: Season.season_1997,
     1997: Season.season_1996,
     1996: Season.season_1995,
+    1995: Season.season_1994,
+    1994: Season.season_1993,
+    1993: Season.season_1992,
+    1992: Season.season_1991,
+    1991: Season.season_1990,
 }
