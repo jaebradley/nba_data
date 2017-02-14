@@ -1,7 +1,7 @@
 from datetime import datetime
 
 from nba_data.data.game import Game
-from nba_data.data.matchup import Matchup
+from nba_data.data.matchup import MatchUp
 from nba_data.data.outcome import Outcome
 from nba_data.data.season import Season
 from nba_data.data.season_type import SeasonType
@@ -42,12 +42,12 @@ class TeamGameLogDeserializer:
 
         if " vs. " in matchup:
             teams = matchup.split(" vs. ")
-            return Matchup.create(home_team_abbreviation=str(teams[0]),
+            return MatchUp.create(home_team_abbreviation=str(teams[0]),
                                   away_team_abbreviation=str(teams[1]))
 
         elif " @ " in matchup:
             teams = matchup.split(" @ ")
-            return Matchup.create(home_team_abbreviation=str(teams[1]),
+            return MatchUp.create(home_team_abbreviation=str(teams[1]),
                                   away_team_abbreviation=str(teams[0]))
 
         else:

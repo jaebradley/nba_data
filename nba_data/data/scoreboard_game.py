@@ -1,6 +1,6 @@
 from datetime import datetime
 
-from nba_data.data.matchup import Matchup
+from nba_data.data.matchup import MatchUp
 from nba_data.data.season import Season
 
 # TODO: @jbradley in the future, reconcile / deprecate Game class
@@ -13,7 +13,7 @@ class ScoreboardGame:
         assert isinstance(game_id, basestring)
         assert isinstance(season, Season)
         assert isinstance(start_time, datetime)
-        assert isinstance(matchup, Matchup)
+        assert isinstance(matchup, MatchUp)
 
         self.game_id = game_id
         self.season = season
