@@ -40,8 +40,8 @@ class ScoreboardDeserializer:
                              .replace(tzinfo=ScoreboardDeserializer.start_time_time_zone)
         home_team = ScoreboardDeserializer.identify_team(team_json=game_json[ScoreboardDeserializer.home_team_field_name])
         away_team = ScoreboardDeserializer.identify_team(team_json=game_json[ScoreboardDeserializer.visiting_team_field_name])
-        return ScoreboardGame(game_id=game_id, season=season, start_time=start_time,
-                              matchup=MatchUp(home_team=home_team, away_team=away_team))
+        return ScoreboardGame(id=game_id, season=season, start_time=start_time,
+                              match_up=MatchUp(home_team=home_team, away_team=away_team))
 
     @staticmethod
     def identify_team(team_json):
