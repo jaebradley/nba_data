@@ -3,6 +3,9 @@ from team import Team
 
 class MatchUp:
     def __init__(self, home_team, away_team):
+        assert isinstance(home_team, Team)
+        assert isinstance(away_team, Team)
+
         self.home_team = home_team
         self.away_team = away_team
 
