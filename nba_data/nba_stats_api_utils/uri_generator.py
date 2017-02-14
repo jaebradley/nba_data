@@ -2,6 +2,7 @@ from datetime import date
 
 from nba_data.data.season import Season
 
+
 class UriGenerator:
     date_format = "%Y%m%d"
     stats_base_uri = "http://stats.nba.com/stats/"
