@@ -30,7 +30,7 @@ class TeamGameLogDeserializer:
             home_team_outcome = Outcome.get_outcome_from_abbreviation(result[TeamGameLogDeserializer.home_team_outcome_index])
             deserialized_results.append(
                 Game(nba_id=str(result[TeamGameLogDeserializer.game_id_index]),
-                     matchup=matchup,
+                     match_up=matchup,
                      date=TeamGameLogDeserializer.parse_date(result[TeamGameLogDeserializer.game_date_index]),
                      season=season,
                      season_type=season_type,

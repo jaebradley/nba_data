@@ -8,7 +8,7 @@ class BoxScorePlayer:
         assert isinstance(team, Team)
         assert isinstance(id, int)
         assert isinstance(status, PlayerStatus)
-        
+
         self.name = name
         self.team = team
         self.id = id

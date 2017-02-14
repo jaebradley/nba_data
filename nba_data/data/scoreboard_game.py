@@ -10,7 +10,7 @@ from nba_data.data.season import Season
 class ScoreboardGame:
 
     def __init__(self, game_id, season, start_time, matchup):
-        assert isinstance(game_id, str)
+        assert isinstance(game_id, basestring)
         assert isinstance(season, Season)
         assert isinstance(start_time, datetime)
         assert isinstance(matchup, Matchup)
