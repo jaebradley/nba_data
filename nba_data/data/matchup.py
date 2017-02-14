@@ -19,5 +19,8 @@ class MatchUp:
 
     @staticmethod
     def create(home_team_abbreviation, away_team_abbreviation):
+        assert isinstance(home_team_abbreviation, basestring)
+        assert isinstance(away_team_abbreviation, basestring)
+
         return MatchUp(home_team=Team.get_team_by_abbreviation(home_team_abbreviation),
                        away_team=Team.get_team_by_abbreviation(away_team_abbreviation))
