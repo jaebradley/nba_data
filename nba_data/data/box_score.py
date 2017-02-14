@@ -1,6 +1,6 @@
 class BoxScore:
     def __init__(self, game_id, player_box_scores, team_box_scores):
-        assert isinstance(game_id, str)
+        assert isinstance(game_id, basestring)
         assert isinstance(player_box_scores, list)
         assert isinstance(team_box_scores, list)
 
