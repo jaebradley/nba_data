@@ -3,20 +3,13 @@ from nba_data.data.team import Team
 
 
 class Player(BaseQueryParameter):
-    def __init__(self, name, team, id):
+    def __init__(self, name, id):
         self.name = name
-        self.team = team
         self.id = id
 
     def __unicode__(self):
-        return 'name: {0} | team: {1} | id: {2}'.format(self.name, self.team, self.id)
+        return 'name: {0} | id: {1}'.format(self.name, self.id)
 
     @staticmethod
     def get_query_parameter_name():
         return "PlayerId"
-
-    @staticmethod
-    def create(name, team_id, id):
-        return Player(name=name,
-                      team=Team.get_team_by_id(team_id=team_id),
-                      id=id)

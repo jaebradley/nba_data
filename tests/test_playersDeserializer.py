@@ -13,6 +13,6 @@ class TestPlayersDeserializer(TestCase):
     def test_deserialize(self):
         with open(os.path.join(ROOT_DIRECTORY, 'tests/files/players.json')) as data_file:
             data = json.load(data_file)
-            players = PlayersDeserializer.deserialize(players_json=data)
+            players = PlayersDeserializer.deserialize(data=data)
             self.assertIsNotNone(players)
             self.assertEqual(len(players), 778)
