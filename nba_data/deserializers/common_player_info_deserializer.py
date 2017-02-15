@@ -41,7 +41,7 @@ class CommonPlayerInfoDeserializer:
         if CommonPlayerInfoDeserializer.row_set_field_name not in result_set:
             raise ValueError('Unable to parse results from %s', data)
 
-        row_set = results_set[CommonPlayerInfoDeserializer.row_set_field_name]
+        row_set = result_set[CommonPlayerInfoDeserializer.row_set_field_name]
 
         if len(row_set) < 1:
             raise ValueError('Unable to parse row set from %s', data)
@@ -66,14 +66,14 @@ class CommonPlayerInfoDeserializer:
         if jersey_number is not None:
             jersey_number = int(jersey_number)
 
-        return DetailedPlayer(id=int(result[CommonPlayerInfoDeserializer.nba_id_index]),
-                              name=str(result[CommonPlayerInfoDeserializer.name_index]),
-                              team=Team.get_team_by_id(team_id=int(result[CommonPlayerInfoDeserializer.team_id_index])),
-                              birth_date=CommonPlayerInfoDeserializer.parse_date(result[CommonPlayerInfoDeserializer.birth_date_index]),
-                              height=height,
-                              weight=weight,
-                              jersey_number=jersey_number,
-                              position=Position.get_position_from_name(name=str(result[CommonPlayerInfoDeserializer.position_name_index])))
+        id = int(result[CommonPlayerInfoDeserializer.nba_id_index])
+        name = result[CommonPlayerInfoDeserializer.name_index]
+        team = Team.get_team_by_id(team_id=int(result[CommonPlayerInfoDeserializer.team_id_index]))
+        birth_date = CommonPlayerInfoDeserializer.parse_date(result[CommonPlayerInfoDeserializer.birth_date_index])
+        position = Position.get_position_from_name(name=str(result[CommonPlayerInfoDeserializer.position_name_index]))
+
+        return DetailedPlayer(id=id, name=name, team=team, birth_date=birth_date, height=height, weight=weight,
+                              jersey_number=jersey_number, position=position)
 
     @staticmethod
     def parse_height(height_value):

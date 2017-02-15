@@ -18,9 +18,9 @@ class TestCommonPlayerInfoDeserializer(TestCase):
         with open(os.path.join(ROOT_DIRECTORY, 'tests/files/commonplayerinfo.json')) as data_file:
             data = json.load(data_file)
             deserialized_player = CommonPlayerInfoDeserializer.deserialize(data)
-            self.assertEqual(deserialized_player.player.name, "Russell Westbrook")
-            self.assertEqual(deserialized_player.player.id, 201566)
-            self.assertEqual(deserialized_player.player.team, Team.oklahoma_city_thunder)
+            self.assertEqual(deserialized_player.name, "Russell Westbrook")
+            self.assertEqual(deserialized_player.id, 201566)
+            self.assertEqual(deserialized_player.team, Team.oklahoma_city_thunder)
             self.assertEqual(deserialized_player.birth_date, datetime(year=1988, month=11, day=12).date())
             self.assertEqual(deserialized_player.height, 75)
             self.assertEqual(deserialized_player.weight, 200)
