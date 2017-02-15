@@ -56,7 +56,7 @@ class CommonPlayerInfoDeserializer:
 
         height_value = result[CommonPlayerInfoDeserializer.height_index]
         if height_value is not None:
-            height = CommonPlayerInfoDeserializer.parse_height(height_string=height_value)
+            height = CommonPlayerInfoDeserializer.parse_height(height_value=height_value)
         else:
             height = None
 
@@ -74,8 +74,8 @@ class CommonPlayerInfoDeserializer:
                                     position_name=str(result[CommonPlayerInfoDeserializer.position_name_index]))
 
     @staticmethod
-    def parse_height(height_string):
-        height_components = height_string.split("-")
+    def parse_height(height_value):
+        height_components = height_value.split("-")
 
         assert len(height_components) == 2
 
