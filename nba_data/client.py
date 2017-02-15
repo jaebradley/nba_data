@@ -109,4 +109,4 @@ class Client:
 
         response.raise_for_status()
 
-        return PlayersDeserializer.deserialize(players_json=response.json())
+        return PlayersDeserializer.deserialize(data=response.json())
