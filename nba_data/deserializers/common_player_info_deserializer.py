@@ -1,6 +1,8 @@
 from datetime import datetime
 
-from nba_data.data.player_details import PlayerDetails
+from nba_data.data.detailed_player import DetailedPlayer
+from nba_data.data.team import Team
+from nba_data.data.position import Position
 
 
 class CommonPlayerInfoDeserializer:
@@ -64,14 +66,14 @@ class CommonPlayerInfoDeserializer:
         if jersey_number is not None:
             jersey_number = int(jersey_number)
 
-        return PlayerDetails.create(nba_id=int(result[CommonPlayerInfoDeserializer.nba_id_index]),
-                                    name=str(result[CommonPlayerInfoDeserializer.name_index]),
-                                    team_id=int(result[CommonPlayerInfoDeserializer.team_id_index]),
-                                    birth_date=CommonPlayerInfoDeserializer.parse_date(result[CommonPlayerInfoDeserializer.birth_date_index]),
-                                    height=height,
-                                    weight=weight,
-                                    jersey_number=jersey_number,
-                                    position_name=str(result[CommonPlayerInfoDeserializer.position_name_index]))
+        return DetailedPlayer(id=int(result[CommonPlayerInfoDeserializer.nba_id_index]),
+                              name=str(result[CommonPlayerInfoDeserializer.name_index]),
+                              team=Team.get_team_by_id(team_id=int(result[CommonPlayerInfoDeserializer.team_id_index])),
+                              birth_date=CommonPlayerInfoDeserializer.parse_date(result[CommonPlayerInfoDeserializer.birth_date_index]),
+                              height=height,
+                              weight=weight,
+                              jersey_number=jersey_number,
+                              position=Position.get_position_from_name(name=str(result[CommonPlayerInfoDeserializer.position_name_index])))
 
     @staticmethod
     def parse_height(height_value):

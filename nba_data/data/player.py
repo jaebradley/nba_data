@@ -9,7 +9,7 @@ class Player(BaseQueryParameter):
         self.id = id
 
     def __unicode__(self):
-        return "{0} - {1} - {2}".format(self.name, self.team, self.id)
+        return 'name: {0} | team: {1} | id: {2}'.format(self.name, self.team, self.id)
 
     @staticmethod
     def get_query_parameter_name():
