@@ -7,7 +7,11 @@ class CommonPlayerInfoDeserializer:
     game_date_format = "%Y-%m-%dT%H:%M:%S"
     unknown_value = ""
 
+    results_set_field_name = 'resultSets'
+    row_set_field_name = 'rowSet'
+
     result_set_index = 0
+    row_set_index = 0
     nba_id_index = 0
     name_index = 3
     birth_date_index = 6
@@ -21,30 +25,44 @@ class CommonPlayerInfoDeserializer:
         pass
 
     @staticmethod
-    def deserialize_common_player_info(common_player_info_deserializer):
-        results = common_player_info_deserializer["resultSets"][CommonPlayerInfoDeserializer.result_set_index]["rowSet"]
+    def parse_result(data):
+        if CommonPlayerInfoDeserializer.results_set_field_name not in data:
+            raise ValueError('Unable to parse results from %s', data)
 
-        assert len(results) == 1
+        results_set = data[CommonPlayerInfoDeserializer.results_set_field_name]
 
-        result = results[0]
+        if len(results_set) < 1:
+            raise ValueError('Unable to parse results from %s', data)
 
-        weight = None
-        try:
-            weight = int(result[CommonPlayerInfoDeserializer.weight_index])
-        except ValueError:
-            pass
+        result_set = results_set[CommonPlayerInfoDeserializer.result_set_index]
 
-        height = None
-        try:
-            height = CommonPlayerInfoDeserializer.parse_height(result[CommonPlayerInfoDeserializer.height_index])
-        except (ValueError, AssertionError):
-            pass
+        if CommonPlayerInfoDeserializer.row_set_field_name not in result_set:
+            raise ValueError('Unable to parse results from %s', data)
 
-        jersey_number = None
-        try:
-            jersey_number = int(result[CommonPlayerInfoDeserializer.jersey_number_index])
-        except ValueError:
-            pass
+        row_set = results_set[CommonPlayerInfoDeserializer.row_set_field_name]
+
+        if len(row_set) < 1:
+            raise ValueError('Unable to parse row set from %s', data)
+
+        return row_set[CommonPlayerInfoDeserializer.row_set_index]
+
+    @staticmethod
+    def deserialize_common_player_info(data):
+        result = CommonPlayerInfoDeserializer.parse_result(data=data)
+
+        weight = result[CommonPlayerInfoDeserializer.weight_index]
+        if weight is not None:
+            weight = int(weight)
+
+        height_value = result[CommonPlayerInfoDeserializer.height_index]
+        if height_value is not None:
+            height = CommonPlayerInfoDeserializer.parse_height(height_string=height_value)
+        else:
+            height = None
+
+        jersey_number = result[CommonPlayerInfoDeserializer.jersey_number_index]
+        if jersey_number is not None:
+            jersey_number = int(jersey_number)
 
         return PlayerDetails.create(nba_id=int(result[CommonPlayerInfoDeserializer.nba_id_index]),
                                     name=str(result[CommonPlayerInfoDeserializer.name_index]),
