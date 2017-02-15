@@ -17,7 +17,7 @@ class TestCommonPlayerInfoDeserializer(TestCase):
     def test_common_player_info_deserialization(self):
         with open(os.path.join(ROOT_DIRECTORY, 'tests/files/commonplayerinfo.json')) as data_file:
             data = json.load(data_file)
-            deserialized_player = CommonPlayerInfoDeserializer.deserialize_common_player_info(data)
+            deserialized_player = CommonPlayerInfoDeserializer.deserialize(data)
             self.assertEqual(deserialized_player.player.name, "Russell Westbrook")
             self.assertEqual(deserialized_player.player.id, 201566)
             self.assertEqual(deserialized_player.player.team, Team.oklahoma_city_thunder)
@@ -30,7 +30,7 @@ class TestCommonPlayerInfoDeserializer(TestCase):
     def test_common_player_info_errored_deserialization(self):
         with open(os.path.join(ROOT_DIRECTORY, 'tests/files/errorcommonplayerinfo.json')) as data_file:
             data = json.load(data_file)
-            deserialized_player = CommonPlayerInfoDeserializer.deserialize_common_player_info(data)
+            deserialized_player = CommonPlayerInfoDeserializer.deserialize(data)
             self.assertIsNone(deserialized_player.height)
             self.assertIsNone(deserialized_player.weight)
             self.assertIsNone(deserialized_player.jersey_number)

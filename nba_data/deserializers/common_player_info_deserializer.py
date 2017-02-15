@@ -47,7 +47,7 @@ class CommonPlayerInfoDeserializer:
         return row_set[CommonPlayerInfoDeserializer.row_set_index]
 
     @staticmethod
-    def deserialize_common_player_info(data):
+    def deserialize(data):
         result = CommonPlayerInfoDeserializer.parse_result(data=data)
 
         weight = result[CommonPlayerInfoDeserializer.weight_index]

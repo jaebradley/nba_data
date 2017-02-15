@@ -61,7 +61,7 @@ class Client:
                                 params=QueryParameterGenerator.generate_request_parameters(player_id=player_id))
         response.raise_for_status()
 
-        return CommonPlayerInfoDeserializer.deserialize_common_player_info(response.json())
+        return CommonPlayerInfoDeserializer.deserialize(response.json())
 
     @staticmethod
     def get_advanced_box_score(game_id):
