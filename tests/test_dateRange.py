@@ -1,5 +1,5 @@
-from unittest import TestCase
 from datetime import date, timedelta
+from unittest import TestCase
 
 from nba_data.data.date_range import DateRange
 

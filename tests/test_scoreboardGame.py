@@ -1,10 +1,10 @@
-from unittest import TestCase
 from datetime import datetime
+from unittest import TestCase
 
+from nba_data.data.matchup import MatchUp
 from nba_data.data.scoreboard_game import ScoreboardGame
 from nba_data.data.season import Season
 from nba_data.data.team import Team
-from nba_data.data.matchup import MatchUp
 
 
 class TestScoreboardGame(TestCase):

@@ -1,5 +1,5 @@
-from unittest import TestCase
 from datetime import date
+from unittest import TestCase
 
 from nba_data.client import Client
 from nba_data.data.box_score import BoxScore
