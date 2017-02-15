@@ -2,7 +2,7 @@ import json
 import os
 from unittest import TestCase
 
-from nba_data.deserializers.season_playersgs import SeasonPlayersDeserializer
+from nba_data.deserializers.season_players import SeasonPlayersDeserializer
 from tests.config import ROOT_DIRECTORY
 
 
