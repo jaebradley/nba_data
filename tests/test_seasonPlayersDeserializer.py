@@ -2,11 +2,11 @@ import json
 import os
 from unittest import TestCase
 
-from nba_data.deserializers.players import SeasonPlayersDeserializer
+from nba_data.deserializers.season_playersgs import SeasonPlayersDeserializer
 from tests.config import ROOT_DIRECTORY
 
 
-class TestPlayersDeserializer(TestCase):
+class TestSeasonPlayersDeserializer(TestCase):
     def test_instantiation(self):
         self.assertIsNotNone(SeasonPlayersDeserializer())
 
