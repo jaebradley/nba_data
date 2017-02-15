@@ -4,10 +4,6 @@ from nba_data.data.team import Team
 
 class Player(BaseQueryParameter):
     def __init__(self, name, team, id):
-        assert isinstance(name, basestring)
-        assert isinstance(team, Team)
-        assert isinstance(id, int)
-
         self.name = name
         self.team = team
         self.id = id
@@ -21,10 +17,6 @@ class Player(BaseQueryParameter):
 
     @staticmethod
     def create(name, team_id, id):
-        assert isinstance(name, basestring)
-        assert isinstance(team_id, int)
-        assert isinstance(id, int)
-
         return Player(name=name,
                       team=Team.get_team_by_id(team_id=team_id),
                       id=id)

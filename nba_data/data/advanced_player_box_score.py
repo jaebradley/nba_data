@@ -7,9 +7,6 @@ class AdvancedPlayerBoxScore:
                  teammate_assist_percentage, assist_to_turnover_ratio, assists_per_100_possessions,
                  offensive_rebound_percentage, defensive_rebound_percentage, turnovers_per_100_possessions,
                  effective_field_goal_percentage, true_shooting_percentage, usage_percentage):
-
-        assert isinstance(player, BoxScorePlayer)
-
         self.player = player
         self.seconds_played = seconds_played
         self.offensive_rating = offensive_rating

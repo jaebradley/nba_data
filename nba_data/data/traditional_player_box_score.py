@@ -7,9 +7,6 @@ class TraditionalPlayerBoxScore:
                  three_point_field_goals_made, three_point_field_goal_attempts,
                  free_throws_made, free_throw_attempts, offensive_rebounds, defensive_rebounds, assists,
                  steals, blocks, turnovers, personal_fouls, plus_minus):
-
-        assert isinstance(player, BoxScorePlayer)
-
         self.player = player
         self.seconds_played = seconds_played
         self.field_goals_made = field_goals_made

@@ -3,24 +3,15 @@ from team import Team
 
 class MatchUp:
     def __init__(self, home_team, away_team):
-        assert isinstance(home_team, Team)
-        assert isinstance(away_team, Team)
-
         self.home_team = home_team
         self.away_team = away_team
 
     @staticmethod
     def create(home_team_id, away_team_id):
-        assert isinstance(home_team_id, int)
-        assert isinstance(away_team_id, int)
-
         return MatchUp(home_team=Team.get_team_by_id(team_id=home_team_id),
                        away_team=Team.get_team_by_id(team_id=away_team_id))
 
     @staticmethod
     def create(home_team_abbreviation, away_team_abbreviation):
-        assert isinstance(home_team_abbreviation, basestring)
-        assert isinstance(away_team_abbreviation, basestring)
-
         return MatchUp(home_team=Team.get_team_by_abbreviation(home_team_abbreviation),
                        away_team=Team.get_team_by_abbreviation(away_team_abbreviation))

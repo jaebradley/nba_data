@@ -1,14 +1,8 @@
 from nba_data.data.team import Team
-from nba_data.data.player_status import PlayerStatus
 
 
 class BoxScorePlayer:
     def __init__(self, name, team, id, status):
-        assert isinstance(name, basestring)
-        assert isinstance(team, Team)
-        assert isinstance(id, int)
-        assert isinstance(status, PlayerStatus)
-
         self.name = name
         self.team = team
         self.id = id

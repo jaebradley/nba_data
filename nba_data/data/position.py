@@ -11,14 +11,10 @@ class Position(Enum):
 
     @staticmethod
     def get_position_from_abbreviation(abbreviation):
-        assert isinstance(abbreviation, str)
-
         return abbreviation_to_position_map.get(abbreviation.upper())
 
     @staticmethod
     def get_position_from_name(name):
-        assert isinstance(name, str)
-
         return name_to_position_map.get(name.upper())
 
 abbreviation_to_position_map = {
