@@ -41,7 +41,7 @@ class Client:
 
         response.raise_for_status()
 
-        return CommonAllPlayersDeserializer.deserialize_common_all_players(response.json())
+        return CommonAllPlayersDeserializer.deserialize(response.json())
 
     @staticmethod
     def get_games_for_team(season, team, season_type=SeasonType.regular_season):

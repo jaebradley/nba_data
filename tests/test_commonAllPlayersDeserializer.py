@@ -15,7 +15,7 @@ class TestCommonAllPlayersDeserializer(TestCase):
     def test_deserialize_common_all_players(self):
         with open(os.path.join(ROOT_DIRECTORY, 'tests/files/commonallplayers.json')) as data_file:
             data = json.load(data_file)
-            deserialized_players = CommonAllPlayersDeserializer.deserialize_common_all_players(data)
+            deserialized_players = CommonAllPlayersDeserializer.deserialize(data)
             quincy_acy = deserialized_players[0]
             self.assertEqual(quincy_acy.name, "Quincy Acy")
             self.assertEqual(quincy_acy.id, 203112)
