@@ -15,7 +15,3 @@ class TestScoreboardGame(TestCase):
         matchup_value = MatchUp(home_team=Team.atlanta_hawks, away_team=Team.boston_celtics)
         self.assertIsNotNone(ScoreboardGame(id=game_id_value, season=season_value, start_time=start_time_value,
                                             match_up=matchup_value))
-        self.assertRaises(AssertionError, ScoreboardGame, 1234, season_value, start_time_value, matchup_value)
-        self.assertRaises(AssertionError, ScoreboardGame, game_id_value, 1234, start_time_value, matchup_value)
-        self.assertRaises(AssertionError, ScoreboardGame, game_id_value, season_value, 1234, matchup_value)
-        self.assertRaises(AssertionError, ScoreboardGame, game_id_value, season_value, start_time_value, 1234)

@@ -10,7 +10,3 @@ class TestBoxScore(TestCase):
         self.assertEqual(test_box_score.game_id, "bae")
         self.assertEqual(test_box_score.player_box_scores, [])
         self.assertEqual(test_box_score.team_box_scores, [])
-
-        self.assertRaises(AssertionError, BoxScore, game_id=1, player_box_scores=[], team_box_scores=[])
-        self.assertRaises(AssertionError, BoxScore, game_id="bae", player_box_scores="jadley", team_box_scores=[])
-        self.assertRaises(AssertionError, BoxScore, game_id="bae", player_box_scores=[], team_box_scores="jadley")
