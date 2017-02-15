@@ -54,7 +54,7 @@ class TeamGameLogDeserializer:
         if Season.get_query_parameter_name() not in parameters:
             raise ValueError('Unable to parse season from %s', data)
 
-        return parameters[Season.get_query_parameter_name()]
+        return Season.get_season_by_name(name=parameters[Season.get_query_parameter_name()])
 
     @staticmethod
     def parse_season_type(data):
@@ -63,7 +63,7 @@ class TeamGameLogDeserializer:
         if SeasonType.get_query_parameter_name() not in parameters:
             raise ValueError('Unable to parse season type from %s', data)
 
-        return parameters[SeasonType.get_query_parameter_name()]
+        return SeasonType.get_season_type(season_type_name=parameters[SeasonType.get_query_parameter_name()])
 
     @staticmethod
     def parse_results(data):
