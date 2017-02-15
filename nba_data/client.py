@@ -52,7 +52,7 @@ class Client:
                                                                                            team=team))
         response.raise_for_status()
 
-        return TeamGameLogDeserializer.deserialize_team_game_log(response.json())
+        return TeamGameLogDeserializer.deserialize(response.json())
 
     @staticmethod
     def get_player_info(player_id):
