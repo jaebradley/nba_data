@@ -27,9 +27,9 @@ class TraditionalBoxScorePlayerStatsDeserializer:
         pass
 
     @staticmethod
-    def deserialize_traditional_box_score_player_stats(traditional_box_score_player_stats_json):
+    def deserialize_traditional_box_score_player_stats(data):
         deserialized_box_scores = []
-        for box_score in traditional_box_score_player_stats_json["rowSet"]:
+        for box_score in data["rowSet"]:
             deserialized_box_scores.append(
                 TraditionalPlayerBoxScore.create(player_name=str(box_score[TraditionalBoxScorePlayerStatsDeserializer.player_name_index]),
                                                  player_id=int(box_score[TraditionalBoxScorePlayerStatsDeserializer.player_id_index]),

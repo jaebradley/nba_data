@@ -39,7 +39,8 @@ class TraditionalBoxScoreDeserializer:
         if len(result_sets) < 1:
             raise ValueError('Expected at least one field for %s', data)
 
-        return TraditionalBoxScorePlayerStatsDeserializer.deserialize_traditional_box_score_player_stats(traditional_box_score_player_stats_json=result_sets[TraditionalBoxScoreDeserializer.player_box_scores_index])
+        return TraditionalBoxScorePlayerStatsDeserializer.deserialize_traditional_box_score_player_stats(
+            data=result_sets[TraditionalBoxScoreDeserializer.player_box_scores_index])
 
     @staticmethod
     def parse_team_box_scores(data):
@@ -51,4 +52,5 @@ class TraditionalBoxScoreDeserializer:
         if len(result_sets) < 2:
             raise ValueError('Expected at least two fields for %s', data)
 
-        return TraditionalBoxScoreTeamStatsDeserializer.deserialize_traditional_box_score_team_stats(traditional_box_score_player_stats_json=result_sets[TraditionalBoxScoreDeserializer.team_box_scores_index])
+        return TraditionalBoxScoreTeamStatsDeserializer.deserialize_traditional_box_score_team_stats(
+            data=result_sets[TraditionalBoxScoreDeserializer.team_box_scores_index])
