@@ -39,3 +39,12 @@ class SeasonPlayer(Player):
     def get_additional_unicode(self):
         return 'jersey: {jersey} | team seasons: {team_seasons}'.format(jersey=self.jersey,
                                                                         team_seasons=self.team_seasons)
+
+
+class BoxScorePlayer(TeamPlayer):
+    def __init__(self, name, team, id, status):
+        self.status = status
+        TeamPlayer.__init__(self, name=name, id=id, team=team)
+
+    def get_additional_unicode(self):
+        return 'team: {team} | status: {status}'.format(team=self.team, status=self.status)
