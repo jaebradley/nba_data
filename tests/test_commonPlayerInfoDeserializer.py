@@ -5,7 +5,7 @@ from unittest import TestCase
 
 from nba_data.data.position import Position
 from nba_data.data.team import Team
-from nba_data.deserializers.common_player_info_deserializer import CommonPlayerInfoDeserializer
+from nba_data.deserializers.common_player_info import CommonPlayerInfoDeserializer
 from tests.config import ROOT_DIRECTORY
 
 

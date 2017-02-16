@@ -3,7 +3,7 @@ import os
 from unittest import TestCase
 
 from nba_data.data.team import Team
-from nba_data.deserializers.common_all_players_deserializer import CommonAllPlayersDeserializer
+from nba_data.deserializers.common_all_players import CommonAllPlayersDeserializer
 from tests.config import ROOT_DIRECTORY
 
 
