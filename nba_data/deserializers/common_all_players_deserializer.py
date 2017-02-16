@@ -1,4 +1,4 @@
-from nba_data.data.team_player import TeamPlayer
+from nba_data.data.player import CommonAllPlayer
 from nba_data.data.team import Team
 
 
@@ -20,9 +20,9 @@ class CommonAllPlayersDeserializer:
 
     @staticmethod
     def deserialize_result(result):
-        return TeamPlayer(name=result[CommonAllPlayersDeserializer.name_index],
-                          team=Team.get_team_by_id(team_id=result[CommonAllPlayersDeserializer.team_id_index]),
-                          id=result[CommonAllPlayersDeserializer.id_index])
+        return CommonAllPlayer(name=result[CommonAllPlayersDeserializer.name_index],
+                               team=Team.get_team_by_id(team_id=result[CommonAllPlayersDeserializer.team_id_index]),
+                               id=result[CommonAllPlayersDeserializer.id_index])
 
     @staticmethod
     def parse_results(data):
