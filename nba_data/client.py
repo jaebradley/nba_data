@@ -5,14 +5,13 @@ from nba_data.data.date_range import DateRange
 from nba_data.data.league import League
 from nba_data.data.season import Season
 from nba_data.data.season_type import SeasonType
-from nba_data.deserializers.advanced_box_score_deserializer import AdvancedBoxScoreDeserializer
 from nba_data.deserializers.calendar import CalendarDeserializer
 from nba_data.deserializers.common_all_players_deserializer import CommonAllPlayersDeserializer
 from nba_data.deserializers.common_player_info_deserializer import CommonPlayerInfoDeserializer
 from nba_data.deserializers.scoreboard import ScoreboardDeserializer
 from nba_data.deserializers.season_players import SeasonPlayersDeserializer
 from nba_data.deserializers.team_game_log_deserializer import TeamGameLogDeserializer
-from nba_data.deserializers.box_scores.game import TraditionalBoxScoreDeserializer
+from nba_data.deserializers.box_scores.game import TraditionalBoxScoreDeserializer, AdvancedBoxScoreDeserializer
 from nba_data.nba_stats_api_utils.query_parameter_generator import QueryParameterGenerator
 from nba_data.nba_stats_api_utils.uri_generator import UriGenerator
 
