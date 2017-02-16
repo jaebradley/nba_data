@@ -37,7 +37,7 @@ class TraditionalTeamBoxScoresDeserializer:
     def parse_box_score(data):
         team_id = data[TraditionalTeamBoxScoresDeserializer.team_id_index]
         minutes_played = data[TraditionalTeamBoxScoresDeserializer.minutes_played_index]
-        field_goals_made = data[TraditionalTeamBoxScoresDeserializer.field_goals_made_index],
+        field_goals_made = data[TraditionalTeamBoxScoresDeserializer.field_goals_made_index]
         field_goals_attempted = data[TraditionalTeamBoxScoresDeserializer.field_goal_attempts_index]
         three_point_field_goals_made = data[TraditionalTeamBoxScoresDeserializer.three_point_field_goals_made_index]
         three_point_field_goals_attempted = data[TraditionalTeamBoxScoresDeserializer.three_point_field_goal_attempts_index]

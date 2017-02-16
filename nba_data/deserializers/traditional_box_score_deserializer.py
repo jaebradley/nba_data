@@ -20,7 +20,7 @@ class TraditionalBoxScoreDeserializer:
 
         parameters = data[TraditionalBoxScoreDeserializer.parameters_field_name]
 
-        if TraditionalBoxScoreDeserializer.game_id_field_name not in data:
+        if TraditionalBoxScoreDeserializer.game_id_field_name not in parameters:
             raise ValueError('Unable to parse game id field for %s', data)
 
         game_id = parameters[TraditionalBoxScoreDeserializer.game_id_field_name]
