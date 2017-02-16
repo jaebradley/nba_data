@@ -1,4 +1,4 @@
-from nba_data.data.game_box_score import GameBoxScore
+from nba_data.data.box_scores import GameBoxScore
 
 
 class BoxScoreDeserializer:
