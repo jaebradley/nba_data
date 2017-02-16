@@ -23,7 +23,7 @@ class TraditionalBoxScoreTeamStatsDeserializer:
         pass
 
     @staticmethod
-    def deserialize_traditional_box_score_team_stats(data):
+    def deserialize(data):
         deserialized_box_scores = []
         for box_score in data["rowSet"]:
             deserialized_box_scores.append(

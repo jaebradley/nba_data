@@ -39,7 +39,7 @@ class TraditionalBoxScoreDeserializer:
         if len(result_sets) < 1:
             raise ValueError('Expected at least one field for %s', data)
 
-        return TraditionalBoxScorePlayerStatsDeserializer.deserialize_traditional_box_score_player_stats(
+        return TraditionalBoxScorePlayerStatsDeserializer.deserialize(
             data=result_sets[TraditionalBoxScoreDeserializer.player_box_scores_index])
 
     @staticmethod
@@ -52,5 +52,5 @@ class TraditionalBoxScoreDeserializer:
         if len(result_sets) < 2:
             raise ValueError('Expected at least two fields for %s', data)
 
-        return TraditionalBoxScoreTeamStatsDeserializer.deserialize_traditional_box_score_team_stats(
+        return TraditionalBoxScoreTeamStatsDeserializer.deserialize(
             data=result_sets[TraditionalBoxScoreDeserializer.team_box_scores_index])
