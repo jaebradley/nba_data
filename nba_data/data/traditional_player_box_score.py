@@ -16,3 +16,6 @@ class TraditionalPlayerBoxScore(TraditionalBoxScore):
                                      offensive_rebounds=offensive_rebounds, defensive_rebounds=defensive_rebounds,
                                      assists=assists, steals=steals, blocks=blocks, turnovers=turnovers,
                                      personal_fouls=personal_fouls)
+
+    def __unicode__(self):
+        return 'player: {0}'.format(self.player)
