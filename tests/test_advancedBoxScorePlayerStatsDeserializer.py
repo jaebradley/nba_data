@@ -4,7 +4,7 @@ from decimal import Decimal
 from unittest import TestCase
 
 from nba_data.data.team import Team
-from nba_data.deserializers.advanced_player_box_score_deserializer import AdvancedPlayerBoxScoresDeserializer
+from nba_data.deserializers.box_scores.advanced import AdvancedPlayerBoxScoresDeserializer
 from tests.config import ROOT_DIRECTORY
 
 
