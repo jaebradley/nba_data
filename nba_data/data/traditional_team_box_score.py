@@ -16,5 +16,5 @@ class TraditionalTeamBoxScore(TraditionalBoxScore):
                                      assists=assists, steals=steals, blocks=blocks, turnovers=turnovers,
                                      personal_fouls=personal_fouls)
 
-    def __unicode__(self):
-        return 'team: {0}'.format(self.team)
+    def get_additional_unicode(self):
+        return 'team: {team}'.format(self.team)

@@ -17,5 +17,5 @@ class TraditionalPlayerBoxScore(TraditionalBoxScore):
                                      assists=assists, steals=steals, blocks=blocks, turnovers=turnovers,
                                      personal_fouls=personal_fouls)
 
-    def __unicode__(self):
-        return 'player: {0}'.format(self.player)
+    def get_additional_unicode(self):
+        return 'player: {player} | plus minus: {plus_minus}'.format(player=self.player, plus_minus=self.plus_minus)
