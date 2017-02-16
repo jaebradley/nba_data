@@ -1,4 +1,8 @@
 from nba_data.data.box_scores import GameBoxScore
+from nba_data.deserializers.box_scores.traditional import TraditionalTeamBoxScoresDeserializer, \
+    TraditionalPlayerBoxScoresDeserializer
+from nba_data.deserializers.box_scores.advanced import AdvancedTeamBoxScoresDeserializer, \
+    AdvancedPlayerBoxScoresDeserializer
 
 
 class BoxScoreDeserializer:
@@ -58,3 +62,21 @@ class BoxScoreDeserializer:
 
     def team_box_scores_deserializer(self, data):
         raise NotImplementedError()
+
+
+class TraditionalGameBoxScoreDeserializer(BoxScoreDeserializer):
+
+    def team_box_scores_deserializer(self, data):
+        return TraditionalTeamBoxScoresDeserializer.deserialize(data=data)
+
+    def player_box_scores_deserializer(self, data):
+        return TraditionalPlayerBoxScoresDeserializer.deserialize(data=data)
+
+
+class AdvancedGameBoxScoreDeserializer(BoxScoreDeserializer):
+
+    def player_box_scores_deserializer(self, data):
+        return AdvancedPlayerBoxScoresDeserializer.deserialize(data=data)
+
+    def team_box_scores_deserializer(self, data):
+        return AdvancedTeamBoxScoresDeserializer.deserialize(data=data)

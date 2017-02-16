@@ -5,18 +5,18 @@ from unittest import TestCase
 
 from nba_data.data.player_status import PlayerStatusType
 from nba_data.data.team import Team
-from nba_data.deserializers.advanced_box_score_deserializer import AdvancedBoxScoreDeserializer
+from nba_data.deserializers.box_scores.game import AdvancedGameBoxScoreDeserializer
 from tests.config import ROOT_DIRECTORY
 
 
 class TestAdvancedBoxScoreDeserializer(TestCase):
     def test_instantiation(self):
-        self.assertIsNotNone(AdvancedBoxScoreDeserializer())
+        self.assertIsNotNone(AdvancedGameBoxScoreDeserializer())
 
     def test_deserialize_advanced_box_score(self):
         with open(os.path.join(ROOT_DIRECTORY, 'tests/files/boxscoreadvanced.json')) as data_file:
             data = json.load(data_file)
-            advanced_box_score = AdvancedBoxScoreDeserializer().deserialize(data)
+            advanced_box_score = AdvancedGameBoxScoreDeserializer().deserialize(data)
             self.assertEqual(advanced_box_score.game_id, "0021501205")
             self.assertEqual(len(advanced_box_score.player_box_scores), 26)
 

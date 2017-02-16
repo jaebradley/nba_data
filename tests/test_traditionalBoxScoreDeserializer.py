@@ -3,18 +3,18 @@ import os
 from unittest import TestCase
 
 from nba_data.data.box_scores import GameBoxScore, TraditionalPlayerBoxScore, TraditionalTeamBoxScore
-from nba_data.deserializers.traditional_box_score_deserializer import TraditionalBoxScoreDeserializer
+from nba_data.deserializers.box_scores.game import TraditionalGameBoxScoreDeserializer
 from tests.config import ROOT_DIRECTORY
 
 
 class TestTraditionalBoxScoreDeserializer(TestCase):
     def test_instantiation(self):
-        self.assertIsNotNone(TraditionalBoxScoreDeserializer())
+        self.assertIsNotNone(TraditionalGameBoxScoreDeserializer())
 
     def test_deserialize_traditional_box_score(self):
         with open(os.path.join(ROOT_DIRECTORY, 'tests/files/boxscoretraditional.json')) as data_file:
             data = json.load(data_file)
-            box_score = TraditionalBoxScoreDeserializer().deserialize(data=data)
+            box_score = TraditionalGameBoxScoreDeserializer().deserialize(data=data)
             self.assertIsNotNone(box_score)
             self.assertIsInstance(box_score, GameBoxScore)
             self.assertEqual(box_score.game_id, "0021500945")
