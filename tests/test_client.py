@@ -2,7 +2,7 @@ from datetime import date
 from unittest import TestCase
 
 from nba_data.client import Client
-from nba_data.data.box_score import BoxScore
+from nba_data.data.game_box_score import GameBoxScore
 from nba_data.data.game import Game
 from nba_data.data.player import Player
 from nba_data.data.detailed_player import DetailedPlayer
@@ -52,12 +52,12 @@ class TestClient(TestCase):
     def test_get_advanced_box_score(self):
         advanced_box_score = Client.get_advanced_box_score(game_id="0021501205")
         self.assertIsNotNone(advanced_box_score)
-        self.assertIsInstance(advanced_box_score, BoxScore)
+        self.assertIsInstance(advanced_box_score, GameBoxScore)
 
     def test_get_traditional_box_score(self):
         traditional_box_score = Client.get_traditional_box_score(game_id="0021501205")
         self.assertIsNotNone(traditional_box_score)
-        self.assertIsInstance(traditional_box_score, BoxScore)
+        self.assertIsInstance(traditional_box_score, GameBoxScore)
 
     def test_get_game_counts_in_date_range(self):
         game_counts = Client.get_game_counts_in_date_range()
