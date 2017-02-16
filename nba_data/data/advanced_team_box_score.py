@@ -17,3 +17,6 @@ class AdvancedTeamBoxScore(AdvancedBoxScore):
                                   turnovers_per_100_possessions=turnovers_per_100_possessions,
                                   effective_field_goal_percentage=effective_field_goal_percentage,
                                   true_shooting_percentage=true_shooting_percentage)
+
+    def get_additional_unicode(self):
+        return 'team: {team}'.format(team=self.team)
