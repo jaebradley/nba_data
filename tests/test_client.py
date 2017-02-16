@@ -3,7 +3,7 @@ from unittest import TestCase
 
 from nba_data.client import Client
 from nba_data.data.game_box_score import GameBoxScore
-from nba_data.data.game import Game
+from nba_data.data.game import LoggedGame
 from nba_data.data.player import Player
 from nba_data.data.detailed_player import DetailedPlayer
 from nba_data.data.season import Season
@@ -36,7 +36,7 @@ class TestClient(TestCase):
         games = Client.get_games_for_team(season=Season.season_2015, team=Team.boston_celtics)
         self.assertIsNotNone(games)
         self.assertEqual(len(games), 82)
-        self.assertIsInstance(games[0], Game)
+        self.assertIsInstance(games[0], LoggedGame)
 
     def test_get_player_info(self):
         player_details = Client.get_player_info(player_id=201566)

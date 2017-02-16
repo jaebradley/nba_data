@@ -27,7 +27,7 @@ class TestTeamGameLogDeserializer(TestCase):
             self.assertEqual(game.season, Season.season_2015)
             self.assertEqual(game.season_type, SeasonType.regular_season)
             self.assertEqual(game.home_team_outcome, Outcome.win)
-            self.assertEqual(game.date, datetime(year=2016, month=4, day=13).date())
+            self.assertEqual(game.start_date, datetime(year=2016, month=4, day=13).date())
 
     def test_parse_home_matchup(self):
         home_matchup = TeamGameLogDeserializer.parse_match_up("LAL vs. LAC")

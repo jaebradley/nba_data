@@ -1,6 +1,6 @@
 from datetime import datetime
 
-from nba_data.data.game import Game
+from nba_data.data.game import LoggedGame
 from nba_data.data.matchup import MatchUp
 from nba_data.data.outcome import Outcome
 from nba_data.data.season import Season
@@ -33,12 +33,12 @@ class TeamGameLogDeserializer:
     def parse_result(data, season, season_type):
         match_up = TeamGameLogDeserializer.parse_match_up(match_up=data[TeamGameLogDeserializer.match_up_index])
         home_team_outcome = Outcome.get_outcome_from_abbreviation(abbreviation=data[TeamGameLogDeserializer.home_team_outcome_index])
-        return Game(id=data[TeamGameLogDeserializer.game_id_index],
-                    match_up=match_up,
-                    date=TeamGameLogDeserializer.parse_date(date_string=data[TeamGameLogDeserializer.game_date_index]),
-                    season=season,
-                    season_type=season_type,
-                    home_team_outcome=home_team_outcome)
+        return LoggedGame(id=data[TeamGameLogDeserializer.game_id_index],
+                          match_up=match_up,
+                          start_date=TeamGameLogDeserializer.parse_date(date_string=data[TeamGameLogDeserializer.game_date_index]),
+                          season=season,
+                          season_type=season_type,
+                          home_team_outcome=home_team_outcome)
 
     @staticmethod
     def parse_parameters(data):
