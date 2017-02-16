@@ -1,22 +1,18 @@
 import requests
-from datetime import date
 
 from nba_data.data.current_season_only import CurrentSeasonOnly
+from nba_data.data.date_range import DateRange
 from nba_data.data.league import League
 from nba_data.data.season import Season
 from nba_data.data.season_type import SeasonType
-from nba_data.data.team import Team
-from nba_data.data.date_range import DateRange
-
 from nba_data.deserializers.advanced_box_score_deserializer import AdvancedBoxScoreDeserializer
 from nba_data.deserializers.calendar import CalendarDeserializer
 from nba_data.deserializers.common_all_players_deserializer import CommonAllPlayersDeserializer
 from nba_data.deserializers.common_player_info_deserializer import CommonPlayerInfoDeserializer
-from nba_data.deserializers.players import PlayersDeserializer
+from nba_data.deserializers.season_players import SeasonPlayersDeserializer
 from nba_data.deserializers.scoreboard import ScoreboardDeserializer
 from nba_data.deserializers.team_game_log_deserializer import TeamGameLogDeserializer
 from nba_data.deserializers.traditional_box_score_deserializer import TraditionalBoxScoreDeserializer
-
 from nba_data.nba_stats_api_utils.query_parameter_generator import QueryParameterGenerator
 from nba_data.nba_stats_api_utils.uri_generator import UriGenerator
 
@@ -37,10 +33,6 @@ class Client:
 
     @staticmethod
     def get_players_for_season(season, league=League.nba, current_season_only=CurrentSeasonOnly.yes):
-        assert isinstance(season, Season)
-        assert isinstance(league, League)
-        assert isinstance(current_season_only, CurrentSeasonOnly)
-
         response = requests.get(UriGenerator.generate_common_all_players_uri(),
                                 headers=Client.headers,
                                 params=QueryParameterGenerator.generate_request_parameters(season=season,
@@ -49,14 +41,10 @@ class Client:
 
         response.raise_for_status()
 
-        return CommonAllPlayersDeserializer.deserialize_common_all_players(response.json())
+        return CommonAllPlayersDeserializer.deserialize(response.json())
 
     @staticmethod
     def get_games_for_team(season, team, season_type=SeasonType.regular_season):
-        assert isinstance(season, Season)
-        assert isinstance(team, Team)
-        assert isinstance(season_type, SeasonType)
-
         response = requests.get(UriGenerator.generate_team_game_log_uri(),
                                 headers=Client.headers,
                                 params=QueryParameterGenerator.generate_request_parameters(season=season,
@@ -64,23 +52,19 @@ class Client:
                                                                                            team=team))
         response.raise_for_status()
 
-        return TeamGameLogDeserializer.deserialize_team_game_log(response.json())
+        return TeamGameLogDeserializer.deserialize(response.json())
 
     @staticmethod
     def get_player_info(player_id):
-        assert isinstance(player_id, int)
-
         response = requests.get(UriGenerator.generate_common_player_info_uri(),
                                 headers=Client.headers,
                                 params=QueryParameterGenerator.generate_request_parameters(player_id=player_id))
         response.raise_for_status()
 
-        return CommonPlayerInfoDeserializer.deserialize_common_player_info(response.json())
+        return CommonPlayerInfoDeserializer.deserialize(response.json())
 
     @staticmethod
     def get_advanced_box_score(game_id):
-        assert isinstance(game_id, str)
-
         response = requests.get(UriGenerator.generate_advanced_box_score_uri(),
                                 headers=Client.headers,
                                 params=QueryParameterGenerator.generate_box_score_request_parameters(game_id=game_id))
@@ -91,8 +75,6 @@ class Client:
 
     @staticmethod
     def get_traditional_box_score(game_id):
-        assert isinstance(game_id, str)
-
         response = requests.get(UriGenerator.generate_traditional_box_score_uri(),
                                 headers=Client.headers,
                                 params=QueryParameterGenerator.generate_box_score_request_parameters(game_id=game_id))
@@ -103,8 +85,6 @@ class Client:
 
     @staticmethod
     def get_game_counts_in_date_range(date_range=DateRange(), ignore_dates_without_games=True):
-        assert isinstance(date_range, DateRange)
-
         response = requests.get(UriGenerator.generate_calendar_data_uri(),
                                 headers=Client.headers)
 
@@ -115,8 +95,6 @@ class Client:
 
     @staticmethod
     def get_games_for_date(date_value):
-        assert isinstance(date_value, date)
-
         response = requests.get(UriGenerator.generate_scoreboard_data_uri(date_value=date_value),
                                 headers=Client.headers)
 
@@ -126,11 +104,9 @@ class Client:
 
     @staticmethod
     def get_players(season):
-        assert isinstance(season, Season)
-
         response = requests.get(UriGenerator.generate_players_data_uri(season=season),
                                 headers=Client.headers)
 
         response.raise_for_status()
 
-        return PlayersDeserializer.deserialize(players_json=response.json())
+        return SeasonPlayersDeserializer.deserialize(data=response.json())

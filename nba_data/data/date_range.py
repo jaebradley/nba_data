@@ -3,8 +3,6 @@ from datetime import date
 
 class DateRange:
     def __init__(self, start=date.today(), end=date.today()):
-        assert isinstance(start, date)
-        assert isinstance(end, date)
         assert start <= end
 
         self.start = start

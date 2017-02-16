@@ -1,8 +1,7 @@
-from unittest import TestCase
-
 import json
 import os
 from datetime import date
+from unittest import TestCase
 
 from nba_data.data.date_range import DateRange
 from nba_data.deserializers.calendar import CalendarDeserializer

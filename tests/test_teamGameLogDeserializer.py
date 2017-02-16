@@ -19,28 +19,28 @@ class TestTeamGameLogDeserializer(TestCase):
     def test_deserialize_team_game_log(self):
         with open(os.path.join(ROOT_DIRECTORY, 'tests/files/teamgamelog.json')) as data_file:
             data = json.load(data_file)
-            deserialized_games = TeamGameLogDeserializer.deserialize_team_game_log(data)
+            deserialized_games = TeamGameLogDeserializer.deserialize(data)
             game = deserialized_games[0]
-            self.assertEqual(game.nba_id, "0021501217")
-            self.assertEqual(game.matchup.home_team, Team.boston_celtics)
-            self.assertEqual(game.matchup.away_team, Team.miami_heat)
+            self.assertEqual(game.id, "0021501217")
+            self.assertEqual(game.match_up.home_team, Team.boston_celtics)
+            self.assertEqual(game.match_up.away_team, Team.miami_heat)
             self.assertEqual(game.season, Season.season_2015)
             self.assertEqual(game.season_type, SeasonType.regular_season)
             self.assertEqual(game.home_team_outcome, Outcome.win)
             self.assertEqual(game.date, datetime(year=2016, month=4, day=13).date())
 
     def test_parse_home_matchup(self):
-        home_matchup = TeamGameLogDeserializer.parse_matchup("LAL vs. LAC")
+        home_matchup = TeamGameLogDeserializer.parse_match_up("LAL vs. LAC")
         self.assertEqual(home_matchup.home_team, Team.los_angeles_lakers)
         self.assertEqual(home_matchup.away_team, Team.los_angeles_clippers)
 
     def test_parse_away_matchup(self):
-        away_matchup = TeamGameLogDeserializer.parse_matchup("LAL @ LAC")
+        away_matchup = TeamGameLogDeserializer.parse_match_up("LAL @ LAC")
         self.assertEqual(away_matchup.home_team, Team.los_angeles_clippers)
         self.assertEqual(away_matchup.away_team, Team.los_angeles_lakers)
 
     def test_parse_exceptional_matchup(self):
-        self.assertRaises(RuntimeError, TeamGameLogDeserializer.parse_matchup, "Jae Bradley")
+        self.assertRaises(RuntimeError, TeamGameLogDeserializer.parse_match_up, "Jae Bradley")
 
     def test_parse_date(self):
         self.assertEqual(TeamGameLogDeserializer.parse_date("SEP 19, 1991"), datetime(year=1991, month=9, day=19).date())

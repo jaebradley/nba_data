@@ -2,8 +2,8 @@ from decimal import Decimal
 from unittest import TestCase
 
 from nba_data.data.advanced_player_box_score import AdvancedPlayerBoxScore
-from nba_data.data.team import Team
 from nba_data.data.player_status import PlayerStatusType
+from nba_data.data.team import Team
 
 
 class TestAdvancedPlayerBoxScore(TestCase):

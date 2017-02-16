@@ -13,5 +13,3 @@ class TestTeamSeasonRange(TestCase):
         end_season = Season.season_2016
         season_range = SeasonRange(start=start_season, end=end_season)
         self.assertIsNotNone(TeamSeasonRange(team=team, season_range=season_range))
-        self.assertRaises(AssertionError, TeamSeasonRange, 1, season_range)
-        self.assertRaises(AssertionError, TeamSeasonRange, team, 1)

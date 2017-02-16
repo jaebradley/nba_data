@@ -1,7 +1,8 @@
 from datetime import datetime
+
 import pytz
 
-from nba_data.data.matchup import Matchup
+from nba_data.data.matchup import MatchUp
 from nba_data.data.scoreboard_game import ScoreboardGame
 from nba_data.data.season import Season
 from nba_data.data.team import Team
@@ -40,8 +41,8 @@ class ScoreboardDeserializer:
                              .replace(tzinfo=ScoreboardDeserializer.start_time_time_zone)
         home_team = ScoreboardDeserializer.identify_team(team_json=game_json[ScoreboardDeserializer.home_team_field_name])
         away_team = ScoreboardDeserializer.identify_team(team_json=game_json[ScoreboardDeserializer.visiting_team_field_name])
-        return ScoreboardGame(game_id=game_id, season=season, start_time=start_time,
-                              matchup=Matchup(home_team=home_team, away_team=away_team))
+        return ScoreboardGame(id=game_id, season=season, start_time=start_time,
+                              match_up=MatchUp(home_team=home_team, away_team=away_team))
 
     @staticmethod
     def identify_team(team_json):

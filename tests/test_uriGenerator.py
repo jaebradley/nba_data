@@ -1,5 +1,5 @@
-from unittest import TestCase
 from datetime import date
+from unittest import TestCase
 
 from nba_data.nba_stats_api_utils.uri_generator import UriGenerator
 

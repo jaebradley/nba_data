@@ -1,5 +1,5 @@
-from unittest import TestCase
 from datetime import date, timedelta
+from unittest import TestCase
 
 from nba_data.data.date_range import DateRange
 
@@ -10,8 +10,6 @@ class TestDateRange(TestCase):
 
     def test_instantiation(self):
         self.assertIsNotNone(DateRange(start=TestDateRange.start, end=TestDateRange.end))
-        self.assertRaises(AssertionError, DateRange, 1, TestDateRange.end)
-        self.assertRaises(AssertionError, DateRange, TestDateRange.start, 1)
         self.assertRaises(AssertionError, DateRange, TestDateRange.start, TestDateRange.start - timedelta(days=1))
 
     def test_is_date_in_range(self):
