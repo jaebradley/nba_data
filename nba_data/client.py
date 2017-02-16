@@ -11,14 +11,14 @@ from nba_data.deserializers.common_player_info_deserializer import CommonPlayerI
 from nba_data.deserializers.scoreboard import ScoreboardDeserializer
 from nba_data.deserializers.season_players import SeasonPlayersDeserializer
 from nba_data.deserializers.team_game_log_deserializer import TeamGameLogDeserializer
-from nba_data.deserializers.box_scores.game import TraditionalBoxScoreDeserializer, AdvancedBoxScoreDeserializer
+from nba_data.deserializers.box_scores.game import TraditionalGameBoxScoreDeserializer, AdvancedGameBoxScoreDeserializer
 from nba_data.nba_stats_api_utils.query_parameter_generator import QueryParameterGenerator
 from nba_data.nba_stats_api_utils.uri_generator import UriGenerator
 
 
 class Client:
-    advanced_box_score_deserializer = AdvancedBoxScoreDeserializer()
-    traditional_box_score_deserializer = TraditionalBoxScoreDeserializer()
+    advanced_box_score_deserializer = AdvancedGameBoxScoreDeserializer()
+    traditional_box_score_deserializer = TraditionalGameBoxScoreDeserializer()
     headers = {'user-agent': ('Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_5) '
                               'AppleWebKit/537.36 (KHTML, like Gecko) '
                               'Chrome/45.0.2454.101 Safari/537.36'),
