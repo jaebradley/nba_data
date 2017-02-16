@@ -1,8 +1,9 @@
 from decimal import Decimal
 
 from nba_data.data.advanced_player_box_score import AdvancedPlayerBoxScore
-from nba_data.data.box_score_player import BoxScorePlayer
+from nba_data.data.player import BoxScorePlayer
 from nba_data.data.player_status import PlayerStatus
+from nba_data.data.team import Team
 from nba_data.deserializers.utils.advanced_box_score_deserializer_utils import AdvancedBoxScoreDeserializerUtils
 from nba_data.deserializers.utils.box_score_deserializer_utils import BoxScoreDeserializerUtils
 
@@ -58,6 +59,10 @@ class AdvancedPlayerBoxScoresDeserializer:
         true_shooting_percentage_value = data[AdvancedPlayerBoxScoresDeserializer.true_shooting_percentage_index]
         usage_percentage_value = data[AdvancedPlayerBoxScoresDeserializer.usage_percentage_index]
 
+        try:
+            team = Team.get_team_by_id(team_id=team_id)
+        except ValueError:
+            team = Team.undefined
         seconds_played = BoxScoreDeserializerUtils.parse_minutes_representation_to_seconds(minutes=minutes_played)
         offensive_rating = AdvancedBoxScoreDeserializerUtils.parse_float(offensive_rating_value)
         defensive_rating = AdvancedBoxScoreDeserializerUtils.parse_float(defensive_rating_value)
@@ -72,7 +77,7 @@ class AdvancedPlayerBoxScoresDeserializer:
         usage_percentage = AdvancedBoxScoreDeserializerUtils.parse_percentage(usage_percentage_value)
         player_status = PlayerStatus.from_comment(comment=comment)
 
-        player = BoxScorePlayer.create(name=player_name, team_id=team_id,id=player_id, status=player_status)
+        player = BoxScorePlayer(name=player_name, team=team,id=player_id, status=player_status)
         return AdvancedPlayerBoxScore(player=player, seconds_played=seconds_played, offensive_rating=offensive_rating,
                                       defensive_rating=defensive_rating,
                                       teammate_assist_percentage=teammate_assist_percentage,

@@ -1,7 +1,8 @@
 from nba_data.data.traditional_player_box_score import TraditionalPlayerBoxScore
 from nba_data.deserializers.utils.box_score_deserializer_utils import BoxScoreDeserializerUtils
-from nba_data.data.box_score_player import BoxScorePlayer
+from nba_data.data.player import BoxScorePlayer
 from nba_data.data.player_status import PlayerStatus
+from nba_data.data.team import Team
 
 
 class TraditionalPlayerBoxScoresDeserializer:
@@ -60,8 +61,12 @@ class TraditionalPlayerBoxScoresDeserializer:
         personal_fouls = data[TraditionalPlayerBoxScoresDeserializer.personal_fouls_index]
         plus_minus = data[TraditionalPlayerBoxScoresDeserializer.plus_minus_index]
 
+        try:
+            team = Team.get_team_by_id(team_id=team_id)
+        except ValueError:
+            team = Team.undefined
         player_status = PlayerStatus.from_comment(comment=comment)
-        player = BoxScorePlayer.create(name=player_name, team_id=team_id, id=player_id, status=player_status)
+        player = BoxScorePlayer(name=player_name, team=team, id=player_id, status=player_status)
         seconds_played = BoxScoreDeserializerUtils.parse_minutes_representation_to_seconds(minutes=minutes_played)
 
         return TraditionalPlayerBoxScore(player=player, plus_minus=plus_minus, seconds_played=seconds_played,
