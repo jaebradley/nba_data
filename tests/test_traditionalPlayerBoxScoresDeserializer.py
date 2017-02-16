@@ -5,18 +5,18 @@ from unittest import TestCase
 from nba_data.data.player_status import PlayerStatusType
 from nba_data.data.team import Team
 from nba_data.data.traditional_player_box_score import TraditionalPlayerBoxScore
-from nba_data.deserializers.traditional_player_box_score_deserializer import TraditionalBoxScorePlayerStatsDeserializer
+from nba_data.deserializers.traditional_player_box_score_deserializer import TraditionalPlayerBoxScoresDeserializer
 from tests.config import ROOT_DIRECTORY
 
 
-class TestTraditionalBoxScorePlayerStatsDeserializer(TestCase):
+class TestTraditionalPlayerBoxScoresDeserializer(TestCase):
     def test_instantiation(self):
-        self.assertIsNotNone(TraditionalBoxScorePlayerStatsDeserializer())
+        self.assertIsNotNone(TraditionalPlayerBoxScoresDeserializer())
 
     def test_deserialize_traditional_box_score_player_stats(self):
-         with open(os.path.join(ROOT_DIRECTORY, 'tests/files/boxscoretraditionalplayerstats.json')) as data_file:
+        with open(os.path.join(ROOT_DIRECTORY, 'tests/files/boxscoretraditionalplayerstats.json')) as data_file:
             data = json.load(data_file)
-            player_box_scores = TraditionalBoxScorePlayerStatsDeserializer.deserialize_traditional_box_score_player_stats(data)
+            player_box_scores = TraditionalPlayerBoxScoresDeserializer.deserialize(data)
 
             self.assertIsNotNone(player_box_scores)
             self.assertEqual(len(player_box_scores), 25)
@@ -30,11 +30,11 @@ class TestTraditionalBoxScorePlayerStatsDeserializer(TestCase):
             self.assertIsNone(kawhi_leonard_box_score.player.status.comment)
             self.assertEqual(kawhi_leonard_box_score.seconds_played, 1471)
             self.assertEqual(kawhi_leonard_box_score.field_goals_made, 6)
-            self.assertEqual(kawhi_leonard_box_score.field_goal_attempts, 12)
+            self.assertEqual(kawhi_leonard_box_score.field_goals_attempted, 12)
             self.assertEqual(kawhi_leonard_box_score.three_point_field_goals_made, 0)
-            self.assertEqual(kawhi_leonard_box_score.three_point_field_goal_attempts, 1)
+            self.assertEqual(kawhi_leonard_box_score.three_point_field_goals_attempted, 1)
             self.assertEqual(kawhi_leonard_box_score.free_throws_made, 3)
-            self.assertEqual(kawhi_leonard_box_score.free_throw_attempts, 3)
+            self.assertEqual(kawhi_leonard_box_score.free_throws_attempted, 3)
             self.assertEqual(kawhi_leonard_box_score.offensive_rebounds, 1)
             self.assertEqual(kawhi_leonard_box_score.defensive_rebounds, 4)
             self.assertEqual(kawhi_leonard_box_score.assists, 2)

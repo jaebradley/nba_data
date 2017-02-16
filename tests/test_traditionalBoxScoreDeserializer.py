@@ -16,7 +16,7 @@ class TestTraditionalBoxScoreDeserializer(TestCase):
     def test_deserialize_traditional_box_score(self):
         with open(os.path.join(ROOT_DIRECTORY, 'tests/files/boxscoretraditional.json')) as data_file:
             data = json.load(data_file)
-            box_score = TraditionalBoxScoreDeserializer.deserialize_traditional_box_score(traditional_box_score_json=data)
+            box_score = TraditionalBoxScoreDeserializer.deserialize(data=data)
             self.assertIsNotNone(box_score)
             self.assertIsInstance(box_score, BoxScore)
             self.assertEqual(box_score.game_id, "0021500945")
