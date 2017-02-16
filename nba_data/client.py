@@ -36,7 +36,7 @@ class Client:
     def get_players_for_season(season, league=League.nba, current_season_only=CurrentSeasonOnly.yes):
         parameters = QueryParameterGenerator.generate_request_parameters(season=season, league=league,
                                                                          current_season_only=current_season_only)
-        return Client.get_deserialized_data(uri=UriGenerator.generate_team_game_log_uri(),
+        return Client.get_deserialized_data(uri=UriGenerator.generate_common_all_players_uri(),
                                             parameters=parameters, deserializer=CommonAllPlayersDeserializer)
 
     @staticmethod
