@@ -29,65 +29,58 @@ class Client:
         pass
 
     @staticmethod
-    def make_request(uri, parameters, deserializer):
-        response = requests.get(uri, headers=Client.headers, params=parameters)
-
-        response.raise_for_status()
-
-        return deserializer.deserialize(response.json())
-
-    @staticmethod
     def get_all_nba_players():
         return Client.get_players_for_season(season=Season.season_2015, current_season_only=CurrentSeasonOnly.no)
 
     @staticmethod
     def get_players_for_season(season, league=League.nba, current_season_only=CurrentSeasonOnly.yes):
-        response = requests.get(UriGenerator.generate_common_all_players_uri(),
-                                headers=Client.headers,
-                                params=QueryParameterGenerator.generate_request_parameters(season=season,
-                                                                                           league=league,
-                                                                                           current_season_only=current_season_only))
-
-        response.raise_for_status()
-
-        return CommonAllPlayersDeserializer.deserialize(response.json())
+        parameters = QueryParameterGenerator.generate_request_parameters(season=season, league=league,
+                                                                         current_season_only=current_season_only)
+        return Client.make_request(uri=UriGenerator.generate_team_game_log_uri(),
+                                   parameters=parameters, deserializer=CommonAllPlayersDeserializer)
 
     @staticmethod
     def get_games_for_team(season, team, season_type=SeasonType.regular_season):
+        parameters = QueryParameterGenerator.generate_request_parameters(season=season,
+                                                                         season_type=season_type, team=team)
         return Client.make_request(uri=UriGenerator.generate_team_game_log_uri(),
-                                   parameters=QueryParameterGenerator.generate_request_parameters(season=season,
-                                                                                                  season_type=season_type,
-                                                                                                  team=team),
-                                   deserializer=TeamGameLogDeserializer)
+                                   parameters=parameters, deserializer=TeamGameLogDeserializer)
 
     @staticmethod
     def get_player_info(player_id):
-        response = requests.get(UriGenerator.generate_common_player_info_uri(),
-                                headers=Client.headers,
-                                params=QueryParameterGenerator.generate_request_parameters(player_id=player_id))
-        response.raise_for_status()
-
-        return CommonPlayerInfoDeserializer.deserialize(response.json())
+        return Client.make_request(uri=UriGenerator.generate_common_player_info_uri(),
+                                   parameters=QueryParameterGenerator.generate_request_parameters(player_id=player_id),
+                                   deserializer=CommonPlayerInfoDeserializer)
 
     @staticmethod
     def get_advanced_box_score(game_id):
-        response = requests.get(UriGenerator.generate_advanced_box_score_uri(),
-                                headers=Client.headers,
-                                params=QueryParameterGenerator.generate_box_score_request_parameters(game_id=game_id))
-
-        response.raise_for_status()
-
-        return AdvancedBoxScoreDeserializer().deserialize(data=response.json())
+        parameters = QueryParameterGenerator.generate_box_score_request_parameters(game_id=game_id)
+        return Client.make_request(uri=UriGenerator.generate_advanced_box_score_uri(),
+                                   parameters=parameters, deserializer=Client.advanced_box_score_deserializer)
 
     @staticmethod
     def get_traditional_box_score(game_id):
-        response = requests.get(UriGenerator.generate_traditional_box_score_uri(),
-                                headers=Client.headers,
-                                params=QueryParameterGenerator.generate_box_score_request_parameters(game_id=game_id))
+        parameters = QueryParameterGenerator.generate_box_score_request_parameters(game_id=game_id)
+        return Client.make_request(uri=UriGenerator.generate_traditional_box_score_uri(),
+                                   parameters=parameters, deserializer=Client.traditional_box_score_deserializer)
+
+    @staticmethod
+    def get_games_for_date(date_value):
+        return Client.make_request(uri=UriGenerator.generate_scoreboard_data_uri(date_value=date_value),
+                                   deserializer=ScoreboardDeserializer)
+
+    @staticmethod
+    def get_players(season):
+        return Client.make_request(uri=UriGenerator.generate_players_data_uri(season=season),
+                                   deserializer=SeasonPlayersDeserializer)
+
+    @staticmethod
+    def make_request(uri, deserializer, parameters=None):
+        response = requests.get(uri, headers=Client.headers, params=parameters)
 
         response.raise_for_status()
 
-        return TraditionalBoxScoreDeserializer().deserialize(data=response.json())
+        return deserializer.deserialize(response.json())
 
     @staticmethod
     def get_game_counts_in_date_range(date_range=DateRange(), ignore_dates_without_games=True):
@@ -98,21 +91,3 @@ class Client:
 
         return CalendarDeserializer.deserialize(calendar_json=response.json(), date_range=date_range,
                                                 ignore_dates_without_games=ignore_dates_without_games)
-
-    @staticmethod
-    def get_games_for_date(date_value):
-        response = requests.get(UriGenerator.generate_scoreboard_data_uri(date_value=date_value),
-                                headers=Client.headers)
-
-        response.raise_for_status()
-
-        return ScoreboardDeserializer.deserialize(data=response.json())
-
-    @staticmethod
-    def get_players(season):
-        response = requests.get(UriGenerator.generate_players_data_uri(season=season),
-                                headers=Client.headers)
-
-        response.raise_for_status()
-
-        return SeasonPlayersDeserializer.deserialize(data=response.json())
