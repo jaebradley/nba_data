@@ -8,8 +8,23 @@ class Player(BaseQueryParameter):
         self.id = id
 
     def __unicode__(self):
-        return 'name: {0} | id: {1}'.format(self.name, self.id)
+        return '{0} | {1}'.format(self.get_additional_unicode(), self.get_base_unicode())
+
+    def get_base_unicode(self):
+        return 'name: {name} | id: {id}'.format(name=self.name, id=self.id)
+
+    def get_additional_unicode(self):
+        raise NotImplementedError('Implement in concrete classes')
 
     @staticmethod
     def get_query_parameter_name():
         return "PlayerId"
+
+
+class TeamPlayer(Player):
+    def __init__(self, name, id, team):
+        self.team = team
+        Player.__init__(self, name, id)
+
+    def get_additional_unicode(self):
+        return 'team: {team}'.format(team=self.team)
