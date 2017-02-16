@@ -12,7 +12,7 @@ from nba_data.deserializers.common_player_info_deserializer import CommonPlayerI
 from nba_data.deserializers.scoreboard import ScoreboardDeserializer
 from nba_data.deserializers.season_players import SeasonPlayersDeserializer
 from nba_data.deserializers.team_game_log_deserializer import TeamGameLogDeserializer
-from nba_data.deserializers.traditional_box_score_deserializer import TraditionalBoxScoreDeserializer
+from nba_data.deserializers.box_scores.game import TraditionalBoxScoreDeserializer
 from nba_data.nba_stats_api_utils.query_parameter_generator import QueryParameterGenerator
 from nba_data.nba_stats_api_utils.uri_generator import UriGenerator
 
