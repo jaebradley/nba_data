@@ -2,8 +2,8 @@ from datetime import datetime
 
 import pytz
 
-from nba_data.data.matchup import MatchUp
 from nba_data.data.game import ScoreboardGame
+from nba_data.data.matchup import MatchUp
 from nba_data.data.season import Season
 from nba_data.data.team import Team
 

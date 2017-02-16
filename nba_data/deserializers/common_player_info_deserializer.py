@@ -1,8 +1,8 @@
 from datetime import datetime
 
 from nba_data.data.players import DetailedPlayer
-from nba_data.data.team import Team
 from nba_data.data.position import Position
+from nba_data.data.team import Team
 
 
 class CommonPlayerInfoDeserializer:

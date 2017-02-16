@@ -1,5 +1,5 @@
-from nba_data.data.team import Team
 from nba_data.data.box_scores import AdvancedTeamBoxScore
+from nba_data.data.team import Team
 from nba_data.deserializers.utils.advanced_box_score_deserializer_utils import AdvancedBoxScoreDeserializerUtils
 from nba_data.deserializers.utils.box_score_deserializer_utils import BoxScoreDeserializerUtils
 

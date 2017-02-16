@@ -1,8 +1,8 @@
 from nba_data.data.box_scores import TraditionalPlayerBoxScore
-from nba_data.deserializers.utils.box_score_deserializer_utils import BoxScoreDeserializerUtils
-from nba_data.data.players import BoxScorePlayer
 from nba_data.data.player_status import PlayerStatus
+from nba_data.data.players import BoxScorePlayer
 from nba_data.data.team import Team
+from nba_data.deserializers.utils.box_score_deserializer_utils import BoxScoreDeserializerUtils
 
 
 class TraditionalPlayerBoxScoresDeserializer:
