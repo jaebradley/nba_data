@@ -1,7 +1,6 @@
 from unittest import TestCase
 
-from nba_data.data.player import Player
-from nba_data.data.team import Team
+from nba_data.data.players import Player
 
 
 class TestPlayer(TestCase):

@@ -1,6 +1,6 @@
 from datetime import datetime
 
-from nba_data.data.detailed_player import DetailedPlayer
+from nba_data.data.players import DetailedPlayer
 from nba_data.data.team import Team
 from nba_data.data.position import Position
 
@@ -73,7 +73,7 @@ class CommonPlayerInfoDeserializer:
         position = Position.get_position_from_name(name=str(result[CommonPlayerInfoDeserializer.position_name_index]))
 
         return DetailedPlayer(id=id, name=name, team=team, birth_date=birth_date, height=height, weight=weight,
-                              jersey_number=jersey_number, position=position)
+                              jersey=jersey_number, position=position)
 
     @staticmethod
     def parse_height(height_value):

@@ -24,7 +24,7 @@ class TestCommonPlayerInfoDeserializer(TestCase):
             self.assertEqual(deserialized_player.birth_date, datetime(year=1988, month=11, day=12).date())
             self.assertEqual(deserialized_player.height, 75)
             self.assertEqual(deserialized_player.weight, 200)
-            self.assertEqual(deserialized_player.jersey_number, 0)
+            self.assertEqual(deserialized_player.jersey, 0)
             self.assertEqual(deserialized_player.position, Position.guard)
 
     # TODO: @jbradley need this test?
