@@ -4,7 +4,7 @@ from nba_data.deserializers.utils.advanced_box_score_deserializer_utils import A
 from nba_data.deserializers.utils.box_score_deserializer_utils import BoxScoreDeserializerUtils
 
 
-class AdvancedBoxScoreTeamStatsDeserializer:
+class AdvancedTeamBoxScoresDeserializer:
     row_set_field_name = 'rowSet'
 
     team_id_index = 1
@@ -25,26 +25,26 @@ class AdvancedBoxScoreTeamStatsDeserializer:
 
     @staticmethod
     def deserialize(data):
-        if AdvancedBoxScoreTeamStatsDeserializer.row_set_field_name not in data:
+        if AdvancedTeamBoxScoresDeserializer.row_set_field_name not in data:
             raise ValueError('Unable to parse row set field for %s', data)
 
-        return [AdvancedBoxScoreTeamStatsDeserializer.parse_box_score(data=box_score)
-                for box_score in data[AdvancedBoxScoreTeamStatsDeserializer.row_set_field_name]]
+        return [AdvancedTeamBoxScoresDeserializer.parse_box_score(data=box_score)
+                for box_score in data[AdvancedTeamBoxScoresDeserializer.row_set_field_name]]
 
     @staticmethod
     def parse_box_score(data):
-        team_id = int(data[AdvancedBoxScoreTeamStatsDeserializer.team_id_index])
-        minutes_played = data[AdvancedBoxScoreTeamStatsDeserializer.minutes_played_index]
-        offensive_rating_value = data[AdvancedBoxScoreTeamStatsDeserializer.offensive_rating_index]
-        defensive_rating_value = data[AdvancedBoxScoreTeamStatsDeserializer.defensive_rating_index]
-        teammate_assist_percentage_value = data[AdvancedBoxScoreTeamStatsDeserializer.teammate_assist_percentage_index]
-        assist_to_turnover_ratio_value = data[AdvancedBoxScoreTeamStatsDeserializer.assist_to_turnover_ratio_index]
-        assists_per_100_possessions_value = data[AdvancedBoxScoreTeamStatsDeserializer.assists_per_100_possessions_index]
-        offensive_rebound_percentage_value = data[AdvancedBoxScoreTeamStatsDeserializer.offensive_rebound_percentage_index]
-        defensive_rebound_percentage_value = data[AdvancedBoxScoreTeamStatsDeserializer.defensive_rebound_percentage_index]
-        turnovers_per_100_possessions_value = data[AdvancedBoxScoreTeamStatsDeserializer.turnovers_per_100_possessions_index]
-        effective_field_goal_percentage_value = data[AdvancedBoxScoreTeamStatsDeserializer.effective_field_goal_percentage_index]
-        true_shooting_percentage_value = data[AdvancedBoxScoreTeamStatsDeserializer.true_shooting_percentage_index]
+        team_id = int(data[AdvancedTeamBoxScoresDeserializer.team_id_index])
+        minutes_played = data[AdvancedTeamBoxScoresDeserializer.minutes_played_index]
+        offensive_rating_value = data[AdvancedTeamBoxScoresDeserializer.offensive_rating_index]
+        defensive_rating_value = data[AdvancedTeamBoxScoresDeserializer.defensive_rating_index]
+        teammate_assist_percentage_value = data[AdvancedTeamBoxScoresDeserializer.teammate_assist_percentage_index]
+        assist_to_turnover_ratio_value = data[AdvancedTeamBoxScoresDeserializer.assist_to_turnover_ratio_index]
+        assists_per_100_possessions_value = data[AdvancedTeamBoxScoresDeserializer.assists_per_100_possessions_index]
+        offensive_rebound_percentage_value = data[AdvancedTeamBoxScoresDeserializer.offensive_rebound_percentage_index]
+        defensive_rebound_percentage_value = data[AdvancedTeamBoxScoresDeserializer.defensive_rebound_percentage_index]
+        turnovers_per_100_possessions_value = data[AdvancedTeamBoxScoresDeserializer.turnovers_per_100_possessions_index]
+        effective_field_goal_percentage_value = data[AdvancedTeamBoxScoresDeserializer.effective_field_goal_percentage_index]
+        true_shooting_percentage_value = data[AdvancedTeamBoxScoresDeserializer.true_shooting_percentage_index]
 
         team = Team.get_team_by_id(team_id=team_id)
         seconds_played = BoxScoreDeserializerUtils.parse_minutes_representation_to_seconds(minutes=minutes_played)
