@@ -35,7 +35,7 @@ class TeamGameLogDeserializer:
         home_team_outcome = Outcome.get_outcome_from_abbreviation(abbreviation=data[TeamGameLogDeserializer.home_team_outcome_index])
         return LoggedGame(id=data[TeamGameLogDeserializer.game_id_index],
                           match_up=match_up,
-                          date=TeamGameLogDeserializer.parse_date(date_string=data[TeamGameLogDeserializer.game_date_index]),
+                          start_date=TeamGameLogDeserializer.parse_date(date_string=data[TeamGameLogDeserializer.game_date_index]),
                           season=season,
                           season_type=season_type,
                           home_team_outcome=home_team_outcome)
