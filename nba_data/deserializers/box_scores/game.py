@@ -64,7 +64,7 @@ class BoxScoreDeserializer:
         raise NotImplementedError()
 
 
-class TraditionalBoxScoreDeserializer(BoxScoreDeserializer):
+class TraditionalGameBoxScoreDeserializer(BoxScoreDeserializer):
 
     def team_box_scores_deserializer(self, data):
         return TraditionalTeamBoxScoresDeserializer.deserialize(data=data)
@@ -73,7 +73,7 @@ class TraditionalBoxScoreDeserializer(BoxScoreDeserializer):
         return TraditionalPlayerBoxScoresDeserializer.deserialize(data=data)
 
 
-class AdvancedBoxScoreDeserializer(BoxScoreDeserializer):
+class AdvancedGameBoxScoreDeserializer(BoxScoreDeserializer):
 
     def player_box_scores_deserializer(self, data):
         return AdvancedPlayerBoxScoresDeserializer.deserialize(data=data)
