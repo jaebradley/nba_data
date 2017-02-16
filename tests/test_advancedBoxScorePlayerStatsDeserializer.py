@@ -16,7 +16,7 @@ class TestAdvancedBoxScorePlayerStatsDeserializer(TestCase):
     def test_deserialize_advanced_box_score_player_stats(self):
         with open(os.path.join(ROOT_DIRECTORY, 'tests/files/boxscoreadvancedplayerstats.json')) as data_file:
             data = json.load(data_file)
-            player_box_scores = AdvancedPlayerBoxScoresDeserializer.deserialize_advanced_box_score_player_stats(advanced_box_score_player_stats_json=data)
+            player_box_scores = AdvancedPlayerBoxScoresDeserializer.deserialize(advanced_box_score_player_stats_json=data)
             self.assertIsNotNone(player_box_scores)
             self.assertEqual(len(player_box_scores), 26)
 
