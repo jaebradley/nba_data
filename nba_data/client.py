@@ -7,7 +7,7 @@ from nba_data.data.season import Season
 from nba_data.data.season_type import SeasonType
 from nba_data.deserializers.calendar import CalendarDeserializer
 from nba_data.deserializers.common_all_players_deserializer import CommonAllPlayersDeserializer
-from nba_data.deserializers.common_player_info_deserializer import CommonPlayerInfoDeserializer
+from nba_data.deserializers.common_player_info import CommonPlayerInfoDeserializer
 from nba_data.deserializers.scoreboard import ScoreboardDeserializer
 from nba_data.deserializers.season_players import SeasonPlayersDeserializer
 from nba_data.deserializers.team_game_log import TeamGameLogDeserializer
