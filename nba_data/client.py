@@ -18,7 +18,8 @@ from nba_data.nba_stats_api_utils.uri_generator import UriGenerator
 
 
 class Client:
-
+    advanced_box_score_deserializer = AdvancedBoxScoreDeserializer()
+    traditional_box_score_deserializer = TraditionalBoxScoreDeserializer()
     headers = {'user-agent': ('Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_5) '
                               'AppleWebKit/537.36 (KHTML, like Gecko) '
                               'Chrome/45.0.2454.101 Safari/537.36'),
@@ -33,7 +34,7 @@ class Client:
 
         response.raise_for_status()
 
-        return deserializer(response.json())
+        return deserializer.deserialize(response.json())
 
     @staticmethod
     def get_all_nba_players():
@@ -57,7 +58,7 @@ class Client:
                                    parameters=QueryParameterGenerator.generate_request_parameters(season=season,
                                                                                                   season_type=season_type,
                                                                                                   team=team),
-                                   deserializer=TeamGameLogDeserializer.deserialize)
+                                   deserializer=TeamGameLogDeserializer)
 
     @staticmethod
     def get_player_info(player_id):
