@@ -3,7 +3,7 @@ import os
 from unittest import TestCase
 
 from nba_data.data.box_scores import GameBoxScore, TraditionalPlayerBoxScore, TraditionalTeamBoxScore
-from nba_data.deserializers.traditional_box_score_deserializer import TraditionalBoxScoreDeserializer
+from nba_data.deserializers.box_scores.game import TraditionalBoxScoreDeserializer
 from tests.config import ROOT_DIRECTORY
 
 
