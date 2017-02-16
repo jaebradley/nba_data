@@ -2,7 +2,7 @@ from datetime import date
 from unittest import TestCase
 
 from nba_data.client import Client
-from nba_data.data.box_score import GameBoxScore
+from nba_data.data.game_box_score import GameBoxScore
 from nba_data.data.game import Game
 from nba_data.data.player import Player
 from nba_data.data.detailed_player import DetailedPlayer

@@ -1,6 +1,6 @@
 from unittest import TestCase
 
-from nba_data.data.box_score import GameBoxScore
+from nba_data.data.game_box_score import GameBoxScore
 
 
 class TestBoxScore(TestCase):
