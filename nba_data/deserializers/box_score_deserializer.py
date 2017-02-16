@@ -1,4 +1,4 @@
-from nba_data.data.box_score import BoxScore
+from nba_data.data.box_score import GameBoxScore
 
 
 class BoxScoreDeserializer:
@@ -25,7 +25,7 @@ class BoxScoreDeserializer:
         player_box_scores = self.parse_player_box_scores(data=data)
         team_box_scores = self.parse_team_box_scores(data=data)
 
-        return BoxScore(game_id=game_id, player_box_scores=player_box_scores, team_box_scores=team_box_scores)
+        return GameBoxScore(game_id=game_id, player_box_scores=player_box_scores, team_box_scores=team_box_scores)
 
     def parse_player_box_scores(self, data):
         if BoxScoreDeserializer.result_sets_field_name not in data:
