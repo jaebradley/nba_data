@@ -35,7 +35,7 @@ class TraditionalPlayerBoxScoresDeserializer:
         if TraditionalPlayerBoxScoresDeserializer.row_set_field_name not in data:
             raise ValueError('Unable to parse row set field for %s', data)
 
-        return [TraditionalPlayerBoxScoresDeserializer.deserialize(data=box_score)
+        return [TraditionalPlayerBoxScoresDeserializer.parse_box_score(data=box_score)
                 for box_score in data[TraditionalPlayerBoxScoresDeserializer.row_set_field_name]]
 
     @staticmethod
@@ -60,13 +60,12 @@ class TraditionalPlayerBoxScoresDeserializer:
         personal_fouls = data[TraditionalPlayerBoxScoresDeserializer.personal_fouls_index]
         plus_minus = data[TraditionalPlayerBoxScoresDeserializer.plus_minus_index]
 
-        player = BoxScorePlayer.create(name=player_name, team_id=team_id, id=player_id)
         player_status = PlayerStatus.from_comment(comment=comment)
+        player = BoxScorePlayer.create(name=player_name, team_id=team_id, id=player_id, status=player_status)
         seconds_played = BoxScoreDeserializerUtils.parse_minutes_representation_to_seconds(minutes=minutes_played)
 
-        return TraditionalPlayerBoxScore(player=player, status=player_status, plus_minus=plus_minus,
-                                         seconds_played=seconds_played, field_goals_made=field_goals_made,
-                                         field_goals_attempted=field_goals_attempted,
+        return TraditionalPlayerBoxScore(player=player, plus_minus=plus_minus, seconds_played=seconds_played,
+                                         field_goals_made=field_goals_made, field_goals_attempted=field_goals_attempted,
                                          three_point_field_goals_made=three_point_field_goals_made,
                                          three_point_field_goals_attempted=three_point_field_goals_attempted,
                                          free_throws_made=free_throws_made, free_throws_attempted=free_throws_attempted,
