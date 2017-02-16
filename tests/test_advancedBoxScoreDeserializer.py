@@ -16,7 +16,7 @@ class TestAdvancedBoxScoreDeserializer(TestCase):
     def test_deserialize_advanced_box_score(self):
         with open(os.path.join(ROOT_DIRECTORY, 'tests/files/boxscoreadvanced.json')) as data_file:
             data = json.load(data_file)
-            advanced_box_score = AdvancedBoxScoreDeserializer.deserialize_advanced_box_score(data)
+            advanced_box_score = AdvancedBoxScoreDeserializer().deserialize(data)
             self.assertEqual(advanced_box_score.game_id, "0021501205")
             self.assertEqual(len(advanced_box_score.player_box_scores), 26)
 
