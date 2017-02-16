@@ -5,10 +5,8 @@ from nba_data.deserializers.traditional_team_box_score_deserializer import Tradi
 
 class TraditionalBoxScoreDeserializer(BoxScoreDeserializer):
 
-    @staticmethod
-    def team_box_scores_deserializer(data):
-        return TraditionalPlayerBoxScoresDeserializer.deserialize(data=data)
-
-    @staticmethod
-    def player_box_scores_deserializer(data):
+    def team_box_scores_deserializer(self, data):
         return TraditionalTeamBoxScoresDeserializer.deserialize(data=data)
+
+    def player_box_scores_deserializer(self, data):
+        return TraditionalPlayerBoxScoresDeserializer.deserialize(data=data)

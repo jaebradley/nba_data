@@ -12,8 +12,7 @@ class BoxScoreDeserializer:
     def __init__(self):
         pass
 
-    @staticmethod
-    def deserialize(data):
+    def deserialize(self, data):
         if BoxScoreDeserializer.parameters_field_name not in data:
             raise ValueError('Unable to parse parameters field for %s', data)
 
@@ -23,13 +22,12 @@ class BoxScoreDeserializer:
             raise ValueError('Unable to parse game id field for %s', data)
 
         game_id = parameters[BoxScoreDeserializer.game_id_field_name]
-        player_box_scores = BoxScoreDeserializer.parse_player_box_scores(data=data)
-        team_box_scores = BoxScoreDeserializer.parse_team_box_scores(data=data)
+        player_box_scores = self.parse_player_box_scores(data=data)
+        team_box_scores = self.parse_team_box_scores(data=data)
 
         return BoxScore(game_id=game_id, player_box_scores=player_box_scores, team_box_scores=team_box_scores)
 
-    @staticmethod
-    def parse_player_box_scores(data):
+    def parse_player_box_scores(self, data):
         if BoxScoreDeserializer.result_sets_field_name not in data:
             raise ValueError('Unable to parse result sets field for %s', data)
 
@@ -40,10 +38,9 @@ class BoxScoreDeserializer:
 
         data = result_sets[BoxScoreDeserializer.player_box_scores_index]
 
-        return BoxScoreDeserializer.player_box_scores_deserializer(data=data)
+        return self.player_box_scores_deserializer(data=data)
 
-    @staticmethod
-    def parse_team_box_scores(data):
+    def parse_team_box_scores(self, data):
         if BoxScoreDeserializer.result_sets_field_name not in data:
             raise ValueError('Unable to parse result sets field for %s', data)
 
@@ -54,12 +51,10 @@ class BoxScoreDeserializer:
 
         data = result_sets[BoxScoreDeserializer.team_box_scores_index]
 
-        return BoxScoreDeserializer.team_box_scores_deserializer(data=data)
+        return self.team_box_scores_deserializer(data=data)
 
-    @staticmethod
-    def player_box_scores_deserializer(data):
+    def player_box_scores_deserializer(self, data):
         raise NotImplementedError()
 
-    @staticmethod
-    def team_box_scores_deserializer(data):
+    def team_box_scores_deserializer(self, data):
         raise NotImplementedError()
