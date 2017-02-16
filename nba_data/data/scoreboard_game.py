@@ -10,3 +10,7 @@ class ScoreboardGame:
         self.start_time = start_time
         self.match_up = match_up
 
+    def __unicode__(self):
+        return 'id: {0} | season: {1} | start time: {2} | match up: {3}'.format(self.id, self.season, self.start_time,
+                                                                                self.match_up)
+
