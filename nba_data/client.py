@@ -71,7 +71,7 @@ class Client:
 
         response.raise_for_status()
 
-        return AdvancedBoxScoreDeserializer.deserialize_advanced_box_score(response.json())
+        return AdvancedBoxScoreDeserializer.deserialize(data=response.json())
 
     @staticmethod
     def get_traditional_box_score(game_id):
