@@ -28,3 +28,14 @@ class TeamPlayer(Player):
 
     def get_additional_unicode(self):
         return 'team: {team}'.format(team=self.team)
+
+
+class SeasonPlayer(Player):
+    def __init__(self, id, name, jersey, team_seasons):
+        self.jersey = jersey
+        self.team_seasons = team_seasons
+        Player.__init__(self, name=name, id=id)
+
+    def get_additional_unicode(self):
+        return 'jersey: {jersey} | team seasons: {team_seasons}'.format(jersey=self.jersey,
+                                                                        team_seasons=self.team_seasons)
