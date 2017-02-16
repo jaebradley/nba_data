@@ -100,7 +100,7 @@ class Client:
 
         response.raise_for_status()
 
-        return ScoreboardDeserializer.deserialize(scoreboard_json=response.json())
+        return ScoreboardDeserializer.deserialize(data=response.json())
 
     @staticmethod
     def get_players(season):
