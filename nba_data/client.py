@@ -28,6 +28,14 @@ class Client:
         pass
 
     @staticmethod
+    def make_request(uri, parameters, deserializer):
+        response = requests.get(uri, headers=Client.headers, params=parameters)
+
+        response.raise_for_status()
+
+        return deserializer(response.json())
+
+    @staticmethod
     def get_all_nba_players():
         return Client.get_players_for_season(season=Season.season_2015, current_season_only=CurrentSeasonOnly.no)
 
@@ -45,14 +53,11 @@ class Client:
 
     @staticmethod
     def get_games_for_team(season, team, season_type=SeasonType.regular_season):
-        response = requests.get(UriGenerator.generate_team_game_log_uri(),
-                                headers=Client.headers,
-                                params=QueryParameterGenerator.generate_request_parameters(season=season,
-                                                                                           season_type=season_type,
-                                                                                           team=team))
-        response.raise_for_status()
-
-        return TeamGameLogDeserializer.deserialize(response.json())
+        return Client.make_request(uri=UriGenerator.generate_team_game_log_uri(),
+                                   parameters=QueryParameterGenerator.generate_request_parameters(season=season,
+                                                                                                  season_type=season_type,
+                                                                                                  team=team),
+                                   deserializer=TeamGameLogDeserializer.deserialize)
 
     @staticmethod
     def get_player_info(player_id):
