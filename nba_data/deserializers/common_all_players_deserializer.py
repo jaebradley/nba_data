@@ -1,4 +1,4 @@
-from nba_data.data.player import CommonAllPlayer
+from nba_data.data.players import CommonAllPlayer
 from nba_data.data.team import Team
 
 

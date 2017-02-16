@@ -1,6 +1,6 @@
 from datetime import datetime
 
-from nba_data.data.player import DetailedPlayer
+from nba_data.data.players import DetailedPlayer
 from nba_data.data.team import Team
 from nba_data.data.position import Position
 

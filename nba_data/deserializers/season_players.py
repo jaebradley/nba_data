@@ -1,4 +1,4 @@
-from nba_data.data.player import SeasonPlayer
+from nba_data.data.players import SeasonPlayer
 from nba_data.data.season import Season
 from nba_data.data.season_range import SeasonRange
 from nba_data.data.team import Team
