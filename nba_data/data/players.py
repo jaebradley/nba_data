@@ -1,5 +1,4 @@
 from nba_data.data.base_query_parameter import BaseQueryParameter
-from nba_data.data.team import Team
 
 
 class Player(BaseQueryParameter):
