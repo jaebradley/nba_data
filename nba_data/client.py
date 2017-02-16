@@ -81,7 +81,7 @@ class Client:
 
         response.raise_for_status()
 
-        return TraditionalBoxScoreDeserializer.deserialize_traditional_box_score(traditional_box_score_json=response.json())
+        return TraditionalBoxScoreDeserializer.deserialize(data=response.json())
 
     @staticmethod
     def get_game_counts_in_date_range(date_range=DateRange(), ignore_dates_without_games=True):
