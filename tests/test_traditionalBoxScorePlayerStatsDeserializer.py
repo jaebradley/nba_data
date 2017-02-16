@@ -5,18 +5,18 @@ from unittest import TestCase
 from nba_data.data.player_status import PlayerStatusType
 from nba_data.data.team import Team
 from nba_data.data.traditional_player_box_score import TraditionalPlayerBoxScore
-from nba_data.deserializers.traditional_player_box_score_deserializer import TraditionalBoxScorePlayerStatsDeserializer
+from nba_data.deserializers.traditional_player_box_score_deserializer import TraditionalPlayerBoxScoreDeserializer
 from tests.config import ROOT_DIRECTORY
 
 
 class TestTraditionalBoxScorePlayerStatsDeserializer(TestCase):
     def test_instantiation(self):
-        self.assertIsNotNone(TraditionalBoxScorePlayerStatsDeserializer())
+        self.assertIsNotNone(TraditionalPlayerBoxScoreDeserializer())
 
     def test_deserialize_traditional_box_score_player_stats(self):
          with open(os.path.join(ROOT_DIRECTORY, 'tests/files/boxscoretraditionalplayerstats.json')) as data_file:
             data = json.load(data_file)
-            player_box_scores = TraditionalBoxScorePlayerStatsDeserializer.deserialize(data)
+            player_box_scores = TraditionalPlayerBoxScoreDeserializer.deserialize(data)
 
             self.assertIsNotNone(player_box_scores)
             self.assertEqual(len(player_box_scores), 25)
