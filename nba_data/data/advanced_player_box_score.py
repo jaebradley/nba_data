@@ -21,6 +21,10 @@ class AdvancedPlayerBoxScore(AdvancedBoxScore):
                                   effective_field_goal_percentage=effective_field_goal_percentage,
                                   true_shooting_percentage=true_shooting_percentage)
 
+    def get_additional_unicode(self):
+        return 'player: {player} | usage percentage: {usage_percentage}'.format(player=self.player,
+                                                                                usage_percentage=self.usage_percentage)
+
     @staticmethod
     def create(player_name, player_id, team_id, comment, seconds_played, offensive_rating, defensive_rating,
                teammate_assist_percentage, assist_to_turnover_ratio, assists_per_100_possessions,

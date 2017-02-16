@@ -16,6 +16,9 @@ class AdvancedBoxScore:
         self.true_shooting_percentage = true_shooting_percentage
 
     def __unicode__(self):
+        return '{0} | {1}'.format(self.get_additional_unicode(), self.get_base_unicode)
+
+    def get_base_unicode(self):
         return 'seconds played: {seconds_played} | offensive rating: {offensive_rating} | ' \
                'defensive rating: {defensive_rating} | teammate assist percentage: {teammate_assist_percentage} |' \
                'assist to turnover ratio: {assist_to_turnover_ratio} | ' \
@@ -34,3 +37,6 @@ class AdvancedBoxScore:
                     turnovers_per_100_possessions=self.turnovers_per_100_possessions,
                     effective_field_goal_percentage=self.effective_field_goal_percentage,
                     true_shooting_percentage=self.true_shooting_percentage)
+
+    def get_additional_unicode(self):
+        return NotImplementedError('Should be implemented in concrete class')
