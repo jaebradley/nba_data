@@ -4,7 +4,7 @@ from nba_data.data.box_score_player import BoxScorePlayer
 from nba_data.data.player_status import PlayerStatus
 
 
-class TraditionalPlayerBoxScoreDeserializer:
+class TraditionalPlayerBoxScoresDeserializer:
     row_set_field_name = 'rowSet'
 
     team_id_index = 1
@@ -32,33 +32,33 @@ class TraditionalPlayerBoxScoreDeserializer:
 
     @staticmethod
     def deserialize(data):
-        if TraditionalPlayerBoxScoreDeserializer.row_set_field_name not in data:
+        if TraditionalPlayerBoxScoresDeserializer.row_set_field_name not in data:
             raise ValueError('Unable to parse row set field for %s', data)
 
-        return [TraditionalPlayerBoxScoreDeserializer.deserialize(data=box_score)
-                for box_score in data[TraditionalPlayerBoxScoreDeserializer.row_set_field_name]]
+        return [TraditionalPlayerBoxScoresDeserializer.deserialize(data=box_score)
+                for box_score in data[TraditionalPlayerBoxScoresDeserializer.row_set_field_name]]
 
     @staticmethod
     def parse_box_score(data):
-        player_name = data[TraditionalPlayerBoxScoreDeserializer.player_name_index]
-        player_id = int(data[TraditionalPlayerBoxScoreDeserializer.player_id_index])
-        team_id = int(data[TraditionalPlayerBoxScoreDeserializer.team_id_index])
-        comment = data[TraditionalPlayerBoxScoreDeserializer.comment_index]
-        minutes_played = data[TraditionalPlayerBoxScoreDeserializer.minutes_played_index]
-        field_goals_made = data[TraditionalPlayerBoxScoreDeserializer.field_goals_made_index]
-        field_goals_attempted = data[TraditionalPlayerBoxScoreDeserializer.field_goal_attempts_index]
-        three_point_field_goals_made = data[TraditionalPlayerBoxScoreDeserializer.three_point_field_goals_made_index]
-        three_point_field_goals_attempted = data[TraditionalPlayerBoxScoreDeserializer.three_point_field_goal_attempts_index]
-        free_throws_made = data[TraditionalPlayerBoxScoreDeserializer.free_throws_made_index]
-        free_throws_attempted = data[TraditionalPlayerBoxScoreDeserializer.free_throw_attempts_index]
-        offensive_rebounds = data[TraditionalPlayerBoxScoreDeserializer.offensive_rebounds_index]
-        defensive_rebounds = data[TraditionalPlayerBoxScoreDeserializer.defensive_rebounds_index]
-        assists = data[TraditionalPlayerBoxScoreDeserializer.assists_index]
-        steals = data[TraditionalPlayerBoxScoreDeserializer.steals_index]
-        blocks = data[TraditionalPlayerBoxScoreDeserializer.blocks_index]
-        turnovers = data[TraditionalPlayerBoxScoreDeserializer.turnovers_index]
-        personal_fouls = data[TraditionalPlayerBoxScoreDeserializer.personal_fouls_index]
-        plus_minus = data[TraditionalPlayerBoxScoreDeserializer.plus_minus_index]
+        player_name = data[TraditionalPlayerBoxScoresDeserializer.player_name_index]
+        player_id = int(data[TraditionalPlayerBoxScoresDeserializer.player_id_index])
+        team_id = int(data[TraditionalPlayerBoxScoresDeserializer.team_id_index])
+        comment = data[TraditionalPlayerBoxScoresDeserializer.comment_index]
+        minutes_played = data[TraditionalPlayerBoxScoresDeserializer.minutes_played_index]
+        field_goals_made = data[TraditionalPlayerBoxScoresDeserializer.field_goals_made_index]
+        field_goals_attempted = data[TraditionalPlayerBoxScoresDeserializer.field_goal_attempts_index]
+        three_point_field_goals_made = data[TraditionalPlayerBoxScoresDeserializer.three_point_field_goals_made_index]
+        three_point_field_goals_attempted = data[TraditionalPlayerBoxScoresDeserializer.three_point_field_goal_attempts_index]
+        free_throws_made = data[TraditionalPlayerBoxScoresDeserializer.free_throws_made_index]
+        free_throws_attempted = data[TraditionalPlayerBoxScoresDeserializer.free_throw_attempts_index]
+        offensive_rebounds = data[TraditionalPlayerBoxScoresDeserializer.offensive_rebounds_index]
+        defensive_rebounds = data[TraditionalPlayerBoxScoresDeserializer.defensive_rebounds_index]
+        assists = data[TraditionalPlayerBoxScoresDeserializer.assists_index]
+        steals = data[TraditionalPlayerBoxScoresDeserializer.steals_index]
+        blocks = data[TraditionalPlayerBoxScoresDeserializer.blocks_index]
+        turnovers = data[TraditionalPlayerBoxScoresDeserializer.turnovers_index]
+        personal_fouls = data[TraditionalPlayerBoxScoresDeserializer.personal_fouls_index]
+        plus_minus = data[TraditionalPlayerBoxScoresDeserializer.plus_minus_index]
 
         player = BoxScorePlayer.create(name=player_name, team_id=team_id, id=player_id)
         player_status = PlayerStatus.from_comment(comment=comment)

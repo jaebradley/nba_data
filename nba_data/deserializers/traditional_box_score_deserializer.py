@@ -1,5 +1,5 @@
 from nba_data.data.box_score import BoxScore
-from nba_data.deserializers.traditional_player_box_score_deserializer import TraditionalPlayerBoxScoreDeserializer
+from nba_data.deserializers.traditional_player_box_score_deserializer import TraditionalPlayerBoxScoresDeserializer
 from nba_data.deserializers.traditional_team_box_score_deserializer import TraditionalTeamBoxScoresDeserializer
 
 
@@ -39,7 +39,7 @@ class TraditionalBoxScoreDeserializer:
         if len(result_sets) < 1:
             raise ValueError('Expected at least one field for %s', data)
 
-        return TraditionalPlayerBoxScoreDeserializer.deserialize(
+        return TraditionalPlayerBoxScoresDeserializer.deserialize(
             data=result_sets[TraditionalBoxScoreDeserializer.player_box_scores_index])
 
     @staticmethod
