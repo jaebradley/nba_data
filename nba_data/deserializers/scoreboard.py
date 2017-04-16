@@ -10,7 +10,8 @@ from nba_data.data.team import Team
 
 class ScoreboardDeserializer:
 
-    start_time_format = '%Y-%m-%dT%H:%M:%S.%fZ'
+    datetime_format = '%Y-%m-%dT%H:%M:%S.%fZ'
+    date_format = '%Y-%m-%d'
     start_time_time_zone = pytz.utc
 
     games_field_name = 'games'
@@ -46,8 +47,14 @@ class ScoreboardDeserializer:
         game_id = data[ScoreboardDeserializer.game_id_field_name]
         season = Season.get_season_by_start_year(year=int(data[ScoreboardDeserializer.season_year_field_name]))
         start_time_value = data[ScoreboardDeserializer.start_time_field_name]
-        start_time = datetime.strptime(start_time_value, ScoreboardDeserializer.start_time_format)\
-            .replace(tzinfo=ScoreboardDeserializer.start_time_time_zone)
+
+        # If start time is not a datetime then use date formatting
+        try:
+            start_time = datetime.strptime(start_time_value, ScoreboardDeserializer.datetime_format)
+        except ValueError:
+            start_time = datetime.strptime(start_time_value, ScoreboardDeserializer.date_format)
+
+        start_time = start_time.replace(tzinfo=ScoreboardDeserializer.start_time_time_zone)
 
         match_up = ScoreboardDeserializer.parse_match_up(data=data)
 

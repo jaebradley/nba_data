@@ -1,0 +1,817 @@
+{
+    "_internal": {
+        "eventName": "game_schedule_update_for_date",
+        "pubDateTime": "2017-04-16 04:17:11.83",
+        "xslt": "xsl/league/schedule/marty_daily_scoreboard.xsl"
+    },
+    "games": [
+        {
+            "attendance": "",
+            "clock": "",
+            "extendedStatusNum": 0,
+            "gameDuration": {
+                "hours": "",
+                "minutes": ""
+            },
+            "gameId": "0041600115",
+            "hTeam": {
+                "linescore": [],
+                "loss": "31",
+                "score": "",
+                "seriesLoss": "0",
+                "seriesWin": "1",
+                "teamId": "1610612739",
+                "triCode": "CLE",
+                "win": "51"
+            },
+            "hasGameBookPdf": false,
+            "isBuzzerBeater": false,
+            "isGameActivated": false,
+            "isPreviewArticleAvail": false,
+            "isRecapArticleAvail": false,
+            "isStartTimeTBD": true,
+            "nugget": {
+                "text": ""
+            },
+            "period": {
+                "current": 0,
+                "isEndOfPeriod": false,
+                "isHalftime": false,
+                "maxRegular": 4,
+                "type": 0
+            },
+            "playoffs": {
+                "confName": "East",
+                "gameNumInSeries": "5",
+                "hTeam": {
+                    "isSeriesWinner": false,
+                    "seedNum": "2",
+                    "seriesWin": "1"
+                },
+                "isIfNecessary": true,
+                "isSeriesCompleted": false,
+                "roundNum": "1",
+                "seriesId": "17",
+                "seriesSummaryText": "CLE leads 1-0",
+                "vTeam": {
+                    "isSeriesWinner": false,
+                    "seedNum": "7",
+                    "seriesWin": "0"
+                }
+            },
+            "seasonStageId": 4,
+            "seasonYear": "2016",
+            "startDateEastern": "20170425",
+            "startTimeUTC": "2017-04-25",
+            "statusNum": 1,
+            "tags": [
+                "E1"
+            ],
+            "tickets": {
+                "desktopWeb": "http://nbatickets.nba.com/",
+                "mobileApp": "http://www.nba.com/cavaliers/tickets",
+                "mobileWeb": "http://nbatickets.nba.com/"
+            },
+            "vTeam": {
+                "linescore": [],
+                "loss": "40",
+                "score": "",
+                "seriesLoss": "1",
+                "seriesWin": "0",
+                "teamId": "1610612754",
+                "triCode": "IND",
+                "win": "42"
+            },
+            "watch": {
+                "broadcast": {
+                    "audio": {
+                        "hTeam": {
+                            "broadcasters": [
+                                {
+                                    "longName": "WTAM 1100 / 87.7 FM (ESP)",
+                                    "shortName": "WTAM 1100 / 87.7 FM (ESP)"
+                                }
+                            ],
+                            "streams": [
+                                {
+                                    "isOnAir": false,
+                                    "language": "English",
+                                    "streamId": ""
+                                },
+                                {
+                                    "isOnAir": false,
+                                    "language": "Spanish",
+                                    "streamId": ""
+                                }
+                            ]
+                        },
+                        "national": {
+                            "broadcasters": [],
+                            "streams": [
+                                {
+                                    "isOnAir": false,
+                                    "language": "English",
+                                    "streamId": ""
+                                },
+                                {
+                                    "isOnAir": false,
+                                    "language": "Spanish",
+                                    "streamId": ""
+                                }
+                            ]
+                        },
+                        "vTeam": {
+                            "broadcasters": [
+                                {
+                                    "longName": "1070 The Fan/107.5 FM",
+                                    "shortName": "1070 The Fan/107.5 FM"
+                                }
+                            ],
+                            "streams": [
+                                {
+                                    "isOnAir": false,
+                                    "language": "English",
+                                    "streamId": ""
+                                },
+                                {
+                                    "isOnAir": false,
+                                    "language": "Spanish",
+                                    "streamId": ""
+                                }
+                            ]
+                        }
+                    },
+                    "broadcasters": {
+                        "canadian": [
+                            {
+                                "longName": "TSN1/4",
+                                "shortName": "TSN1/4"
+                            }
+                        ],
+                        "hTeam": [
+                            {
+                                "longName": "Fox Sports Ohio - Cleveland",
+                                "shortName": "FSO"
+                            }
+                        ],
+                        "national": [],
+                        "vTeam": []
+                    },
+                    "video": {
+                        "canPurchase": false,
+                        "deepLink": [],
+                        "isLeaguePass": false,
+                        "isTNTOT": false,
+                        "isVR": false,
+                        "regionalBlackoutCodes": "tarr_cler",
+                        "streams": [
+                            {
+                                "doesArchiveExist": false,
+                                "duration": 0,
+                                "isArchiveAvailToWatch": false,
+                                "isOnAir": false,
+                                "streamId": "",
+                                "streamType": "vTeam"
+                            },
+                            {
+                                "doesArchiveExist": false,
+                                "duration": 0,
+                                "isArchiveAvailToWatch": false,
+                                "isOnAir": false,
+                                "streamId": "",
+                                "streamType": "hTeam"
+                            },
+                            {
+                                "doesArchiveExist": false,
+                                "duration": 0,
+                                "isArchiveAvailToWatch": false,
+                                "isOnAir": false,
+                                "streamId": "",
+                                "streamType": "mobile"
+                            },
+                            {
+                                "doesArchiveExist": false,
+                                "duration": 0,
+                                "isArchiveAvailToWatch": false,
+                                "isOnAir": false,
+                                "streamId": "",
+                                "streamType": "condensed"
+                            }
+                        ],
+                        "tntotIsOnAir": false
+                    }
+                }
+            }
+        },
+        {
+            "attendance": "",
+            "clock": "",
+            "extendedStatusNum": 0,
+            "gameDuration": {
+                "hours": "",
+                "minutes": ""
+            },
+            "gameId": "0041600155",
+            "hTeam": {
+                "linescore": [],
+                "loss": "21",
+                "score": "",
+                "seriesLoss": "0",
+                "seriesWin": "1",
+                "teamId": "1610612759",
+                "triCode": "SAS",
+                "win": "61"
+            },
+            "hasGameBookPdf": false,
+            "isBuzzerBeater": false,
+            "isGameActivated": false,
+            "isPreviewArticleAvail": false,
+            "isRecapArticleAvail": false,
+            "isStartTimeTBD": true,
+            "nugget": {
+                "text": ""
+            },
+            "period": {
+                "current": 0,
+                "isEndOfPeriod": false,
+                "isHalftime": false,
+                "maxRegular": 4,
+                "type": 0
+            },
+            "playoffs": {
+                "confName": "West",
+                "gameNumInSeries": "5",
+                "hTeam": {
+                    "isSeriesWinner": false,
+                    "seedNum": "2",
+                    "seriesWin": "1"
+                },
+                "isIfNecessary": true,
+                "isSeriesCompleted": false,
+                "roundNum": "1",
+                "seriesId": "13",
+                "seriesSummaryText": "SAS leads 1-0",
+                "vTeam": {
+                    "isSeriesWinner": false,
+                    "seedNum": "7",
+                    "seriesWin": "0"
+                }
+            },
+            "seasonStageId": 4,
+            "seasonYear": "2016",
+            "startDateEastern": "20170425",
+            "startTimeUTC": "2017-04-25",
+            "statusNum": 1,
+            "tags": [
+                "W1"
+            ],
+            "tickets": {
+                "desktopWeb": "http://www.ticketmaster.com/san-antonio-spurs-2017-playoffs-round-san-antonio-texas-04-24-2017/event/3A005263D8226D14?brand=spurs&extcmp=gw510719&wt.mc_id=NBA_TEAM_SCHED_PG_PRI_SAN_PLAYOFFS?CFC_SPURS_WEB_SCHEDULE_PLAYOFFS",
+                "mobileApp": "http://nbatickets.nba.com/",
+                "mobileWeb": "http://nbatickets.nba.com/"
+            },
+            "vTeam": {
+                "linescore": [],
+                "loss": "39",
+                "score": "",
+                "seriesLoss": "1",
+                "seriesWin": "0",
+                "teamId": "1610612763",
+                "triCode": "MEM",
+                "win": "43"
+            },
+            "watch": {
+                "broadcast": {
+                    "audio": {
+                        "hTeam": {
+                            "broadcasters": [
+                                {
+                                    "longName": "WOAI 1200AM",
+                                    "shortName": "WOAI 1200AM"
+                                }
+                            ],
+                            "streams": [
+                                {
+                                    "isOnAir": false,
+                                    "language": "English",
+                                    "streamId": ""
+                                },
+                                {
+                                    "isOnAir": false,
+                                    "language": "Spanish",
+                                    "streamId": ""
+                                }
+                            ]
+                        },
+                        "national": {
+                            "broadcasters": [],
+                            "streams": [
+                                {
+                                    "isOnAir": false,
+                                    "language": "English",
+                                    "streamId": ""
+                                },
+                                {
+                                    "isOnAir": false,
+                                    "language": "Spanish",
+                                    "streamId": ""
+                                }
+                            ]
+                        },
+                        "vTeam": {
+                            "broadcasters": [
+                                {
+                                    "longName": "WMFS",
+                                    "shortName": "WMFS"
+                                }
+                            ],
+                            "streams": [
+                                {
+                                    "isOnAir": false,
+                                    "language": "English",
+                                    "streamId": ""
+                                },
+                                {
+                                    "isOnAir": false,
+                                    "language": "Spanish",
+                                    "streamId": ""
+                                }
+                            ]
+                        }
+                    },
+                    "broadcasters": {
+                        "canadian": [
+                            {
+                                "longName": "NBATV Canada",
+                                "shortName": "NBAC"
+                            }
+                        ],
+                        "hTeam": [
+                            {
+                                "longName": "Fox Sports Southwest - San Antonio",
+                                "shortName": "FSSW-SA"
+                            }
+                        ],
+                        "national": [],
+                        "vTeam": [
+                            {
+                                "longName": "Fox Sports Southeast Memphis",
+                                "shortName": "FSSE-MEM"
+                            }
+                        ]
+                    },
+                    "video": {
+                        "canPurchase": false,
+                        "deepLink": [],
+                        "isLeaguePass": false,
+                        "isTNTOT": false,
+                        "isVR": false,
+                        "regionalBlackoutCodes": "torr_sasr_memr",
+                        "streams": [
+                            {
+                                "doesArchiveExist": false,
+                                "duration": 0,
+                                "isArchiveAvailToWatch": false,
+                                "isOnAir": false,
+                                "streamId": "",
+                                "streamType": "vTeam"
+                            },
+                            {
+                                "doesArchiveExist": false,
+                                "duration": 0,
+                                "isArchiveAvailToWatch": false,
+                                "isOnAir": false,
+                                "streamId": "",
+                                "streamType": "hTeam"
+                            },
+                            {
+                                "doesArchiveExist": false,
+                                "duration": 0,
+                                "isArchiveAvailToWatch": false,
+                                "isOnAir": false,
+                                "streamId": "",
+                                "streamType": "mobile"
+                            },
+                            {
+                                "doesArchiveExist": false,
+                                "duration": 0,
+                                "isArchiveAvailToWatch": false,
+                                "isOnAir": false,
+                                "streamId": "",
+                                "streamType": "condensed"
+                            }
+                        ],
+                        "tntotIsOnAir": false
+                    }
+                }
+            }
+        },
+        {
+            "attendance": "",
+            "clock": "",
+            "extendedStatusNum": 0,
+            "gameDuration": {
+                "hours": "",
+                "minutes": ""
+            },
+            "gameId": "0041600165",
+            "hTeam": {
+                "linescore": [],
+                "loss": "27",
+                "score": "",
+                "seriesLoss": "0",
+                "seriesWin": "0",
+                "teamId": "1610612745",
+                "triCode": "HOU",
+                "win": "55"
+            },
+            "hasGameBookPdf": false,
+            "isBuzzerBeater": false,
+            "isGameActivated": false,
+            "isPreviewArticleAvail": false,
+            "isRecapArticleAvail": false,
+            "isStartTimeTBD": true,
+            "nugget": {
+                "text": ""
+            },
+            "period": {
+                "current": 0,
+                "isEndOfPeriod": false,
+                "isHalftime": false,
+                "maxRegular": 4,
+                "type": 0
+            },
+            "playoffs": {
+                "confName": "West",
+                "gameNumInSeries": "5",
+                "hTeam": {
+                    "isSeriesWinner": false,
+                    "seedNum": "3",
+                    "seriesWin": "0"
+                },
+                "isIfNecessary": true,
+                "isSeriesCompleted": false,
+                "roundNum": "1",
+                "seriesId": "12",
+                "seriesSummaryText": "Series 0-0",
+                "vTeam": {
+                    "isSeriesWinner": false,
+                    "seedNum": "6",
+                    "seriesWin": "0"
+                }
+            },
+            "seasonStageId": 4,
+            "seasonYear": "2016",
+            "startDateEastern": "20170425",
+            "startTimeUTC": "2017-04-25",
+            "statusNum": 1,
+            "tags": [
+                "W1"
+            ],
+            "tickets": {
+                "desktopWeb": "http://nbatickets.nba.com/",
+                "mobileApp": "http://www.houstontoyotacenter.com/events/category/rockets",
+                "mobileWeb": "http://nbatickets.nba.com/"
+            },
+            "vTeam": {
+                "linescore": [],
+                "loss": "35",
+                "score": "",
+                "seriesLoss": "0",
+                "seriesWin": "0",
+                "teamId": "1610612760",
+                "triCode": "OKC",
+                "win": "47"
+            },
+            "watch": {
+                "broadcast": {
+                    "audio": {
+                        "hTeam": {
+                            "broadcasters": [
+                                {
+                                    "longName": "790 AM",
+                                    "shortName": "790 AM"
+                                }
+                            ],
+                            "streams": [
+                                {
+                                    "isOnAir": false,
+                                    "language": "English",
+                                    "streamId": ""
+                                },
+                                {
+                                    "isOnAir": false,
+                                    "language": "Spanish",
+                                    "streamId": ""
+                                }
+                            ]
+                        },
+                        "national": {
+                            "broadcasters": [],
+                            "streams": [
+                                {
+                                    "isOnAir": false,
+                                    "language": "English",
+                                    "streamId": ""
+                                },
+                                {
+                                    "isOnAir": false,
+                                    "language": "Spanish",
+                                    "streamId": ""
+                                }
+                            ]
+                        },
+                        "vTeam": {
+                            "broadcasters": [
+                                {
+                                    "longName": "WWLS 98.1FM OKC / 930AM (ESP)",
+                                    "shortName": "WWLS 98.1FM OKC / 930AM (ESP)"
+                                }
+                            ],
+                            "streams": [
+                                {
+                                    "isOnAir": false,
+                                    "language": "English",
+                                    "streamId": ""
+                                },
+                                {
+                                    "isOnAir": false,
+                                    "language": "Spanish",
+                                    "streamId": ""
+                                }
+                            ]
+                        }
+                    },
+                    "broadcasters": {
+                        "canadian": [
+                            {
+                                "longName": "TSN3/5",
+                                "shortName": "TSN3/5"
+                            }
+                        ],
+                        "hTeam": [
+                            {
+                                "longName": "ROOT Sports South West",
+                                "shortName": "ROOT-SW"
+                            }
+                        ],
+                        "national": [],
+                        "vTeam": [
+                            {
+                                "longName": "Fox Sports Net - Oklahoma",
+                                "shortName": "FSOK"
+                            }
+                        ]
+                    },
+                    "video": {
+                        "canPurchase": false,
+                        "deepLink": [],
+                        "isLeaguePass": false,
+                        "isTNTOT": false,
+                        "isVR": false,
+                        "regionalBlackoutCodes": "torr_hour_okcr",
+                        "streams": [
+                            {
+                                "doesArchiveExist": false,
+                                "duration": 0,
+                                "isArchiveAvailToWatch": false,
+                                "isOnAir": false,
+                                "streamId": "",
+                                "streamType": "vTeam"
+                            },
+                            {
+                                "doesArchiveExist": false,
+                                "duration": 0,
+                                "isArchiveAvailToWatch": false,
+                                "isOnAir": false,
+                                "streamId": "",
+                                "streamType": "hTeam"
+                            },
+                            {
+                                "doesArchiveExist": false,
+                                "duration": 0,
+                                "isArchiveAvailToWatch": false,
+                                "isOnAir": false,
+                                "streamId": "",
+                                "streamType": "mobile"
+                            },
+                            {
+                                "doesArchiveExist": false,
+                                "duration": 0,
+                                "isArchiveAvailToWatch": false,
+                                "isOnAir": false,
+                                "streamId": "",
+                                "streamType": "condensed"
+                            }
+                        ],
+                        "tntotIsOnAir": false
+                    }
+                }
+            }
+        },
+        {
+            "attendance": "",
+            "clock": "",
+            "extendedStatusNum": 0,
+            "gameDuration": {
+                "hours": "",
+                "minutes": ""
+            },
+            "gameId": "0041600175",
+            "hTeam": {
+                "linescore": [],
+                "loss": "31",
+                "score": "",
+                "seriesLoss": "1",
+                "seriesWin": "0",
+                "teamId": "1610612746",
+                "triCode": "LAC",
+                "win": "51"
+            },
+            "hasGameBookPdf": false,
+            "isBuzzerBeater": false,
+            "isGameActivated": false,
+            "isPreviewArticleAvail": false,
+            "isRecapArticleAvail": false,
+            "isStartTimeTBD": true,
+            "nugget": {
+                "text": ""
+            },
+            "period": {
+                "current": 0,
+                "isEndOfPeriod": false,
+                "isHalftime": false,
+                "maxRegular": 4,
+                "type": 0
+            },
+            "playoffs": {
+                "confName": "West",
+                "gameNumInSeries": "5",
+                "hTeam": {
+                    "isSeriesWinner": false,
+                    "seedNum": "4",
+                    "seriesWin": "0"
+                },
+                "isIfNecessary": true,
+                "isSeriesCompleted": false,
+                "roundNum": "1",
+                "seriesId": "11",
+                "seriesSummaryText": "UTA leads 1-0",
+                "vTeam": {
+                    "isSeriesWinner": false,
+                    "seedNum": "5",
+                    "seriesWin": "1"
+                }
+            },
+            "seasonStageId": 4,
+            "seasonYear": "2016",
+            "startDateEastern": "20170425",
+            "startTimeUTC": "2017-04-25",
+            "statusNum": 1,
+            "tags": [
+                "W1"
+            ],
+            "tickets": {
+                "desktopWeb": "https://www.axs.com/events/334484/la-clippers-vs-utah-jazz-round-a-home-game-3-if-necessary-tickets?camefrom=LAC_SCHEDULE_PG",
+                "mobileApp": "http://www.axs.com/series/4148/la-clippers-2017-playoffs-tickets",
+                "mobileWeb": "http://nbatickets.nba.com/"
+            },
+            "vTeam": {
+                "linescore": [],
+                "loss": "31",
+                "score": "",
+                "seriesLoss": "0",
+                "seriesWin": "1",
+                "teamId": "1610612762",
+                "triCode": "UTA",
+                "win": "51"
+            },
+            "watch": {
+                "broadcast": {
+                    "audio": {
+                        "hTeam": {
+                            "broadcasters": [
+                                {
+                                    "longName": "KEIB 1150",
+                                    "shortName": "KEIB 1150"
+                                }
+                            ],
+                            "streams": [
+                                {
+                                    "isOnAir": false,
+                                    "language": "English",
+                                    "streamId": ""
+                                },
+                                {
+                                    "isOnAir": false,
+                                    "language": "Spanish",
+                                    "streamId": ""
+                                }
+                            ]
+                        },
+                        "national": {
+                            "broadcasters": [],
+                            "streams": [
+                                {
+                                    "isOnAir": false,
+                                    "language": "English",
+                                    "streamId": ""
+                                },
+                                {
+                                    "isOnAir": false,
+                                    "language": "Spanish",
+                                    "streamId": ""
+                                }
+                            ]
+                        },
+                        "vTeam": {
+                            "broadcasters": [
+                                {
+                                    "longName": "KZNS",
+                                    "shortName": "KZNS"
+                                }
+                            ],
+                            "streams": [
+                                {
+                                    "isOnAir": false,
+                                    "language": "English",
+                                    "streamId": ""
+                                },
+                                {
+                                    "isOnAir": false,
+                                    "language": "Spanish",
+                                    "streamId": ""
+                                }
+                            ]
+                        }
+                    },
+                    "broadcasters": {
+                        "canadian": [
+                            {
+                                "longName": "NBATV Canada",
+                                "shortName": "NBAC"
+                            }
+                        ],
+                        "hTeam": [
+                            {
+                                "longName": "FSN Prime Ticket",
+                                "shortName": "FSNP"
+                            }
+                        ],
+                        "national": [],
+                        "vTeam": [
+                            {
+                                "longName": "ROOT Sports Rocky Mountain",
+                                "shortName": "ROOT-RM"
+                            }
+                        ]
+                    },
+                    "video": {
+                        "canPurchase": false,
+                        "deepLink": [],
+                        "isLeaguePass": false,
+                        "isTNTOT": false,
+                        "isVR": false,
+                        "regionalBlackoutCodes": "torr_lacr_utar",
+                        "streams": [
+                            {
+                                "doesArchiveExist": false,
+                                "duration": 0,
+                                "isArchiveAvailToWatch": false,
+                                "isOnAir": false,
+                                "streamId": "",
+                                "streamType": "vTeam"
+                            },
+                            {
+                                "doesArchiveExist": false,
+                                "duration": 0,
+                                "isArchiveAvailToWatch": false,
+                                "isOnAir": false,
+                                "streamId": "",
+                                "streamType": "hTeam"
+                            },
+                            {
+                                "doesArchiveExist": false,
+                                "duration": 0,
+                                "isArchiveAvailToWatch": false,
+                                "isOnAir": false,
+                                "streamId": "",
+                                "streamType": "mobile"
+                            },
+                            {
+                                "doesArchiveExist": false,
+                                "duration": 0,
+                                "isArchiveAvailToWatch": false,
+                                "isOnAir": false,
+                                "streamId": "",
+                                "streamType": "condensed"
+                            }
+                        ],
+                        "tntotIsOnAir": false
+                    }
+                }
+            }
+        }
+    ],
+    "numGames": 4
+}

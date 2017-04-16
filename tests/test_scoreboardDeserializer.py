@@ -19,3 +19,10 @@ class TestScoreboardDeserializer(TestCase):
             scoreboard_games = ScoreboardDeserializer.deserialize(data=data)
             self.assertIsNotNone(scoreboard_games)
             self.assertEqual(len(scoreboard_games), 9)
+
+    def test_deserialize_future_game(self):
+        with open(os.path.join(ROOT_DIRECTORY, 'tests/files/scoreboardfuturegames.json')) as data_file:
+            data = json.load(data_file)
+            scoreboard_games = ScoreboardDeserializer.deserialize(data=data)
+            self.assertIsNotNone(scoreboard_games)
+            self.assertEqual(len(scoreboard_games), 4)
