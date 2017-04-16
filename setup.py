@@ -3,7 +3,7 @@ setup(
   name = 'nba_data',
   packages = find_packages(exclude=['tests*']),
   install_requires=['requests', 'enum34'],
-  version = '1.6',
+  version = '1.7',
   description = 'A nba stats client',
   author = 'Jae Bradley',
   author_email = 'jae.b.bradley@gmail.com',
