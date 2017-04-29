@@ -9,7 +9,7 @@ class RotoWirePlayerNewsItemsDeserializer:
 
     @staticmethod
     def deserialize(data):
-        [
+        return [
             RotoWirePlayerNewsItemDeserializer.deserialize(data=player_news_item)
             for player_news_item in data[RotoWirePlayerNewsItemsDeserializer.list_items_field_name]
         ]
