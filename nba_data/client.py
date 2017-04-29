@@ -91,3 +91,10 @@ class Client:
 
         return CalendarDeserializer.deserialize(calendar_json=response.json(), date_range=date_range,
                                                 ignore_dates_without_games=ignore_dates_without_games)
+
+    @staticmethod
+    def get_player_news():
+        response = requests.get(UriGenerator.generate_roto_wire_player_news_uri(), headers=Client.headers)
+
+        response.raise_for_status()
+        
