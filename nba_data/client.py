@@ -12,6 +12,7 @@ from nba_data.deserializers.scoreboard import ScoreboardDeserializer
 from nba_data.deserializers.season_players import SeasonPlayersDeserializer
 from nba_data.deserializers.team_game_log import TeamGameLogDeserializer
 from nba_data.deserializers.box_scores.game import TraditionalGameBoxScoreDeserializer, AdvancedGameBoxScoreDeserializer
+from nba_data.deserializers.roto_wire.player_news_items import RotoWirePlayerNewsItemsDeserializer
 from nba_data.nba_stats_api_utils.query_parameter_generator import QueryParameterGenerator
 from nba_data.nba_stats_api_utils.uri_generator import UriGenerator
 
@@ -94,7 +95,5 @@ class Client:
 
     @staticmethod
     def get_player_news():
-        response = requests.get(UriGenerator.generate_roto_wire_player_news_uri(), headers=Client.headers)
-
-        response.raise_for_status()
-        
+        return Client.get_deserialized_data(uri=UriGenerator.generate_roto_wire_player_news_uri(),
+                                            deserializer=RotoWirePlayerNewsItemsDeserializer)
