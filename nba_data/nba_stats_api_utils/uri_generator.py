@@ -6,6 +6,7 @@ from nba_data.data.season import Season
 class UriGenerator:
     date_format = "%Y%m%d"
     stats_base_uri = "http://stats.nba.com/stats/"
+    stats_prod_base_uri = "http://stats-prod.nba.com/wp-json/statscms/v1/"
     data_base_uri = "http://data.nba.net/"
 
     common_all_players_path = "commonallplayers"
@@ -16,6 +17,7 @@ class UriGenerator:
     calendar_path = "calendar"
     scoreboard_path = "scoreboard"
     players_path = "players"
+    roto_wire_player_news_path = "rotowire/player"
 
     def __init__(self):
         pass
@@ -61,3 +63,7 @@ class UriGenerator:
 
         path = str(Season.get_start_year_by_season(season=season)) + '/' + UriGenerator.players_path
         return UriGenerator.generate_data_uri(path=path)
+
+    @staticmethod
+    def generate_roto_wire_player_news_uri():
+        return UriGenerator.stats_prod_base_uri + '/' + UriGenerator.roto_wire_player_news_path

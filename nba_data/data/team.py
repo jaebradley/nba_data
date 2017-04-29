@@ -53,7 +53,7 @@ class Team(BaseQueryParameter, Enum):
 
     @staticmethod
     def get_team_by_abbreviation(abbreviation):
-        assert isinstance(abbreviation, str)
+        assert isinstance(abbreviation, basestring)
 
         team = team_abbreviation_map.get(abbreviation.upper())
 
@@ -64,7 +64,7 @@ class Team(BaseQueryParameter, Enum):
 
     @staticmethod
     def get_team_by_name(name):
-        assert isinstance(name, str)
+        assert isinstance(name, basestring)
 
         team = team_name_map.get(name)
 
