@@ -1,5 +1,5 @@
 import datetime
-from pytz import timezone
+from pytz import timezone, utc
 
 from nba_data.data.injury_details import InjuryDetails, Status
 from nba_data.data.player_news_item import PlayerNewsItem
@@ -48,15 +48,9 @@ class RotoWirePlayerNewsItemDeserializer:
         if data[RotoWirePlayerNewsItemDeserializer.injured_field_name] == 'YES':
             is_injured = True
 
-        published_at_local = datetime.datetime.strptime(data[RotoWirePlayerNewsItemDeserializer.list_item_publish_date_field_name],
-                                                        RotoWirePlayerNewsItemDeserializer.date_time_format)
-        published_at = RotoWirePlayerNewsItemDeserializer.timezone.localize(published_at_local)
-        local_updated_at = datetime.datetime.strptime(data[RotoWirePlayerNewsItemDeserializer.last_updated_field_name],
-                                                      RotoWirePlayerNewsItemDeserializer.date_time_format)
-        updated_at = RotoWirePlayerNewsItemDeserializer.timezone.localize(local_updated_at)
         team_abbreviation = data[RotoWirePlayerNewsItemDeserializer.team_abbreviation_field_name]
         team = Team.get_team_by_abbreviation(abbreviation=team_abbreviation)
-        player_news_item_date = datetime.datetime.fromtimestamp(int(date))
+        player_news_item_date = datetime.datetime.fromtimestamp(int(date), utc)
         source_update_id = int(data[RotoWirePlayerNewsItemDeserializer.update_id_field_name])
         source_id = int(data[RotoWirePlayerNewsItemDeserializer.roto_id_field_name])
         source_player_id = data[RotoWirePlayerNewsItemDeserializer.player_id_field_name]
@@ -74,8 +68,7 @@ class RotoWirePlayerNewsItemDeserializer:
         injury_details = InjuryDetails(is_injured=is_injured, status=status, affected_area=affected_area,
                                        detail=detail, side=side)
 
-        return PlayerNewsItem(caption=caption, description=description, published_at=published_at,
-                              updated_at=updated_at, source_update_id=source_update_id, source_id=source_id,
-                              source_player_id=source_player_id, first_name=first_name, last_name=last_name,
-                              position=position, team=team, date=player_news_item_date, priority=priority,
-                              headline=headline, injury=injury_details)
+        return PlayerNewsItem(caption=caption, description=description, source_update_id=source_update_id,
+                              source_id=source_id, source_player_id=source_player_id, first_name=first_name,
+                              last_name=last_name, position=position, team=team, published_at=player_news_item_date,
+                              priority=priority, headline=headline, injury=injury_details)
