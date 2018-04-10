@@ -1,6 +1,6 @@
 from enum import Enum
 
-from base_query_parameter import BaseQueryParameter
+from .base_query_parameter import BaseQueryParameter
 
 
 class League(BaseQueryParameter, Enum):
