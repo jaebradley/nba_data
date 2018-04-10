@@ -10,5 +10,8 @@ setup(
   url = 'https://github.com/jaebradley/nba_data',
   download_url = 'https://github.com/jaebradley/nba_data/tarball/1.9.1',
   keywords = ['nba', 'nba_data'],
-  classifiers = [],
+  classifiers=[
+    'Development Status :: 3 - Alpha',
+    'Programming Language :: Python :: 2.7',
+  ],
 )
